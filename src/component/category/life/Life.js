@@ -13,13 +13,13 @@ import Bottom from "../../Items/Bottom";
 import Header from "../../Header";
 import Footer from "../../Footer";
 
-const Education = () => {
+const Life = () => {
     const [newsList, setNewsList] = useState([]);
 
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get(
-                'https://cors-anywhere.herokuapp.com/https://vietnamnet.vn/rss/giao-duc.rss'
+                'https://cors-anywhere.herokuapp.com/https://vietnamnet.vn/rss/doi-song.rss'
             );
             const rss = response.data;
             let parser = new DOMParser();
@@ -41,7 +41,6 @@ const Education = () => {
         };
         fetchNews();
     }, []);
-
     function getZero() {
         for (let i = 0; i < newsList.length; i++) {
             const news = newsList[i];
@@ -50,15 +49,14 @@ const Education = () => {
             }
         }
     }
-
     return (
-        <div className="Education">
+        <div className="Life">
             <Header/>
             <main id="main">
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Giáo dục</h2>
+                            <h2>Đời sống</h2>
 
                         </div>
                     </div>
@@ -95,8 +93,7 @@ const Education = () => {
             </main>
             <Footer/>
         </div>
-    )
-        ;
+    );
 };
 
-export default Education;
+export default Life;

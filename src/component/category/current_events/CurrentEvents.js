@@ -13,17 +13,19 @@ import Bottom from "../../Items/Bottom";
 import Header from "../../Header";
 import Footer from "../../Footer";
 
-const Education = () => {
+const CurrentEvents = () => {
     const [newsList, setNewsList] = useState([]);
 
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get(
-                'https://cors-anywhere.herokuapp.com/https://vietnamnet.vn/rss/giao-duc.rss'
+                'https://cors-anywhere.herokuapp.com/https://vietnamnet.vn/rss/thoi-su.rss'
             );
+            console.log(response); // in dữ liệu trả về từ API
             const rss = response.data;
             let parser = new DOMParser();
             let xml = parser.parseFromString(rss, 'text/xml');
+            console.log(xml); // in ra để kiểm tra xem XML đã được phân tích đúng không
             let items = xml.querySelectorAll('item');
             let results = [];
 
@@ -41,7 +43,6 @@ const Education = () => {
         };
         fetchNews();
     }, []);
-
     function getZero() {
         for (let i = 0; i < newsList.length; i++) {
             const news = newsList[i];
@@ -50,15 +51,14 @@ const Education = () => {
             }
         }
     }
-
     return (
-        <div className="Education">
+        <div className="Life">
             <Header/>
             <main id="main">
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Giáo dục</h2>
+                            <h2>Thời sự</h2>
 
                         </div>
                     </div>
@@ -95,8 +95,7 @@ const Education = () => {
             </main>
             <Footer/>
         </div>
-    )
-        ;
+    );
 };
 
-export default Education;
+export default CurrentEvents;
