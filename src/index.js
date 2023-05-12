@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Education from "./component/category/education/Education";
+import Life from "./component/category/life/Life";
+import CurrentEvents from "./component/category/current_events/CurrentEvents";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Education />
+    <CurrentEvents />
   </React.StrictMode>
 );
 
