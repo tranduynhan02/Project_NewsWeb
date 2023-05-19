@@ -19,7 +19,7 @@ const Education = () => {
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get(
-                'https://cors-anywhere.herokuapp.com/https://vietnamnet.vn/rss/giao-duc.rss'
+                'https://vietnamnet.vn/rss/giao-duc.rss'
             );
             const rss = response.data;
             let parser = new DOMParser();

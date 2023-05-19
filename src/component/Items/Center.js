@@ -6,7 +6,7 @@ const Center = ({ news }) => {
             <a href={news.link}><img src={news.image} alt="" className="img-fluid"></img></a>
             <div className="post-meta"><span>{news.pubDate}</span>
             </div>
-            <h2><a href={news.link}>{news.title}</a></h2>
+            <h2><a href={news.link} style={{textDecoration:"none"}}>{news.title}</a></h2>
         </div>
     );
 };

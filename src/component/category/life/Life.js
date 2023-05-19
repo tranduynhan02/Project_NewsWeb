@@ -19,7 +19,7 @@ const Life = () => {
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get(
-                'https://cors-anywhere.herokuapp.com/https://vietnamnet.vn/rss/doi-song.rss'
+                'https://vietnamnet.vn/rss/doi-song.rss'
             );
             const rss = response.data;
             let parser = new DOMParser();
