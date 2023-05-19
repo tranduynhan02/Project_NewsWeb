@@ -6,11 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import Education from "./component/category/education/Education";
 import Life from "./component/category/life/Life";
 import CurrentEvents from "./component/category/current_events/CurrentEvents";
+import Detail from "./component/detail/Detail";
+import Left from "./component/Items/Left";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CurrentEvents />
+      <Detail url={'https://vietnamnet.vn/het-thoi-kem-lac-gia-xe-suv-gam-cao-giam-sap-san-2144660.html'}/>
   </React.StrictMode>
 );
 

@@ -19,7 +19,7 @@ const CurrentEvents = () => {
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get(
-                'https://cors-anywhere.herokuapp.com/https://vietnamnet.vn/rss/thoi-su.rss'
+                'https://vietnamnet.vn/rss/thoi-su.rss'
             );
             console.log(response); // in dữ liệu trả về từ API
             const rss = response.data;
@@ -87,8 +87,6 @@ const CurrentEvents = () => {
                             {newsList.map((news, index) => (
                                 index > 6 ? <Bottom key={index} news={news}/> : ""
                             ))}
-
-
                         </div>
                     </div>
                 </section>

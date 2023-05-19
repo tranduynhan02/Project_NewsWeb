@@ -7,7 +7,7 @@ const Left = ({ news }) => {
                 <a to={news.link}><img src={news.image} alt=""
                                        className="img-fluid"></img></a>
                 <div className="post-meta">{news.pubDate}</div>
-                <h2><a href={news.link}>{news.title}</a>
+                <h2><a href={news.link} style={{textDecoration:"none"}}>{news.title}</a>
                 </h2>
                 <p className="mb-4 d-block">{news.description}</p>
             </div>
