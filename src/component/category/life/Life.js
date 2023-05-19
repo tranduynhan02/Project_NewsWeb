@@ -12,6 +12,7 @@ import Center from "../../Items/Center";
 import Bottom from "../../Items/Bottom";
 import Header from "../../Header";
 import Footer from "../../Footer";
+import {Outlet} from "react-router-dom";
 
 const Life = () => {
     const [newsList, setNewsList] = useState([]);
@@ -92,6 +93,7 @@ const Life = () => {
                 </section>
             </main>
             <Footer/>
+            <Outlet/>
         </div>
     );
 };

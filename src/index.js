@@ -6,13 +6,22 @@ import reportWebVitals from './reportWebVitals';
 import Education from "./component/category/education/Education";
 import Life from "./component/category/life/Life";
 import CurrentEvents from "./component/category/current_events/CurrentEvents";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Detail from "./component/detail/Detail";
-import Left from "./component/Items/Left";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <Detail url={'https://vietnamnet.vn/het-thoi-kem-lac-gia-xe-suv-gam-cao-giam-sap-san-2144660.html'}/>
+      <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<App/>}>
+                  <Route path="education" element={<Education/>} />
+                  <Route path="current-events" element={<CurrentEvents/>} />
+                  <Route path="life" element={<Life/>} />
+                  <Route path="news" element={<Detail />} />
+              </Route>
+          </Routes>
+      </BrowserRouter>
   </React.StrictMode>
 );
 
