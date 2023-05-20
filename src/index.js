@@ -8,11 +8,12 @@ import Life from "./component/category/life/Life";
 import CurrentEvents from "./component/category/current_events/CurrentEvents";
 import Detail from "./component/detail/Detail";
 import Left from "./component/Items/Left";
+import RealEstate from "./component/category/real_estate/RealEstate";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <Detail url={'https://vietnamnet.vn/het-thoi-kem-lac-gia-xe-suv-gam-cao-giam-sap-san-2144660.html'}/>
+      <RealEstate/>
   </React.StrictMode>
 );
 
