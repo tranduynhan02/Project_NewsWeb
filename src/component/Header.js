@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 const Header = ({ news }) => {
     return (
         <header id="header" className="header d-flex align-items-center fixed-top">
@@ -10,10 +11,10 @@ const Header = ({ news }) => {
 
                 <nav id="navbar" className="navbar">
                     <ul>
-                        <li><a href="index.html">Trang chủ</a></li>
-                        <li><a href="single-post.html">Giáo dục</a></li>
-                        <li><a href="about.html">Thời sự</a></li>
-                        <li><a href="contact.html">Đời sống</a></li>
+                        <li><Link to="/">Trang chủ</Link></li>
+                        <li> <Link to="/life">Đời sống</Link></li>
+                        <li> <Link to="/education">Giáo dục</Link></li>
+                        <li> <Link to="/current-events">Thời sự</Link></li>
                     </ul>
                 </nav>
 

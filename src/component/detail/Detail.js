@@ -10,14 +10,14 @@ import React, {useState} from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import Image from "./items/Image";
-const Detail = ({url}) => {
+const Detail = () => {
     const [title, setTitle] = useState();
     const [listImage, setListImage] = useState([]);
     const [listDecription, setListDecription] = useState([]);
     const [summary, setSummary] = useState();
     const [figcaption, setFigcaption] = useState();
     async function ScrapeData() {
-        const {data} = await axios.get(url);
+        const {data} = await axios.get("https://vietnamnet.vn/sieu-xe-lamborghini-huracan-lan-dan-nhat-viet-nam-hien-ra-sao-2141430.html");
         const cheerio = require('cheerio');
         const $ = cheerio.load(data);
         setTitle($('h1').text());
@@ -45,7 +45,6 @@ const Detail = ({url}) => {
             listFigcaption.push(text);
         });
         setFigcaption(listFigcaption);
-
     }
 
     ScrapeData();
@@ -77,7 +76,6 @@ const Detail = ({url}) => {
                                     ))}
                                 </div>
                                 <div className="row justify-content-center mt-5">
-
                                     <div className="col-lg-12">
                                         <h5 className="comment-title">Bình luận</h5>
                                         <div className="row">
