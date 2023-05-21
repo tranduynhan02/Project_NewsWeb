@@ -12,6 +12,7 @@ import Center from "../../Items/Center";
 import Bottom from "../../Items/Bottom";
 import Header from "../../Header";
 import Footer from "../../Footer";
+import {Outlet} from "react-router-dom";
 
 const Education = () => {
     const [newsList, setNewsList] = useState([]);
@@ -41,67 +42,54 @@ const Education = () => {
         };
         fetchNews();
     }, []);
-    function getZero() {
-        for (let i = 0; i < newsList.length; i++) {
-            const news = newsList[i];
-            if (i === 0) {
-                return <Left key={i} news={news}/>;
-            }
-        }
+    function getIndex(index){
+        return {...newsList[index]};
     }
-    function getlink(link){
-        const url = link;
+    function getlink(url){
         const startIndex = url.indexOf("vietnamnet.vn/") + "vietnamnet.vn/".length;
         const subUrl = url.substring(startIndex);
-        console.log(subUrl); // hiển thị "sieu-xe-lamborghini-huracan-lan-dan-nhat-viet-nam-hien-ra-sao-2141430.html"
         return subUrl;
     }
     return (
-        <div className="Education">
+        <div className="Life">
             <Header/>
             <main id="main">
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
                             <h2>Giáo dục</h2>
-
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">
                         <div className="row g-5">
-                            {getZero()}
+                            {<Left key={0} news={getIndex(0)}/>}
                             <div className="col-lg-8">
                                 <div className="row g-5">
                                     <div className="col-lg-4 border-start custom-border">
-                                        {newsList.map((news, index) => (
-                                            index > 0 && index < 3 ? <Center key={index} news={news}/> : ""
-                                        ))}
+                                        {<Center key={1} news={getIndex(1)}/>}
+                                        {<Center key={2} news={getIndex(2)}/>}
                                     </div>
                                     <div className="col-lg-4 border-start custom-border">
-                                        {newsList.map((news, index) => (
-                                            index > 2 && index < 5 ? <Center key={index} news={news}/> : ""
-                                        ))}
+                                        {<Center key={3} news={getIndex(3)}/>}
+                                        {<Center key={4} news={getIndex(4)}/>}
                                     </div>
                                     <div className="col-lg-4 border-start custom-border">
-                                        {newsList.map((news, index) => (
-                                            index > 4 && index < 7 ? <Center key={index} news={news}/> : ""
-                                        ))}
+                                        {<Center key={5} news={getIndex(5)}/>}
+                                        {<Center key={6} news={getIndex(6)}/>}
                                     </div>
                                 </div>
                             </div>
                             {newsList.map((news, index) => (
                                 index > 6 ? <Bottom key={index} news={news}/> : ""
                             ))}
-
-
                         </div>
                     </div>
                 </section>
             </main>
             <Footer/>
+            <Outlet/>
         </div>
-    )
-        ;
+    );
 };
 
 export default Education;
