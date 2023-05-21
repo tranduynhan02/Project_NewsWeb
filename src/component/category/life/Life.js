@@ -32,7 +32,7 @@ const Life = () => {
                 let result = {
                     title: item.querySelector('title').textContent,
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
-                    link: item.querySelector('link').textContent,
+                    link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,
                 };
@@ -49,6 +49,13 @@ const Life = () => {
                 return <Left key={i} news={news}/>;
             }
         }
+    }
+    function getlink(link){
+        const url = link;
+        const startIndex = url.indexOf("vietnamnet.vn/") + "vietnamnet.vn/".length;
+        const subUrl = url.substring(startIndex);
+        console.log(subUrl); // hiển thị "sieu-xe-lamborghini-huracan-lan-dan-nhat-viet-nam-hien-ra-sao-2141430.html"
+        return subUrl;
     }
     return (
         <div className="Life">

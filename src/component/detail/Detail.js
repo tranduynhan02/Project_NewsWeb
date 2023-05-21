@@ -10,14 +10,17 @@ import React, {useState} from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import Image from "./items/Image";
+import { useParams } from "react-router-dom";
 const Detail = () => {
     const [title, setTitle] = useState();
     const [listImage, setListImage] = useState([]);
     const [listDecription, setListDecription] = useState([]);
     const [summary, setSummary] = useState();
     const [figcaption, setFigcaption] = useState();
+
     async function ScrapeData() {
-        const {data} = await axios.get("https://vietnamnet.vn/sieu-xe-lamborghini-huracan-lan-dan-nhat-viet-nam-hien-ra-sao-2141430.html");
+        let { link } = useParams();
+        const {data} = await axios.get("https://vietnamnet.vn/"+link);
         const cheerio = require('cheerio');
         const $ = cheerio.load(data);
         setTitle($('h1').text());
