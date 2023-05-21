@@ -10,7 +10,7 @@ import React, {useState} from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import Image from "./items/Image";
-import { useParams } from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 const Detail = () => {
     const [title, setTitle] = useState();
     const [listImage, setListImage] = useState([]);
@@ -71,11 +71,11 @@ const Detail = () => {
                         <div className="row">
                             <div className="col-md-9 post-content" data-aos="fade-up">
                                 <div className="single-post">
-                                    <h1 className="mb-5" style={{maxWidth:"900px"}}>{title}</h1>
-                                    <p style={{maxWidth:"800px", fontWeight:"bold"}}>{summary}</p>
+                                    <h1 className="mb-5" style={{maxWidth:"90%"}}>{title}</h1>
+                                    <p style={{maxWidth:"90%", fontWeight:"bold"}}>{summary}</p>
                                     {listDecription.map((p, index) => (
                                         index%getIndex()===0? <Image key={index} p={p} link={listImage[index/getIndex()]}/>:
-                                        <p key={index} style={{maxWidth:"800px"}}>{p}</p>
+                                        <p key={index} style={{maxWidth:"90%"}}>{p}</p>
                                     ))}
                                 </div>
                                 <div className="row justify-content-center mt-5">
@@ -285,54 +285,15 @@ const Detail = () => {
                                         </div>
                                     </div>
                                 </div>
-
                                 <div className="aside-block">
-                                    <h3 className="aside-title">Video</h3>
-                                    <div className="video-post">
-                                        <a href="https://www.youtube.com/watch?v=AiFfDjmd0jU"
-                                           className="glightbox link-video">
-                                            <span className="bi-play-fill"></span>
-                                            <img src="assets/img/post-landscape-5.jpg" alt="" className="img-fluid"/>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="aside-block">
-                                    <h3 className="aside-title">Categories</h3>
+                                    <h3 className="aside-title">Danh mục</h3>
                                     <ul className="aside-links list-unstyled">
-                                        <li><a href="category.html"><i className="bi bi-chevron-right"></i> Business</a>
-                                        </li>
-                                        <li><a href="category.html"><i className="bi bi-chevron-right"></i> Culture</a>
-                                        </li>
-                                        <li><a href="category.html"><i className="bi bi-chevron-right"></i> Sport</a>
-                                        </li>
-                                        <li><a href="category.html"><i className="bi bi-chevron-right"></i> Food</a>
-                                        </li>
-                                        <li><a href="category.html"><i className="bi bi-chevron-right"></i> Politics</a>
-                                        </li>
-                                        <li><a href="category.html"><i
-                                            className="bi bi-chevron-right"></i> Celebrity</a></li>
-                                        <li><a href="category.html"><i className="bi bi-chevron-right"></i> Startups</a>
-                                        </li>
-                                        <li><a href="category.html"><i className="bi bi-chevron-right"></i> Travel</a>
-                                        </li>
+                                        <li><Link to="/">Trang chủ</Link></li>
+                                        <li> <Link to="/life">Đời sống</Link></li>
+                                        <li> <Link to="/education">Giáo dục</Link></li>
+                                        <li> <Link to="/current-events">Thời sự</Link></li>
                                     </ul>
                                 </div>
-
-                                <div className="aside-block">
-                                    <h3 className="aside-title">Tags</h3>
-                                    <ul className="aside-tags list-unstyled">
-                                        <li><a href="category.html">Business</a></li>
-                                        <li><a href="category.html">Culture</a></li>
-                                        <li><a href="category.html">Sport</a></li>
-                                        <li><a href="category.html">Food</a></li>
-                                        <li><a href="category.html">Politics</a></li>
-                                        <li><a href="category.html">Celebrity</a></li>
-                                        <li><a href="category.html">Startups</a></li>
-                                        <li><a href="category.html">Travel</a></li>
-                                    </ul>
-                                </div>
-
                             </div>
                         </div>
                     </div>
