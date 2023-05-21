@@ -8,6 +8,7 @@ import Life from "./component/category/life/Life";
 import CurrentEvents from "./component/category/current_events/CurrentEvents";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Detail from "./component/detail/Detail";
+import RealEstate from "./component/category/real_estate/RealEstate";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,7 @@ root.render(
                   <Route path="current-events" element={<CurrentEvents/>} />
                   <Route path="life" element={<Life/>} />
                   <Route path="news" element={<Detail />} />
+                  <Route path="realestate" element={< RealEstate/>} />
               </Route>
           </Routes>
       </BrowserRouter>
