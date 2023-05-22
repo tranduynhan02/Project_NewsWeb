@@ -5,16 +5,14 @@ const Header = ({ news }) => {
         <header id="header" className="header d-flex align-items-center fixed-top">
             <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-                <a href="index.html" className="logo d-flex align-items-center">
-                    <h1>News</h1>
-                </a>
+                    <Link style={{textDecoration:"none"}} className="logo d-flex align-items-center" to="/"><h1>VietNamNet</h1></Link>
 
                 <nav id="navbar" className="navbar">
                     <ul>
-                        <li><Link to="/">Trang chủ</Link></li>
-                        <li> <Link to="/life">Đời sống</Link></li>
-                        <li> <Link to="/education">Giáo dục</Link></li>
-                        <li> <Link to="/current-events">Thời sự</Link></li>
+                        <li><Link style={{textDecoration:"none"}} to="/">Trang chủ</Link></li>
+                        <li> <Link style={{textDecoration:"none"}} to="/life">Đời sống</Link></li>
+                        <li> <Link style={{textDecoration:"none"}} to="/education">Giáo dục</Link></li>
+                        <li> <Link style={{textDecoration:"none"}} to="/current-events">Thời sự</Link></li>
                     </ul>
                 </nav>
 
