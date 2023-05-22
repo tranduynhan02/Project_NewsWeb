@@ -4,7 +4,7 @@ import Life from "./category/life/Life";
 import Detail from "./detail/Detail";
 import Education from "./category/education/Education";
 import CurrentEvents from "./category/current_events/CurrentEvents";
-
+import Business from "./category/business/Business";
 export const appRouter = createBrowserRouter([{
     path: '/',
     element: <App/>,
@@ -19,6 +19,10 @@ export const appRouter = createBrowserRouter([{
         {
             path: "current-events",
             element: <CurrentEvents/>
+        },
+        {
+            path: "business",
+            element: <Business/>
         },
         {
             path: "news/:link",
