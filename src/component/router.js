@@ -5,6 +5,8 @@ import Detail from "./detail/Detail";
 import Education from "./category/education/Education";
 import CurrentEvents from "./category/current_events/CurrentEvents";
 import Business from "./category/business/Business";
+import Sport from "./category/sport/Sport";
+import Entertainment from "./category/entertainment/Entertainment";
 export const appRouter = createBrowserRouter([{
     path: '/',
     element: <App/>,
@@ -23,6 +25,16 @@ export const appRouter = createBrowserRouter([{
         {
             path: "business",
             element: <Business/>
+        },
+
+        {
+            path: "sport",
+            element: <Sport/>
+        },
+
+        {
+            path: "entertainment",
+            element: <Entertainment/>
         },
         {
             path: "news/:link",

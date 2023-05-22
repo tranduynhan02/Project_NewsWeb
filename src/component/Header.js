@@ -16,6 +16,8 @@ const Header = ({news}) => {
                         <li><Link style={{textDecoration: "none"}} to="/education">Giáo dục</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/current-events">Thời sự</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/business">Kinh doanh</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/sport">Thể thao</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/entertainment">Giải trí</Link></li>
                     </ul>
                 </nav>
 

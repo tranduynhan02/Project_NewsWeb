@@ -14,7 +14,7 @@ import Bottom from "../../Items/Bottom";
 import Footer from "../../Footer";
 import {Outlet} from "react-router-dom";
 
-const Business = () => {
+const Sport = () => {
     const [newsList, setNewList] = useState([]);
 
     function getlink(url) {
@@ -25,7 +25,7 @@ const Business = () => {
 
     useEffect(() => {
         const fetchNews = async () => {
-            const response = await axios.get('https://vietnamnet.vn/rss/kinh-doanh.rss');
+            const response = await axios.get('https://vietnamnet.vn/rss/the-thao.rss');
             const rss = response.data;
             let parser = new DOMParser();
             let xml = parser.parseFromString(rss, 'text/xml');
@@ -53,13 +53,13 @@ const Business = () => {
     }
 
     return (
-        <div className="Business">
+        <div className="Sport">
             <Header/>
             <main id="main">
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Kinh doanh</h2>
+                            <h2>Thể thao</h2>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">
@@ -94,4 +94,4 @@ const Business = () => {
     );
 };
 
-export default Business;
+export default Sport;
