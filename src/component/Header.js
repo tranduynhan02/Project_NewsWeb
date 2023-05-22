@@ -1,18 +1,23 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-const Header = ({ news }) => {
+
+const Header = ({news}) => {
     return (
         <header id="header" className="header d-flex align-items-center fixed-top">
             <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-                    <Link style={{textDecoration:"none"}} className="logo d-flex align-items-center" to="/"><h1>VietNamNet</h1></Link>
+                <Link style={{textDecoration: "none"}} className="logo d-flex align-items-center" to="/">
+                    <h1>VietNamNet</h1></Link>
 
                 <nav id="navbar" className="navbar">
                     <ul>
-                        <li><Link style={{textDecoration:"none"}} to="/">Trang chủ</Link></li>
-                        <li> <Link style={{textDecoration:"none"}} to="/life">Đời sống</Link></li>
-                        <li> <Link style={{textDecoration:"none"}} to="/education">Giáo dục</Link></li>
-                        <li> <Link style={{textDecoration:"none"}} to="/current-events">Thời sự</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/">Trang chủ</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/life">Đời sống</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/education">Giáo dục</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/current-events">Thời sự</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/business">Kinh doanh</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/sport">Thể thao</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/entertainment">Giải trí</Link></li>
                     </ul>
                 </nav>
 
