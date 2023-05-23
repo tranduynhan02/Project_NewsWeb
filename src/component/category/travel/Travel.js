@@ -12,6 +12,8 @@ import Bottom from "../../Items/Bottom";
 import Header from "../../Header";
 import Footer from "../../Footer";
 import Small_Center from "../home/Small_Center";
+import {Link} from "react-router-dom";
+import Detail from "../../detail/Detail";
 
 const Travel = () => {
     const [newsList, setNewsList] = useState([]);
@@ -19,7 +21,7 @@ const Travel = () => {
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get(
-                'https://vietnamnet.vn/rss/doi-song.rss'
+                'https://vietnamnet.vn/rss/du-lich.rss'
             );
             const rss = response.data;
             let parser = new DOMParser();
@@ -43,7 +45,7 @@ const Travel = () => {
     }, []);
 
     return (
-        <div className="Life">
+        <div className="Travel">
             <Header/>
             <main id="main">
                 <section className="category-section">
@@ -63,62 +65,62 @@ const Travel = () => {
                                         ))}
                                         <div className="col-lg-3 " style={{float: "left", marginLeft: 40}}>
                                             {newsList.map((news, index) => (
-                                                index == 5 ? <Small_Center key={index} news={news}/> : ""
+                                                index == 1 ? <Small_Center key={index} news={news}/> : ""
                                             ))}
                                         </div>
                                         <div className="col-lg-3 " style={{float: "left" , marginLeft: 40, marginRight: 40}}>
                                             {newsList.map((news, index) => (
-                                                index == 5 ? <Small_Center key={index} news={news}/> : ""
+                                                index == 2 ? <Small_Center key={index} news={news}/> : ""
                                             ))}
                                         </div>
                                         <div className="col-lg-3 " style={{float: "left"}}>
                                             {newsList.map((news, index) => (
-                                                index == 5 ? <Small_Center key={index} news={news}/> : ""
+                                                index == 3 ? <Small_Center key={index} news={news}/> : ""
                                             ))}
                                         </div>
                                     </div>
                                     <div className="col-lg-3 border-start custom-border">
                                         {newsList.map((news, index) => (
-                                            index > 2 && index < 5 ? <Center key={index} news={news}/> : ""
+                                            index > 3 && index < 6 ? <Center key={index} news={news}/> : ""
                                         ))}
                                     </div>
                                     <div className="col-lg-3 border-start custom-border">
                                         {newsList.map((news, index) => (
-                                            index > 4 && index < 7 ? <Center key={index} news={news}/> : ""
+                                            index > 5 && index < 8 ? <Center key={index} news={news}/> : ""
                                         ))}
                                     </div>
                                 </div>
                             </div>
                             {newsList.map((news, index) => (
-                                index > 6 && index < 14 ? <Bottom key={index} news={news}/> : ""
+                                index > 7 && index < 15 ? <Bottom key={index} news={news}/> : ""
                             ))}
 
                             <div className="container" data-aos="fade-up" style={{ marginTop: 50}}>
                                 <div className="row g-5">
                                     <div className="col-lg-3 " style={{float: "left"}}>
                                         {newsList.map((news, index) => (
-                                            index == 12 ? <Small_Center key={index} news={news}/> : ""
-                                        ))}
-                                    </div>
-                                    <div className="col-lg-3 " style={{float: "left"}}>
-                                        {newsList.map((news, index) => (
-                                            index == 13 ? <Small_Center key={index} news={news}/> : ""
-                                        ))}
-                                    </div>
-                                    <div className="col-lg-3 " style={{float: "left"}}>
-                                        {newsList.map((news, index) => (
-                                            index == 14 ? <Small_Center key={index} news={news}/> : ""
-                                        ))}
-                                    </div>
-                                    <div className="col-lg-3 " style={{float: "left"}}>
-                                        {newsList.map((news, index) => (
                                             index == 15 ? <Small_Center key={index} news={news}/> : ""
+                                        ))}
+                                    </div>
+                                    <div className="col-lg-3 " style={{float: "left"}}>
+                                        {newsList.map((news, index) => (
+                                            index == 16 ? <Small_Center key={index} news={news}/> : ""
+                                        ))}
+                                    </div>
+                                    <div className="col-lg-3 " style={{float: "left"}}>
+                                        {newsList.map((news, index) => (
+                                            index == 17 ? <Small_Center key={index} news={news}/> : ""
+                                        ))}
+                                    </div>
+                                    <div className="col-lg-3 " style={{float: "left"}}>
+                                        {newsList.map((news, index) => (
+                                            index == 18 ? <Small_Center key={index} news={news}/> : ""
                                         ))}
                                     </div>
                                 </div>
                             </div>
                             {newsList.map((news, index) => (
-                                index > 16 && index < 40 ? <Bottom key={index} news={news}/> : ""
+                                index > 17 && index < 41 ? <Bottom key={index} news={news}/> : ""
                             ))}
                         </div>
                     </div>
