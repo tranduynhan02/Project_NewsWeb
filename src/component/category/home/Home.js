@@ -50,7 +50,7 @@ const Home = () => {
                 let result = {
                     title: item.querySelector('title').textContent,
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
-                    link: item.querySelector('link').textContent,
+                    link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,
                 };
@@ -77,7 +77,7 @@ const Home = () => {
                 let result = {
                     title: item.querySelector('title').textContent,
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
-                    link: item.querySelector('link').textContent,
+                    link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,
                 };
@@ -104,7 +104,7 @@ const Home = () => {
                 let result = {
                     title: item.querySelector('title').textContent,
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
-                    link: item.querySelector('link').textContent,
+                    link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,
                 };
@@ -131,7 +131,7 @@ const Home = () => {
                 let result = {
                     title: item.querySelector('title').textContent,
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
-                    link: item.querySelector('link').textContent,
+                    link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,
                 };
@@ -158,7 +158,7 @@ const Home = () => {
                 let result = {
                     title: item.querySelector('title').textContent,
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
-                    link: item.querySelector('link').textContent,
+                    link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,
                 };
@@ -185,7 +185,7 @@ const Home = () => {
                 let result = {
                     title: item.querySelector('title').textContent,
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
-                    link: item.querySelector('link').textContent,
+                    link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,
                 };
@@ -212,7 +212,7 @@ const Home = () => {
                 let result = {
                     title: item.querySelector('title').textContent,
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
-                    link: item.querySelector('link').textContent,
+                    link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,
                 };
@@ -239,7 +239,7 @@ const Home = () => {
                 let result = {
                     title: item.querySelector('title').textContent,
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
-                    link: item.querySelector('link').textContent,
+                    link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,
                 };
@@ -249,6 +249,35 @@ const Home = () => {
         };
         fetchNews();
     }, []);
+    function getIndexTravel(index){
+        return {...travelList[index]};
+    }
+    function getIndexRealEstate(index){
+        return {...realEstateList[index]};
+    }
+    function getIndexNews(index){
+        return {...newsList[index]};
+    }
+    function getIndexEducation(index){
+        return {...educationList[index]};
+    }
+    function getIndexLife(index){
+        return {...lifeList[index]};
+    }
+    function getIndexBusiness(index){
+        return {...businessList[index]};
+    }
+    function getIndexSport(index){
+        return {...sportList[index]};
+    }
+    function getIndexEntertainment(index){
+        return {...entertainmentList[index]};
+    }
+    function getlink(url){
+        const startIndex = url.indexOf("vietnamnet.vn/") + "vietnamnet.vn/".length;
+        const subUrl = url.substring(startIndex);
+        return subUrl;
+    }
     return (
         <div className="Home">
             <Header/>
@@ -257,39 +286,27 @@ const Home = () => {
                     <div className="container" data-aos="fade-up">
                         <div className="row g-5">
                             <div className="col-lg-3">
-                                {lifeList.map((news, index) => (
-                                    index >=0 && index < 2 ? <Left_Home key={index} news={news}/> : ""
-                                ))}
-                                {businessList.map((news, index) => (
-                                    index >=0 && index < 2 ? <Left_Home key={index} news={news}/> : ""
-                                ))}
-                                {realEstateList.map((news, index) => (
-                                    index >=0 && index < 2 ? <Left_Home key={index} news={news}/> : ""
-                                ))}
-
-
+                                {<Left_Home key={0} news={getIndexLife(0)}/>}
+                                {<Left_Home key={1} news={getIndexLife(1)}/>}
+                                {<Left_Home key={0} news={getIndexBusiness(0)}/>}
+                                {<Left_Home key={1} news={getIndexBusiness(1)}/>}
+                                {<Left_Home key={0} news={getIndexRealEstate(0)}/>}
+                                {<Left_Home key={1} news={getIndexRealEstate(1)}/>}
                             </div>
 
                             <div className="col-lg-9">
                                 <div className="row g-5">
                                     <div className="col-lg-8 border-start custom-border">
-                                        {newsList.map((news, index) => (
-                                            index == 0 ? <Center_Home key={index} news={news}/> : ""
-                                        ))}
+
+                                        {<Center_Home key={0} news={getIndexNews(0)}/>}
                                         <div className="col-lg-3 " style={{float: "left"}}>
-                                            {sportList.map((news, index) => (
-                                                index == 0 ? <Small_Center key={index} news={news}/> : ""
-                                            ))}
+                                            {<Small_Center key={0} news={getIndexSport(0)}/>}
                                         </div>
                                         <div className="col-lg-3 "style={{float: "left",marginLeft: 80}}>
-                                            {educationList.map((news, index) => (
-                                                index == 0 ? <Small_Center key={index} news={news}/> : ""
-                                            ))}
+                                            {<Small_Center key={0} news={getIndexEducation(0)}/>}
                                         </div>
                                         <div className="col-lg-3 " style={{float: "right"}}>
-                                            {entertainmentList.map((news, index) => (
-                                                index == 0 ? <Small_Center key={index} news={news}/> : ""
-                                            ))}
+                                            {<Small_Center key={0} news={getIndexEntertainment(0)}/>}
                                         </div>
                                     </div>
 
@@ -299,29 +316,19 @@ const Home = () => {
                                             <h3>Trending</h3>
                                             <ul className="trending-post">
                                                 <li>
-                                                    {travelList.map((news, index) => (
-                                                        index == 1 ? <Trending_Home key={index} news={news}/> : ""
-                                                    ))}
+                                                    {<Trending_Home key={1} news={getIndexTravel(1)}/>}
                                                 </li>
                                                 <li>
-                                                    {newsList.map((news, index) => (
-                                                        index == 1 ? <Trending_Home key={index} news={news}/> : ""
-                                                    ))}
+                                                    {<Trending_Home key={1} news={getIndexNews(1)}/>}
                                                 </li>
                                                 <li>
-                                                    {educationList.map((news, index) => (
-                                                        index == 1 ? <Trending_Home key={index} news={news}/> : ""
-                                                    ))}
+                                                    {<Trending_Home key={1} news={getIndexEducation(1)}/>}
                                                 </li>
                                                 <li>
-                                                    {sportList.map((news, index) => (
-                                                        index == 1 ? <Trending_Home key={index} news={news}/> : ""
-                                                    ))}
+                                                    {<Trending_Home key={1} news={getIndexSport(1)}/>}
                                                 </li>
                                                 <li>
-                                                    {entertainmentList.map((news, index) => (
-                                                        index == 1 ? <Trending_Home key={index} news={news}/> : ""
-                                                    ))}
+                                                    {<Trending_Home key={1} news={getIndexEntertainment(1)}/>}
                                                 </li>
                                             </ul>
                                         </div>
@@ -335,24 +342,16 @@ const Home = () => {
                     <div className="container" data-aos="fade-up" style={{backgroundColor: 'rgb(246,246,246)', marginTop: 50}}>
                         <div className="row g-5">
                             <div className="col-lg-3 " style={{float: "left"}}>
-                                {lifeList.map((news, index) => (
-                                    index == 2 ? <Small_Center key={index} news={news}/> : ""
-                                ))}
+                                {<Small_Center key={2} news={getIndexLife(2)}/>}
                             </div>
                             <div className="col-lg-3 " style={{float: "left"}}>
-                                {entertainmentList.map((news, index) => (
-                                    index == 2 ? <Small_Center key={index} news={news}/> : ""
-                                ))}
+                                {<Small_Center key={2} news={getIndexEntertainment(2)}/>}
                             </div>
                             <div className="col-lg-3 " style={{float: "left"}}>
-                                {sportList.map((news, index) => (
-                                    index == 2 ? <Small_Center key={index} news={news}/> : ""
-                                ))}
+                                {<Small_Center key={2} news={getIndexSport(2)}/>}
                             </div>
                             <div className="col-lg-3 " style={{float: "left"}}>
-                                {educationList.map((news, index) => (
-                                    index == 2 ? <Small_Center key={index} news={news}/> : ""
-                                ))}
+                                {<Small_Center key={2} news={getIndexEducation(2)}/>}
                             </div>
                         </div>
                     </div>
@@ -361,139 +360,63 @@ const Home = () => {
                     <div className="container" data-aos="fade-up">
                         <div className="row g-5">
                             <div className="col-lg-3">
-                                {travelList.map((news, index) => (
-                                    index > 1 && index < 4 ? <Left_Home key={index} news={news}/> : ""
-                                ))}
-                                {realEstateList.map((news, index) => (
-                                    index > 1 && index < 4 ? <Left_Home key={index} news={news}/> : ""
-                                ))}
-                                {newsList.map((news, index) => (
-                                    index == 2 ? <Left_Home key={index} news={news}/> : ""
-                                ))}
-                                {lifeList.map((news, index) => (
-                                    index > 2 && index < 5 ? <Left_Home key={index} news={news}/> : ""
-                                ))}
-                                {businessList.map((news, index) => (
-                                    index > 1 && index < 4 ? <Left_Home key={index} news={news}/> : ""
-                                ))}
-                                {sportList.map((news, index) => (
-                                    index > 2 && index < 5 ? <Left_Home key={index} news={news}/> : ""
-                                ))}
-                                {entertainmentList.map((news, index) => (
-                                    index > 2 && index < 5 ? <Left_Home key={index} news={news}/> : ""
-                                ))}
-
-
+                                {<Left_Home key={2} news={getIndexTravel(2)}/>}
+                                {<Left_Home key={3} news={getIndexTravel(3)}/>}
+                                {<Left_Home key={2} news={getIndexRealEstate(2)}/>}
+                                {<Left_Home key={3} news={getIndexRealEstate(3)}/>}
+                                {<Left_Home key={2} news={getIndexNews(2)}/>}
+                                {<Left_Home key={3} news={getIndexLife(3)}/>}
+                                {<Left_Home key={4} news={getIndexLife(4)}/>}
+                                {<Left_Home key={2} news={getIndexBusiness(2)}/>}
+                                {<Left_Home key={3} news={getIndexBusiness(3)}/>}
+                                {<Left_Home key={3} news={getIndexSport(3)}/>}
+                                {<Left_Home key={4} news={getIndexSport(4)}/>}
+                                {<Left_Home key={3} news={getIndexEntertainment(3)}/>}
+                                {<Left_Home key={4} news={getIndexEntertainment(4)}/>}
                             </div>
 
                             <div className="col-lg-9">
                                 <div className="row g-5">
                                     <div className="col-lg-7 border-start custom-border">
-                                        {newsList.map((news, index) => (
-                                            index == 3 ? <Center_Home key={index} news={news}/> : ""
-                                        ))}
-                                        {educationList.map((news, index) => (
-                                            index >2 && index<5 ? <SmallTrending key={index} news={news}/> : ""
-                                        ))}
-                                        {businessList.map((news, index) => (
-                                            index == 4 ? <SmallTrending key={index} news={news}/> : ""
-                                        ))}
-                                        {travelList.map((news, index) => (
-                                            index == 4 ? <SmallTrending key={index} news={news}/> : ""
-                                        ))}
-                                        {realEstateList.map((news, index) => (
-                                            index == 4 ? <SmallTrending key={index} news={news}/> : ""
-                                        ))}
-                                        {educationList.map((news, index) => (
-                                            index >3 && index<6 ? <SmallTrending key={index} news={news}/> : ""
-                                        ))}
-                                        {newsList.map((news, index) => (
-                                            index ==6 ? <Center_Home key={index} news={news}/> : ""
-                                        ))}
-                                        {entertainmentList.map((news, index) => (
-                                            index == 5 ? <SmallTrending key={index} news={news}/> : ""
-                                        ))}
-                                        {sportList.map((news, index) => (
-                                            index == 5 ? <SmallTrending key={index} news={news}/> : ""
-                                        ))}
-                                        {businessList.map((news, index) => (
-                                            index == 5 ? <SmallTrending key={index} news={news}/> : ""
-                                        ))}
-                                        {lifeList.map((news, index) => (
-                                            index == 5 ? <SmallTrending key={index} news={news}/> : ""
-                                        ))}
-                                        {educationList.map((news, index) => (
-                                            index == 5 ? <SmallTrending key={index} news={news}/> : ""
-                                        ))}
-                                        {newsList.map((news, index) => (
-                                            index == 7 ? <SmallTrending key={index} news={news}/> : ""
-                                        ))}
-                                        {realEstateList.map((news, index) => (
-                                            index == 5 ? <SmallTrending key={index} news={news}/> : ""
-                                        ))}
-                                        {travelList.map((news, index) => (
-                                        index == 5 ? <SmallTrending key={index} news={news}/> : ""
-                                    ))}
-
+                                        {<Center_Home key={3} news={getIndexNews(3)}/>}
+                                        {<SmallTrending key={3} news={getIndexEducation(3)}/>}
+                                        {<SmallTrending key={4} news={getIndexEducation(4)}/>}
+                                        {<SmallTrending key={4} news={getIndexBusiness(4)}/>}
+                                        {<SmallTrending key={4} news={getIndexTravel(4)}/>}
+                                        {<SmallTrending key={4} news={getIndexRealEstate(4)}/>}
+                                        {<SmallTrending key={4} news={getIndexEducation(4)}/>}
+                                        {<SmallTrending key={5} news={getIndexEducation(5)}/>}
+                                        {<Center_Home key={6} news={getIndexNews(6)}/>}
+                                        {<SmallTrending key={5} news={getIndexEntertainment(5)}/>}
+                                        {<SmallTrending key={5} news={getIndexSport(5)}/>}
+                                        {<SmallTrending key={5} news={getIndexBusiness(5)}/>}
+                                        {<SmallTrending key={5} news={getIndexLife(5)}/>}
+                                        {<SmallTrending key={4} news={getIndexNews(4)}/>}
+                                        {<SmallTrending key={7} news={getIndexNews(7)}/>}
+                                        {<SmallTrending key={5} news={getIndexRealEstate(5)}/>}
+                                        {<SmallTrending key={5} news={getIndexTravel(5)}/>}
                                     </div>
 
                                     <div className="col-lg-5">
 
                                         <div className="col-lg-12 border-start custom-border">
-                                            {sportList.map((news, index) => (
-                                                index ==6 ? <Center_Home key={index} news={news}/> : ""
-                                            ))}
-                                            {educationList.map((news, index) => (
-                                                index == 6 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {newsList.map((news, index) => (
-                                                index == 8 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {realEstateList.map((news, index) => (
-                                                index == 6 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {travelList.map((news, index) => (
-                                                index == 7 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {entertainmentList.map((news, index) => (
-                                                index == 6 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {sportList.map((news, index) => (
-                                                index == 7 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {businessList.map((news, index) => (
-                                                index == 6 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {lifeList.map((news, index) => (
-                                                index == 6 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {travelList.map((news, index) => (
-                                                index ==6 ? <Center_Home key={index} news={news}/> : ""
-                                            ))}
-                                            {sportList.map((news, index) => (
-                                                index == 8 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {entertainmentList.map((news, index) => (
-                                                index == 7 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {travelList.map((news, index) => (
-                                                index == 8 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {realEstateList.map((news, index) => (
-                                                index == 7 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {newsList.map((news, index) => (
-                                                index == 9 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {educationList.map((news, index) => (
-                                                index == 7 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {educationList.map((news, index) => (
-                                                index == 7 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
-                                            {businessList.map((news, index) => (
-                                                index == 7 ? <SmallTrending key={index} news={news}/> : ""
-                                            ))}
+                                            {<Center_Home key={6} news={getIndexSport(6)}/>}
+                                            {<SmallTrending key={6} news={getIndexEducation(6)}/>}
+                                            {<SmallTrending key={8} news={getIndexNews(8)}/>}
+                                            {<SmallTrending key={6} news={getIndexRealEstate(6)}/>}
+                                            {<SmallTrending key={7} news={getIndexTravel(7)}/>}
+                                            {<SmallTrending key={6} news={getIndexEntertainment(6)}/>}
+                                            {<SmallTrending key={7} news={getIndexSport(7)}/>}
+                                            {<SmallTrending key={6} news={getIndexBusiness(6)}/>}
+                                            {<SmallTrending key={6} news={getIndexLife(6)}/>}
+                                            {<Center_Home key={6} news={getIndexTravel(6)}/>}
+                                            {<SmallTrending key={8} news={getIndexSport(8)}/>}
+                                            {<SmallTrending key={7} news={getIndexEntertainment(7)}/>}
+                                            {<SmallTrending key={8} news={getIndexTravel(8)}/>}
+                                            {<SmallTrending key={7} news={getIndexRealEstate(7)}/>}
+                                            {<SmallTrending key={9} news={getIndexNews(9)}/>}
+                                            {<SmallTrending key={7} news={getIndexEducation(7)}/>}
+                                            {<SmallTrending key={5} news={getIndexNews(5)}/>}
                                         </div>
 
                                     </div>
@@ -505,24 +428,16 @@ const Home = () => {
                     <div className="container" data-aos="fade-up" style={{backgroundColor: 'rgb(246,246,246)', marginTop: 50}}>
                         <div className="row g-5">
                             <div className="col-lg-3 " style={{float: "left"}}>
-                                {educationList.map((news, index) => (
-                                    index == 8 ? <Small_Center key={index} news={news}/> : ""
-                                ))}
+                                {<SmallTrending key={8} news={getIndexEducation(8)}/>}
                             </div>
                             <div className="col-lg-3 " style={{float: "left"}}>
-                                {lifeList.map((news, index) => (
-                                    index == 8 ? <Small_Center key={index} news={news}/> : ""
-                                ))}
+                                {<SmallTrending key={8} news={getIndexLife(8)}/>}
                             </div>
                             <div className="col-lg-3 " style={{float: "left"}}>
-                                {businessList.map((news, index) => (
-                                    index == 8 ? <Small_Center key={index} news={news}/> : ""
-                                ))}
+                                {<SmallTrending key={8} news={getIndexBusiness(8)}/>}
                             </div>
                             <div className="col-lg-3 " style={{float: "left"}}>
-                                {entertainmentList.map((news, index) => (
-                                    index == 8 ? <Small_Center key={index} news={news}/> : ""
-                                ))}
+                                {<SmallTrending key={8} news={getIndexEntertainment(8)}/>}
                             </div>
                         </div>
                     </div>
