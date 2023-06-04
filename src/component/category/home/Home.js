@@ -276,7 +276,7 @@ const Home = () => {
     function getlink(url){
         const startIndex = url.indexOf("vietnamnet.vn/") + "vietnamnet.vn/".length;
         const subUrl = url.substring(startIndex);
-        return subUrl;
+        return "news/"+subUrl;
     }
     return (
         <div className="Home">
@@ -428,16 +428,16 @@ const Home = () => {
                     <div className="container" data-aos="fade-up" style={{backgroundColor: 'rgb(246,246,246)', marginTop: 50}}>
                         <div className="row g-5">
                             <div className="col-lg-3 " style={{float: "left"}}>
-                                {<SmallTrending key={8} news={getIndexEducation(8)}/>}
+                                {<Small_Center key={8} news={getIndexEducation(8)}/>}
                             </div>
                             <div className="col-lg-3 " style={{float: "left"}}>
-                                {<SmallTrending key={8} news={getIndexLife(8)}/>}
+                                {<Small_Center key={8} news={getIndexLife(8)}/>}
                             </div>
                             <div className="col-lg-3 " style={{float: "left"}}>
-                                {<SmallTrending key={8} news={getIndexBusiness(8)}/>}
+                                {<Small_Center key={8} news={getIndexBusiness(8)}/>}
                             </div>
                             <div className="col-lg-3 " style={{float: "left"}}>
-                                {<SmallTrending key={8} news={getIndexEntertainment(8)}/>}
+                                {<Small_Center key={8} news={getIndexEntertainment(8)}/>}
                             </div>
                         </div>
                     </div>

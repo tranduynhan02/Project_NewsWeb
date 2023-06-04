@@ -7,13 +7,16 @@ import CurrentEvents from "./category/current_events/CurrentEvents";
 import Business from "./category/business/Business";
 import Sport from "./category/sport/Sport";
 import Entertainment from "./category/entertainment/Entertainment";
+import Home from "./category/home/Home";
+import Travel from "./category/travel/Travel";
+import RealEstate from "./category/real_estate/RealEstate";
 export const appRouter = createBrowserRouter([{
     path: '/',
     element: <App/>,
     children: [{
-        path: "life",
-        element: <Life/>
-    },
+            path: "life",
+            element: <Life/>
+        },
         {
             path: "education",
             element: <Education/>
@@ -39,5 +42,17 @@ export const appRouter = createBrowserRouter([{
         {
             path: "news/:link",
             element: <Detail/>,
+        },
+        {
+            path: "home",
+            element: <Home/>,
+        },
+        {
+            path: "travel",
+            element: <Travel/>,
+        },
+        {
+            path: "real-estate",
+            element: <RealEstate/>,
         }]
 }]);

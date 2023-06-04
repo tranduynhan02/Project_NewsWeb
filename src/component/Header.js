@@ -11,13 +11,15 @@ const Header = ({news}) => {
 
                 <nav id="navbar" className="navbar">
                     <ul>
-                        <li><Link style={{textDecoration: "none"}} to="/">Trang chủ</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/home">Trang chủ</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/life">Đời sống</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/education">Giáo dục</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/current-events">Thời sự</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/business">Kinh doanh</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/sport">Thể thao</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/entertainment">Giải trí</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/travel">Du lịch</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/real-estate">Bất động sản</Link></li>
                     </ul>
                 </nav>
 
