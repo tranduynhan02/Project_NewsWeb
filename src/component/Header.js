@@ -15,8 +15,36 @@ const Header = ({news}) => {
                         <li><Link style={{textDecoration: "none"}} to="/life">Đời sống</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/education">Giáo dục</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/current-events">Thời sự</Link></li>
-                        <li><Link style={{textDecoration: "none"}} to="/business">Kinh doanh</Link></li>
-                        <li><Link style={{textDecoration: "none"}} to="/sport">Thể thao</Link></li>
+                        <li></li>
+                        <li className="dropdown">
+                            <Link style={{textDecoration: "none"}} to="/business">Kinh doanh<i
+                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
+                            <ul>
+                                <li><Link style={{textDecoration: "none"}} to="/business/finance">Tài chính</Link></li>
+                                <li><Link style={{textDecoration: "none"}} to="/business/invest">Đầu tư</Link></li>
+                                <li><Link style={{textDecoration: "none"}} to="/business/market">Thị trường</Link></li>
+                                <li><Link style={{textDecoration: "none"}} to="/business/businessmen">Doanh nhân</Link>
+                                </li>
+                                <li><Link style={{textDecoration: "none"}} to="/business/finance-support">Tư vấn tài
+                                    chính</Link></li>
+                            </ul>
+                        </li>
+                        <li className="dropdown">
+                            <Link style={{textDecoration: "none"}} to="/sport">Thể thao<i
+                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
+                            <ul>
+                                <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng đá
+                                    quốc tế</Link></li>
+                                <li><Link style={{textDecoration: "none"}} to="/sport/vn-football">Bóng đá Việt
+                                    Nam</Link>
+                                </li>
+                                <li><Link style={{textDecoration: "none"}} to="/sport/transfer-news">Tin chuyển
+                                    nhượng</Link></li>
+                                <li><Link style={{textDecoration: "none"}} to="/sport/other-sport">Các môn khác</Link>
+                                </li>
+                                <li><Link style={{textDecoration: "none"}} to="/sport/backstage">Hậu trường</Link></li>
+                            </ul>
+                        </li>
                         <li><Link style={{textDecoration: "none"}} to="/entertainment">Giải trí</Link></li>
                     </ul>
                 </nav>

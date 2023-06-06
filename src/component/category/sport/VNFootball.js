@@ -1,3 +1,10 @@
+import '../../../assets/css/variables.css';
+import '../../../assets/css/main.css';
+import '../../../assets/css/style.css';
+import '../../../assets/vendor/glightbox/css/glightbox.min.css';
+import '../../../assets/vendor/swiper/swiper-bundle.min.css';
+import '../../../assets/vendor/bootstrap-icons/bootstrap-icons.css';
+import '../../../assets/vendor/bootstrap/css/bootstrap.min.css';
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Header from "../../Header";
@@ -7,7 +14,7 @@ import Bottom from "../../Items/Bottom";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
 
-const Finance = () => {
+const Sport = () => {
     const [newsList, setNewList] = useState([]);
 
     function getlink(url) {
@@ -18,7 +25,7 @@ const Finance = () => {
 
     useEffect(() => {
         const fetchNews = async () => {
-            const response = await axios.get('https://vietnamnet.vn/kinh-doanh/tai-chinh.rss');
+            const response = await axios.get('https://vietnamnet.vn/rss/the-thao/bong-da-viet-nam.rss');
             const rss = response.data;
             let parser = new DOMParser();
             let xml = parser.parseFromString(rss, 'text/xml');
@@ -46,7 +53,7 @@ const Finance = () => {
     }
 
     return (
-        <div className="Business">
+        <div className="Sport">
             <Header/>
             <main id="main">
                 <section className="category-section">
@@ -54,20 +61,21 @@ const Finance = () => {
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
                             <div>
                                 <div style={{fontSize: "48px"}}><Link
-                                    style={{textDecoration: "none", color: "#000", fontWeight: "700"}} to="/business">Kinh
-                                    doanh</Link></div>
+                                    style={{textDecoration: "none", color: "#000", fontWeight: "700"}} to="/sport">Thể
+                                    thao</Link></div>
                                 <nav id="navbar" className="navbar">
                                     <ul>
-                                        <li><Link style={{textDecoration: "none"}} to="/business/finance">Tài
-                                            chính</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/business/invest">Đầu tư</Link>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng
+                                            đá quốc tế</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/vn-football">Bóng đá Việt
+                                            Nam</Link>
                                         </li>
-                                        <li><Link style={{textDecoration: "none"}} to="/business/market">Thị
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/transfer-news">Tin chuyển
+                                            nhượng</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/other-sport">Các môn
+                                            khác</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/backstage">Hậu
                                             trường</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/business/businessmen">Doanh
-                                            nhân</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/business/finance-support">Tư vấn
-                                            tài chính</Link></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -104,4 +112,5 @@ const Finance = () => {
         </div>
     );
 };
-export default Finance;
+
+export default Sport;

@@ -7,6 +7,16 @@ import CurrentEvents from "./category/current_events/CurrentEvents";
 import Business from "./category/business/Business";
 import Sport from "./category/sport/Sport";
 import Entertainment from "./category/entertainment/Entertainment";
+import Finance from "./category/business/Finance";
+import Invest from "./category/business/Invest";
+import Market from "./category/business/Market";
+import Businessmen from "./category/business/Businessmen";
+import FinanceSupport from "./category/business/FinanceSupport";
+import InternationalFootball from "./category/sport/InternationalFootball";
+import VNFootball from "./category/sport/VNFootball";
+import TransferNews from "./category/sport/TransferNews";
+import OtherSport from "./category/sport/OtherSport";
+import Backstage from "./category/sport/Backstage";
 export const appRouter = createBrowserRouter([{
     path: '/',
     element: <App/>,
@@ -26,12 +36,50 @@ export const appRouter = createBrowserRouter([{
             path: "business",
             element: <Business/>
         },
-
+        {
+            path: "business/finance",
+            element: <Finance/>
+        },
+        {
+            path: "business/invest",
+            element: <Invest/>
+        },
+        {
+            path: "business/market",
+            element: <Market/>
+        },
+        {
+            path: "business/businessmen",
+            element: <Businessmen/>
+        },
+        {
+            path: "business/finance-support",
+            element: <FinanceSupport/>
+        },
         {
             path: "sport",
             element: <Sport/>
         },
-
+        {
+            path: "sport/international-football",
+            element: <InternationalFootball/>
+        },
+        {
+            path: "sport/vn-football",
+            element: <VNFootball/>
+        },
+        {
+            path: "sport/transfer-news",
+            element: <TransferNews/>
+        },
+        {
+            path: "sport/other-sport",
+            element: <OtherSport/>
+        },
+        {
+            path: "sport/backstage",
+            element: <Backstage/>
+        },
         {
             path: "entertainment",
             element: <Entertainment/>
