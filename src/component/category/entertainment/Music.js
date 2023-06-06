@@ -25,7 +25,7 @@ const Entertainment = () => {
 
     useEffect(() => {
         const fetchNews = async () => {
-            const response = await axios.get('https://vietnamnet.vn/rss/giai-tri.rss');
+            const response = await axios.get('https://vietnamnet.vn/rss/giai-tri/nhac.rss');
             const rss = response.data;
             let parser = new DOMParser();
             let xml = parser.parseFromString(rss, 'text/xml');

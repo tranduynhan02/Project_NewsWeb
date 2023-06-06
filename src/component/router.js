@@ -17,6 +17,12 @@ import VNFootball from "./category/sport/VNFootball";
 import TransferNews from "./category/sport/TransferNews";
 import OtherSport from "./category/sport/OtherSport";
 import Backstage from "./category/sport/Backstage";
+import StarWorld from "./category/entertainment/StarWorld";
+import Miss from "./category/entertainment/Miss";
+import Fashion from "./category/entertainment/Fashion";
+import Music from "./category/entertainment/Music";
+import Movie from "./category/entertainment/Movie";
+import TV from "./category/entertainment/TV";
 export const appRouter = createBrowserRouter([{
     path: '/',
     element: <App/>,
@@ -83,6 +89,30 @@ export const appRouter = createBrowserRouter([{
         {
             path: "entertainment",
             element: <Entertainment/>
+        },
+        {
+            path: "entertainment/star-world",
+            element: <StarWorld/>
+        },
+        {
+            path: "entertainment/miss",
+            element: <Miss/>
+        },
+        {
+            path: "entertainment/fashion",
+            element: <Fashion/>
+        },
+        {
+            path: "entertainment/music",
+            element: <Music/>
+        },
+        {
+            path: "entertainment/movie",
+            element: <Movie/>
+        },
+        {
+            path: "entertainment/tv",
+            element: <TV/>
         },
         {
             path: "news/:link",
