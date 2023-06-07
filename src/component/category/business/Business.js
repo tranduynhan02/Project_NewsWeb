@@ -12,7 +12,7 @@ import Left from "../../Items/Left";
 import Center from "../../Items/Center";
 import Bottom from "../../Items/Bottom";
 import Footer from "../../Footer";
-import {Outlet} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 
 const Business = () => {
     const [newsList, setNewList] = useState([]);
@@ -44,6 +44,7 @@ const Business = () => {
                 results.push(result);
             });
             setNewList(results);
+
         };
         fetchNews();
     }, []);
@@ -59,7 +60,25 @@ const Business = () => {
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Kinh doanh</h2>
+                            <div>
+                                <div style={{fontSize: "48px"}}><Link
+                                    style={{textDecoration: "none", color: "#000", fontWeight: "700"}} to="/business">Kinh
+                                    doanh</Link></div>
+                                <nav id="navbar" className="navbar">
+                                    <ul>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/finance">Tài
+                                            chính</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/invest">Đầu tư</Link>
+                                        </li>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/market">Thị
+                                            trường</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/businessmen">Doanh
+                                            nhân</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/finance-support">Tư vấn
+                                            tài chính</Link></li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">

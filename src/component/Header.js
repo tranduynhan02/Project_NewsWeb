@@ -15,12 +15,56 @@ const Header = ({news}) => {
                         <li><Link style={{textDecoration: "none"}} to="/life">Đời sống</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/education">Giáo dục</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/current-events">Thời sự</Link></li>
-                        <li><Link style={{textDecoration: "none"}} to="/business">Kinh doanh</Link></li>
-                        <li><Link style={{textDecoration: "none"}} to="/sport">Thể thao</Link></li>
-                        <li><Link style={{textDecoration: "none"}} to="/entertainment">Giải trí</Link></li>
+                        <li></li>
+                        <li className="dropdown">
+                            <Link style={{textDecoration: "none"}} to="/business">Kinh doanh<i
+                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
+                            <ul>
+                                <li><Link style={{textDecoration: "none"}} to="/business/finance">Tài chính</Link></li>
+                                <li><Link style={{textDecoration: "none"}} to="/business/invest">Đầu tư</Link></li>
+                                <li><Link style={{textDecoration: "none"}} to="/business/market">Thị trường</Link></li>
+                                <li><Link style={{textDecoration: "none"}} to="/business/businessmen">Doanh nhân</Link>
+                                </li>
+                                <li><Link style={{textDecoration: "none"}} to="/business/finance-support">Tư vấn tài
+                                    chính</Link></li>
+                            </ul>
+                        </li>
+                        <li className="dropdown">
+                            <Link style={{textDecoration: "none"}} to="/sport">Thể thao<i
+                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
+                            <ul>
+                                <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng đá
+                                    quốc tế</Link></li>
+                                <li><Link style={{textDecoration: "none"}} to="/sport/vn-football">Bóng đá Việt
+                                    Nam</Link>
+                                </li>
+                                <li><Link style={{textDecoration: "none"}} to="/sport/transfer-news">Tin chuyển
+                                    nhượng</Link></li>
+                                <li><Link style={{textDecoration: "none"}} to="/sport/other-sport">Các môn khác</Link>
+                                </li>
+                                <li><Link style={{textDecoration: "none"}} to="/sport/backstage">Hậu trường</Link></li>
+                            </ul>
+                        </li>
+                        <li className="dropdown">
+                            <Link style={{textDecoration: "none"}} to="/entertainment">Giải trí<i
+                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
+                            <ul>
+                                <li><Link style={{textDecoration: "none"}} to="/entertainment/star-world">Sao thế
+                                    giới</Link></li>
+                                <li><Link style={{textDecoration: "none"}} to="/entertainment/miss">Hoa hậu</Link>
+                                </li>
+                                <li><Link style={{textDecoration: "none"}} to="/entertainment/fashion">Thời
+                                    trang</Link></li>
+                                <li><Link style={{textDecoration: "none"}} to="/entertainment/music">Âm nhạc</Link>
+                                </li>
+                                <li><Link style={{textDecoration: "none"}} to="/entertainment/movie">Phim</Link>
+                                </li>
+                                <li><Link style={{textDecoration: "none"}} to="/entertainment/tv">Truyền hình</Link>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
-
                 <div className="position-relative">
                     <a href="#" className="mx-2"><span className="bi-facebook"></span></a>
                     <a href="#" className="mx-2"><span className="bi-twitter"></span></a>
