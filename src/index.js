@@ -10,6 +10,7 @@ import Left from "./component/Items/Left";
 import Home from "./component/category/home/Home";
 import {appRouter} from "./component/router";
 import {RouterProvider} from "react-router-dom";
+import Travel from "./component/category/travel/Travel";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -7,6 +7,10 @@ import CurrentEvents from "./category/current_events/CurrentEvents";
 import Business from "./category/business/Business";
 import Sport from "./category/sport/Sport";
 import Entertainment from "./category/entertainment/Entertainment";
+import Home from "./category/home/Home";
+import Travel from "./category/travel/Travel";
+import RealEstate from "./category/real_estate/RealEstate";
+import SearchNews from "./search/SearchNews";
 import Finance from "./category/business/Finance";
 import Invest from "./category/business/Invest";
 import Market from "./category/business/Market";
@@ -23,8 +27,8 @@ import Fashion from "./category/entertainment/Fashion";
 import Music from "./category/entertainment/Music";
 import Movie from "./category/entertainment/Movie";
 import TV from "./category/entertainment/TV";
-
 export const appRouter = createBrowserRouter([{
+
     path: '/',
     element: <App/>,
     children: [{path: "life", element: <Life/>},
@@ -35,12 +39,40 @@ export const appRouter = createBrowserRouter([{
 
             ]
         },
+
+        {
+            path: "entertainment",
+            element: <Entertainment/>
+        },
+        {
+            path: "news/:link",
+            element: <Detail/>,
+        },
+        {
+            path: "",
+            element: <Home/>,
+        },
+        {
+            path: "travel",
+            element: <Travel/>,
+        },
+        {
+            path: "real-estate",
+            element: <RealEstate/>,
+        },
+        {
+            path: "search/:name",
+            element: <SearchNews/>,
+        },
+        {
+            path: "/search/news/:link",
+            element: <Detail/>,
+        },
         {path: "business/finance", element: <Finance/>},
         {path: "business/invest", element: <Invest/>},
         {path: "business/market", element: <Market/>},
         {path: "business/businessmen", element: <Businessmen/>},
         {path: "business/finance-support", element: <FinanceSupport/>},
-        {path: "sport", element: <Sport/>},
         {path: "sport/international-football", element: <InternationalFootball/>},
         {path: "sport/vn-football", element: <VNFootball/>},
         {path: "sport/transfer-news", element: <TransferNews/>},
@@ -52,6 +84,5 @@ export const appRouter = createBrowserRouter([{
         {path: "entertainment/fashion", element: <Fashion/>},
         {path: "entertainment/music", element: <Music/>},
         {path: "entertainment/movie", element: <Movie/>},
-        {path: "entertainment/tv", element: <TV/>},
-        {path: "news/:link", element: <Detail/>,}],
+        {path: "entertainment/tv", element: <TV/>}]
 }]);

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Form from "./search/Form";
 
 const Header = ({news}) => {
     return (
@@ -15,7 +16,8 @@ const Header = ({news}) => {
                         <li><Link style={{textDecoration: "none"}} to="/life">Đời sống</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/education">Giáo dục</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/current-events">Thời sự</Link></li>
-                        <li></li>
+                        <li><Link style={{textDecoration: "none"}} to="/travel">Du lịch</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/real-estate">Bất động sản</Link></li>
                         <li className="dropdown">
                             <Link style={{textDecoration: "none"}} to="/business">Kinh doanh<i
                                 className="bi bi-chevron-down dropdown-indicator"></i></Link>
@@ -46,40 +48,40 @@ const Header = ({news}) => {
                             </ul>
                         </li>
                         <li className="dropdown">
-                            <Link style={{textDecoration: "none"}} to="/entertainment">Giải trí<i
-                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
-                            <ul>
-                                <li><Link style={{textDecoration: "none"}} to="/entertainment/star-world">Sao thế
-                                    giới</Link></li>
-                                <li><Link style={{textDecoration: "none"}} to="/entertainment/miss">Hoa hậu</Link>
-                                </li>
-                                <li><Link style={{textDecoration: "none"}} to="/entertainment/fashion">Thời
-                                    trang</Link></li>
-                                <li><Link style={{textDecoration: "none"}} to="/entertainment/music">Âm nhạc</Link>
-                                </li>
-                                <li><Link style={{textDecoration: "none"}} to="/entertainment/movie">Phim</Link>
-                                </li>
-                                <li><Link style={{textDecoration: "none"}} to="/entertainment/tv">Truyền hình</Link>
-                                </li>
-                            </ul>
-                        </li>
+    <Link style={{textDecoration: "none"}} to="/entertainment">Giải trí<i
+        className="bi bi-chevron-down dropdown-indicator"></i></Link>
+    <ul>
+        <li><Link style={{textDecoration: "none"}} to="/entertainment/star-world">Sao thế
+            giới</Link></li>
+        <li><Link style={{textDecoration: "none"}} to="/entertainment/miss">Hoa hậu</Link>
+        </li>
+        <li><Link style={{textDecoration: "none"}} to="/entertainment/fashion">Thời
+            trang</Link></li>
+        <li><Link style={{textDecoration: "none"}} to="/entertainment/music">Âm nhạc</Link>
+        </li>
+        <li><Link style={{textDecoration: "none"}} to="/entertainment/movie">Phim</Link>
+        </li>
+        <li><Link style={{textDecoration: "none"}} to="/entertainment/tv">Truyền hình</Link>
+        </li>
+    </ul>
+</li>
                     </ul>
                 </nav>
-                <div className="position-relative">
+
+                <div className="position-relative" style={{width:200}}>
+                    <Form/>
                     <a href="#" className="mx-2"><span className="bi-facebook"></span></a>
                     <a href="#" className="mx-2"><span className="bi-twitter"></span></a>
                     <a href="#" className="mx-2"><span className="bi-instagram"></span></a>
+                    {/*<i className="bi bi-list mobile-nav-toggle"></i>*/}
 
-                    <a href="#" className="mx-2 js-search-open"><span className="bi-search"></span></a>
-                    <i className="bi bi-list mobile-nav-toggle"></i>
-
-                    <div className="search-form-wrap js-search-form-wrap">
-                        <form action="search-result.html" className="search-form">
-                            <span className="icon bi-search"></span>
-                            <input type="text" placeholder="Search" className="form-control"></input>
-                            <button className="btn js-search-close"><span className="bi-x"></span></button>
-                        </form>
-                    </div>
+                    {/*<div className="search-form-wrap js-search-form-wrap">*/}
+                    {/*    <form action="search-result.html" className="search-form">*/}
+                    {/*        <span className="icon bi-search"></span>*/}
+                    {/*        <input type="text" placeholder="Search" className="form-control"></input>*/}
+                    {/*        <button className="btn js-search-close"><span className="bi-x"></span></button>*/}
+                    {/*    </form>*/}
+                    {/*</div>*/}
 
                 </div>
 
