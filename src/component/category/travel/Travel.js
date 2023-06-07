@@ -19,7 +19,7 @@ const Travel = () => {
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get(
-                'https://vietnamnet.vn/rss/doi-song.rss'
+                'https://vietnamnet.vn/rss/du-lich.rss'
             );
             const rss = response.data;
             let parser = new DOMParser();
@@ -31,7 +31,7 @@ const Travel = () => {
                 let result = {
                     title: item.querySelector('title').textContent,
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
-                    link: item.querySelector('link').textContent,
+                    link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,
                 };
@@ -41,9 +41,17 @@ const Travel = () => {
         };
         fetchNews();
     }, []);
+    function getIndex(index){
+        return {...newsList[index]};
+    }
+    function getlink(url){
+        const startIndex = url.indexOf("vietnamnet.vn/") + "vietnamnet.vn/".length;
+        const subUrl = url.substring(startIndex);
+        return subUrl;
+    }
 
     return (
-        <div className="Life">
+        <div className="Travel">
             <Header/>
             <main id="main">
                 <section className="category-section">
@@ -58,67 +66,53 @@ const Travel = () => {
                             <div className="col-lg-12">
                                 <div className="row g-5">
                                     <div className="col-lg-6 border-start custom-border">
-                                        {newsList.map((news, index) => (
-                                            index == 0 ? <Center key={index} news={news}/> : ""
-                                        ))}
+                                        {<Center key={0} news={getIndex(0)}/>}
                                         <div className="col-lg-3 " style={{float: "left", marginLeft: 40}}>
-                                            {newsList.map((news, index) => (
-                                                index == 5 ? <Small_Center key={index} news={news}/> : ""
-                                            ))}
+                                            {<Small_Center key={1} news={getIndex(1)}/>}
                                         </div>
                                         <div className="col-lg-3 " style={{float: "left" , marginLeft: 40, marginRight: 40}}>
-                                            {newsList.map((news, index) => (
-                                                index == 5 ? <Small_Center key={index} news={news}/> : ""
-                                            ))}
+                                            {<Small_Center key={2} news={getIndex(2)}/>}
                                         </div>
                                         <div className="col-lg-3 " style={{float: "left"}}>
-                                            {newsList.map((news, index) => (
-                                                index == 5 ? <Small_Center key={index} news={news}/> : ""
-                                            ))}
+                                            {<Small_Center key={3} news={getIndex(3)}/>}
                                         </div>
                                     </div>
                                     <div className="col-lg-3 border-start custom-border">
-                                        {newsList.map((news, index) => (
-                                            index > 2 && index < 5 ? <Center key={index} news={news}/> : ""
-                                        ))}
+                                        {<Center key={4} news={getIndex(4)}/>}
+                                        {<Center key={5} news={getIndex(5)}/>}
                                     </div>
                                     <div className="col-lg-3 border-start custom-border">
-                                        {newsList.map((news, index) => (
-                                            index > 4 && index < 7 ? <Center key={index} news={news}/> : ""
-                                        ))}
+                                        {<Center key={6} news={getIndex(6)}/>}
+                                        {<Center key={7} news={getIndex(7)}/>}
                                     </div>
                                 </div>
                             </div>
-                            {newsList.map((news, index) => (
-                                index > 6 && index < 14 ? <Bottom key={index} news={news}/> : ""
-                            ))}
+                            {<Bottom key={8} news={getIndex(8)}/>}
+                            {<Bottom key={9} news={getIndex(9)}/>}
+                            {<Bottom key={10} news={getIndex(10)}/>}
+                            {<Bottom key={11} news={getIndex(11)}/>}
+                            {<Bottom key={12} news={getIndex(12)}/>}
+                            {<Bottom key={13} news={getIndex(13)}/>}
+                            {<Bottom key={14} news={getIndex(14)}/>}
 
                             <div className="container" data-aos="fade-up" style={{ marginTop: 50}}>
                                 <div className="row g-5">
                                     <div className="col-lg-3 " style={{float: "left"}}>
-                                        {newsList.map((news, index) => (
-                                            index == 12 ? <Small_Center key={index} news={news}/> : ""
-                                        ))}
+                                        {<Small_Center key={15} news={getIndex(15)}/>}
                                     </div>
                                     <div className="col-lg-3 " style={{float: "left"}}>
-                                        {newsList.map((news, index) => (
-                                            index == 13 ? <Small_Center key={index} news={news}/> : ""
-                                        ))}
+                                        {<Small_Center key={16} news={getIndex(16)}/>}
                                     </div>
                                     <div className="col-lg-3 " style={{float: "left"}}>
-                                        {newsList.map((news, index) => (
-                                            index == 14 ? <Small_Center key={index} news={news}/> : ""
-                                        ))}
+                                        {<Small_Center key={17} news={getIndex(17)}/>}
                                     </div>
                                     <div className="col-lg-3 " style={{float: "left"}}>
-                                        {newsList.map((news, index) => (
-                                            index == 15 ? <Small_Center key={index} news={news}/> : ""
-                                        ))}
+                                        {<Small_Center key={18} news={getIndex(18)}/>}
                                     </div>
                                 </div>
                             </div>
                             {newsList.map((news, index) => (
-                                index > 16 && index < 40 ? <Bottom key={index} news={news}/> : ""
+                                index > 17 && index < 41 ? <Bottom key={index} news={news}/> : ""
                             ))}
                         </div>
                     </div>
