@@ -10,6 +10,7 @@ import Entertainment from "./category/entertainment/Entertainment";
 import Home from "./category/home/Home";
 import Travel from "./category/travel/Travel";
 import RealEstate from "./category/real_estate/RealEstate";
+import SearchNews from "./search/SearchNews";
 export const appRouter = createBrowserRouter([{
     path: '/',
     element: <App/>,
@@ -44,7 +45,7 @@ export const appRouter = createBrowserRouter([{
             element: <Detail/>,
         },
         {
-            path: "home",
+            path: "",
             element: <Home/>,
         },
         {
@@ -54,5 +55,13 @@ export const appRouter = createBrowserRouter([{
         {
             path: "real-estate",
             element: <RealEstate/>,
+        },
+        {
+            path: "search/:name",
+            element: <SearchNews/>,
+        },
+        {
+            path: "/search/news/:link",
+            element: <Detail/>,
         }]
 }]);
