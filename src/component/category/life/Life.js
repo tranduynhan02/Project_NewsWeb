@@ -30,7 +30,7 @@ const Life = () => {
 
             items.forEach((item) => {
                 let result = {
-                    title: item.querySelector('title').textContent,
+                    title: setTitle(item.querySelector('title').textContent),
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                     link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -49,6 +49,9 @@ const Life = () => {
         const startIndex = url.indexOf("vietnamnet.vn/") + "vietnamnet.vn/".length;
         const subUrl = url.substring(startIndex);
         return subUrl;
+    }
+    function setTitle(title){
+        return title.replace(/&amp;apos;/g, "'");
     }
     return (
         <div className="Life">
