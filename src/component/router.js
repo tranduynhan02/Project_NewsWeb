@@ -23,99 +23,35 @@ import Fashion from "./category/entertainment/Fashion";
 import Music from "./category/entertainment/Music";
 import Movie from "./category/entertainment/Movie";
 import TV from "./category/entertainment/TV";
+
 export const appRouter = createBrowserRouter([{
     path: '/',
     element: <App/>,
-    children: [{
-        path: "life",
-        element: <Life/>
-    },
+    children: [{path: "life", element: <Life/>},
+        {path: "education", element: <Education/>},
+        {path: "current-events", element: <CurrentEvents/>},
         {
-            path: "education",
-            element: <Education/>
+            path: "business", element: <Business/>, children: [
+
+            ]
         },
-        {
-            path: "current-events",
-            element: <CurrentEvents/>
-        },
-        {
-            path: "business",
-            element: <Business/>
-        },
-        {
-            path: "business/finance",
-            element: <Finance/>
-        },
-        {
-            path: "business/invest",
-            element: <Invest/>
-        },
-        {
-            path: "business/market",
-            element: <Market/>
-        },
-        {
-            path: "business/businessmen",
-            element: <Businessmen/>
-        },
-        {
-            path: "business/finance-support",
-            element: <FinanceSupport/>
-        },
-        {
-            path: "sport",
-            element: <Sport/>
-        },
-        {
-            path: "sport/international-football",
-            element: <InternationalFootball/>
-        },
-        {
-            path: "sport/vn-football",
-            element: <VNFootball/>
-        },
-        {
-            path: "sport/transfer-news",
-            element: <TransferNews/>
-        },
-        {
-            path: "sport/other-sport",
-            element: <OtherSport/>
-        },
-        {
-            path: "sport/backstage",
-            element: <Backstage/>
-        },
-        {
-            path: "entertainment",
-            element: <Entertainment/>
-        },
-        {
-            path: "entertainment/star-world",
-            element: <StarWorld/>
-        },
-        {
-            path: "entertainment/miss",
-            element: <Miss/>
-        },
-        {
-            path: "entertainment/fashion",
-            element: <Fashion/>
-        },
-        {
-            path: "entertainment/music",
-            element: <Music/>
-        },
-        {
-            path: "entertainment/movie",
-            element: <Movie/>
-        },
-        {
-            path: "entertainment/tv",
-            element: <TV/>
-        },
-        {
-            path: "news/:link",
-            element: <Detail/>,
-        }]
+        {path: "business/finance", element: <Finance/>},
+        {path: "business/invest", element: <Invest/>},
+        {path: "business/market", element: <Market/>},
+        {path: "business/businessmen", element: <Businessmen/>},
+        {path: "business/finance-support", element: <FinanceSupport/>},
+        {path: "sport", element: <Sport/>},
+        {path: "sport/international-football", element: <InternationalFootball/>},
+        {path: "sport/vn-football", element: <VNFootball/>},
+        {path: "sport/transfer-news", element: <TransferNews/>},
+        {path: "sport/other-sport", element: <OtherSport/>},
+        {path: "sport/backstage", element: <Backstage/>},
+        {path: "entertainment", element: <Entertainment/>},
+        {path: "entertainment/star-world", element: <StarWorld/>},
+        {path: "entertainment/miss", element: <Miss/>},
+        {path: "entertainment/fashion", element: <Fashion/>},
+        {path: "entertainment/music", element: <Music/>},
+        {path: "entertainment/movie", element: <Movie/>},
+        {path: "entertainment/tv", element: <TV/>},
+        {path: "news/:link", element: <Detail/>,}],
 }]);

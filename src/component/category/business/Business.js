@@ -44,6 +44,7 @@ const Business = () => {
                 results.push(result);
             });
             setNewList(results);
+
         };
         fetchNews();
     }, []);

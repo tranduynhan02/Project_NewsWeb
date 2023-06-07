@@ -14,7 +14,7 @@ import Bottom from "../../Items/Bottom";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
 
-const Entertainment = () => {
+const Miss = () => {
     const [newsList, setNewList] = useState([]);
 
     function getlink(url) {
@@ -119,4 +119,4 @@ const Entertainment = () => {
     );
 };
 
-export default Entertainment;
+export default Miss;
