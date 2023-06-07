@@ -14,7 +14,7 @@ import Bottom from "../../Items/Bottom";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
 
-const Sport = () => {
+const VNFootball = () => {
     const [newsList, setNewList] = useState([]);
 
     function getlink(url) {
@@ -25,7 +25,7 @@ const Sport = () => {
 
     useEffect(() => {
         const fetchNews = async () => {
-            const response = await axios.get('https://vietnamnet.vn/rss/the-thao.rss');
+            const response = await axios.get('https://vietnamnet.vn/rss/the-thao/bong-da-viet-nam.rss');
             const rss = response.data;
             let parser = new DOMParser();
             let xml = parser.parseFromString(rss, 'text/xml');
@@ -61,15 +61,21 @@ const Sport = () => {
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
                             <div>
                                 <div style={{fontSize: "48px"}}><Link
-                                    style={{textDecoration: "none", color: "#000", fontWeight: "700"}} to="/sport">Thể thao</Link></div>
+                                    style={{textDecoration: "none", color: "#000", fontWeight: "700"}} to="/sport">Thể
+                                    thao</Link></div>
                                 <nav id="navbar" className="navbar">
                                     <ul>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng đá quốc tế</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/vn-football">Bóng đá Việt Nam</Link>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng
+                                            đá quốc tế</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/vn-football">Bóng đá Việt
+                                            Nam</Link>
                                         </li>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/transfer-news">Tin chuyển nhượng</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/other-sport">Các môn khác</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/backstage">Hậu trường</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/transfer-news">Tin chuyển
+                                            nhượng</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/other-sport">Các môn
+                                            khác</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/backstage">Hậu
+                                            trường</Link></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -107,4 +113,4 @@ const Sport = () => {
     );
 };
 
-export default Sport;
+export default VNFootball;

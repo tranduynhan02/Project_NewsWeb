@@ -30,7 +30,7 @@ class MyComponent extends React.Component {
         return (
             <div key={this.key} style={{marginTop:20}}>
                 <form id="form_search" onSubmit={handleClick}>
-                    <input id="text" type="text" name="name" value={this.state.name} onChange={this.handleInputChange} style={{float:"left"}} />
+                    <input id="text" type="text" name="name" value={this.state.name} onChange={this.handleInputChange} style={{float:"left",width:120}} />
                 </form>
                 <Link to={`/search/${this.state.name}`}><button style={
                     {borderRadius:2,border:'none',backgroundColor:"gray",color:"white",fontSize:12,height:30}

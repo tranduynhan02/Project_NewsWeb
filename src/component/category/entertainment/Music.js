@@ -14,7 +14,7 @@ import Bottom from "../../Items/Bottom";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
 
-const Sport = () => {
+const Music = () => {
     const [newsList, setNewList] = useState([]);
 
     function getlink(url) {
@@ -25,7 +25,7 @@ const Sport = () => {
 
     useEffect(() => {
         const fetchNews = async () => {
-            const response = await axios.get('https://vietnamnet.vn/rss/the-thao.rss');
+            const response = await axios.get('https://vietnamnet.vn/rss/giai-tri/nhac.rss');
             const rss = response.data;
             let parser = new DOMParser();
             let xml = parser.parseFromString(rss, 'text/xml');
@@ -53,7 +53,7 @@ const Sport = () => {
     }
 
     return (
-        <div className="Sport">
+        <div className="Entertainment">
             <Header/>
             <main id="main">
                 <section className="category-section">
@@ -61,15 +61,27 @@ const Sport = () => {
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
                             <div>
                                 <div style={{fontSize: "48px"}}><Link
-                                    style={{textDecoration: "none", color: "#000", fontWeight: "700"}} to="/sport">Thể thao</Link></div>
+                                    style={{textDecoration: "none", color: "#000", fontWeight: "700"}}
+                                    to="/entertainment">Giải
+                                    trí</Link></div>
                                 <nav id="navbar" className="navbar">
                                     <ul>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng đá quốc tế</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/vn-football">Bóng đá Việt Nam</Link>
+                                        <li><Link style={{textDecoration: "none"}} to="/entertainment/star-world">Sao
+                                            thế
+                                            giới</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/entertainment/miss">Hoa
+                                            hậu</Link>
                                         </li>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/transfer-news">Tin chuyển nhượng</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/other-sport">Các môn khác</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/backstage">Hậu trường</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/entertainment/fashion">Thời
+                                            trang</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/entertainment/music">Âm
+                                            nhạc</Link>
+                                        </li>
+                                        <li><Link style={{textDecoration: "none"}} to="/entertainment/movie">Phim</Link>
+                                        </li>
+                                        <li><Link style={{textDecoration: "none"}} to="/entertainment/tv">Truyền
+                                            hình</Link>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -107,4 +119,4 @@ const Sport = () => {
     );
 };
 
-export default Sport;
+export default Music;

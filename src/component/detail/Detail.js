@@ -13,6 +13,8 @@ import Image from "./items/Image";
 import {Link, useParams} from "react-router-dom";
 import Relate from "./items/Relate";
 import Bottom from "../Items/Bottom";
+import ViewedNew from "./items/ViewedNew";
+
 const Detail = () => {
     const [title, setTitle] = useState();
     const [listImage, setListImage] = useState([]);
@@ -21,13 +23,14 @@ const Detail = () => {
 
     const [article, setArticle] = useState([]);
     const [articleTitle, setarTicleTitle] = useState([]);
-
+    const [viewedNews, setViewedNews] = useState(JSON.parse(localStorage.getItem("viewedNews")));
 
     //Danh sach tin noi bat
     const [outstanding, setOutstanding] = useState([]);
+
     async function ScrapeData() {
-        let { link } = useParams();
-        const {data} = await axios.get("https://vietnamnet.vn/"+link);
+        let {link} = useParams();
+        const {data} = await axios.get("https://vietnamnet.vn/" + link);
         const cheerio = require('cheerio');
         const $ = cheerio.load(data);
 
@@ -65,35 +68,39 @@ const Detail = () => {
         });
         setarTicleTitle(texts);
     }
+
     ScrapeData();
 
-    function getIndex(){
-        let x = listDecription.length/listImage.length;
-        let y =Math.round(listDecription.length/listImage.length);
-        if(y-x >=0.5){
+    function getIndex() {
+        let x = listDecription.length / listImage.length;
+        let y = Math.round(listDecription.length / listImage.length);
+        if (y - x >= 0.5) {
             return y;
         }
-        if(y-x <= 0.5){
-            return y-1;
+        if (y - x <= 0.5) {
+            return y - 1;
         }
     }
+
     return (
         <div>
             <Header/>
             <main id="main">
                 <section className="single-post-content">
                     <div className="container">
-                        <div style={{maxWidth:"100%",margin:"auto", marginBottom:"50px"}}>
-                            <img style={{maxWidth:"70%",marginLeft:"15%", marginRight:"15%"}} src={"https://static.vnncdn.net/images/vnn-viet-nam-hung-cuong.svg"}/>
+                        <div style={{maxWidth: "100%", margin: "auto", marginBottom: "50px"}}>
+                            <img style={{maxWidth: "70%", marginLeft: "15%", marginRight: "15%"}}
+                                 src={"https://static.vnncdn.net/images/vnn-viet-nam-hung-cuong.svg"}/>
                         </div>
                         <div className="row">
                             <div className="col-md-9 post-content" data-aos="fade-up">
                                 <div className="single-post">
-                                    <h1 className="mb-5" style={{maxWidth:"90%"}}>{title}</h1>
-                                    <p style={{maxWidth:"90%", fontWeight:"bold"}}>{summary}</p>
+                                    <h1 className="mb-5" style={{maxWidth: "90%"}}>{title}</h1>
+                                    <p style={{maxWidth: "90%", fontWeight: "bold"}}>{summary}</p>
                                     {listDecription.map((p, index) => (
-                                        index%getIndex()===0? <Image key={index} p={p} link={listImage[index/getIndex()]}/>:
-                                        <p key={index} style={{maxWidth:"90%"}}>{p}</p>
+                                        index % getIndex() === 0 ?
+                                            <Image key={index} p={p} link={listImage[index / getIndex()]}/> :
+                                            <p key={index} style={{maxWidth: "90%"}}>{p}</p>
                                     ))}
                                 </div>
                                 <div className="row justify-content-center mt-5">
@@ -117,15 +124,15 @@ const Detail = () => {
                                                           placeholder="Nhập nội dung" cols="30" rows="10"></textarea>
                                             </div>
                                             <div className="col-12">
-                                                <input type="submit" className="btn btn-primary" value="Bình luận"></input>
+                                                <input type="submit" className="btn btn-primary"
+                                                       value="Bình luận"></input>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-3" style={{marginTop:"140px"}}>
-                                <div  className="aside-block">
-
+                            <div className="col-md-3" style={{marginTop: "140px"}}>
+                                <div className="aside-block">
                                     <ul className="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
                                         <li className="nav-item" role="presentation">
                                             <button className="nav-link active" id="pills-popular-tab"
@@ -140,7 +147,8 @@ const Detail = () => {
                                         <div className="tab-pane fade active show" id="pills-popular" role="tabpanel"
                                              aria-labelledby="pills-popular-tab">
                                             {article.map((i, index) => (
-                                               index%2!==0?<Relate key={index} link={i} title={articleTitle[index]}/>:""
+                                                index % 2 !== 0 ?
+                                                    <Relate key={index} link={i} title={articleTitle[index]}/> : ""
                                             ))}
                                         </div>
                                     </div>
@@ -148,15 +156,27 @@ const Detail = () => {
                                 <div className="aside-block">
                                     <h3 className="aside-title">Danh mục</h3>
                                     <ul className="aside-links list-unstyled">
-                                        <li><Link style={{textDecoration:"none"}} to="/">Trang chủ</Link></li>
-                                        <li> <Link style={{textDecoration:"none"}} to="/life">Đời sống</Link></li>
-                                        <li> <Link style={{textDecoration:"none"}} to="/education">Giáo dục</Link></li>
-                                        <li> <Link style={{textDecoration:"none"}} to="/current-events">Thời sự</Link></li>
-                                        <li> <Link style={{textDecoration:"none"}} to="/business">Kinh doanh</Link></li>
-                                        <li> <Link style={{textDecoration:"none"}} to="/sport">Thể thao</Link></li>
-                                        <li> <Link style={{textDecoration:"none"}} to="/entertainment">Giải trí</Link></li>
+
+                                        <li><Link style={{textDecoration: "none"}} to="/">Trang chủ</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/life">Đời sống</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/education">Giáo dục</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/current-events">Thời sự</Link>
                                         <li> <Link style={{textDecoration:"none"}} to="/travel">Du lịch</Link></li>
                                         <li> <Link style={{textDecoration:"none"}} to="/real-estate">Bất động sản</Link></li>
+                                        </li>
+                                        <li><Link style={{textDecoration: "none"}} to="/business">Kinh doanh</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport">Thể thao</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/entertainment">Giải trí</Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className="aside-block">
+                                    <h3 className="aside-title"><Link style={{textDecoration: "none", color: "#000"}}
+                                                                      to="/viewed-news">Tin tức đã xem</Link></h3>
+                                    <ul className="aside-links list-unstyled">
+                                        {viewedNews.map((news, index) => (
+                                            index < 6 ? <ViewedNew key={index} news={news}/> : ""
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
