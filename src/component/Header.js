@@ -13,7 +13,18 @@ const Header = ({news}) => {
                 <nav id="navbar" className="navbar">
                     <ul>
                         <li><Link style={{textDecoration: "none"}} to="/">Trang chủ</Link></li>
-                        <li><Link style={{textDecoration: "none"}} to="/life">Đời sống</Link></li>
+                        <li className="dropdown">
+                            <Link style={{textDecoration: "none"}} to="/life">Đời sống<i
+                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
+                            <ul>
+                                <Link style={{textDecoration: "none"}} to="/family">Gia đình</Link>
+                                <Link style={{textDecoration: "none"}} to="/story">Chuyện lạ</Link>
+                                <Link style={{textDecoration: "none"}} to="/cuisine">Ẩm thực</Link>
+                                <Link style={{textDecoration: "none"}} to="/youth">Giới trẻ</Link>
+                                <Link style={{textDecoration: "none"}} to="/tip">Mẹo vặt</Link>
+                                <Link style={{textDecoration: "none"}} to="/confide">Tâm sự</Link>
+                            </ul>
+                        </li>
                         <li><Link style={{textDecoration: "none"}} to="/education">Giáo dục</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/current-events">Thời sự</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/travel">Du lịch</Link></li>

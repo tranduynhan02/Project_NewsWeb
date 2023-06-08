@@ -14,13 +14,13 @@ import Header from "../../Header";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
 
-const Life = () => {
+const Family = () => {
     const [newsList, setNewsList] = useState([]);
 
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get(
-                'https://vietnamnet.vn/rss/doi-song.rss'
+                'https://vietnamnet.vn/rss/gia-dinh.rss'
             );
             const rss = response.data;
             let parser = new DOMParser();
@@ -60,14 +60,14 @@ const Life = () => {
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Đời sống</h2>
+                            <h2>Đời sống<span style={{fontSize:"25px"}}> / Gia đình</span></h2>
                             <nav id="navbar" className="navbar">
-                            <Link style={{textDecoration: "none"}} to="/family">Gia đình</Link>
-                            <Link style={{textDecoration: "none"}} to="/story">Chuyện lạ</Link>
-                            <Link style={{textDecoration: "none"}} to="/cuisine">Ẩm thực</Link>
-                            <Link style={{textDecoration: "none"}} to="/youth">Giới trẻ</Link>
-                            <Link style={{textDecoration: "none"}} to="/tip">Mẹo vặt</Link>
-                            <Link style={{textDecoration: "none"}} to="/confide">Tâm sự</Link>
+                                <Link style={{textDecoration: "none"}} to="/family">Gia đình</Link>
+                                <Link style={{textDecoration: "none"}} to="/story">Chuyện lạ</Link>
+                                <Link style={{textDecoration: "none"}} to="/cuisine">Ẩm thực</Link>
+                                <Link style={{textDecoration: "none"}} to="/youth">Giới trẻ</Link>
+                                <Link style={{textDecoration: "none"}} to="/tip">Mẹo vặt</Link>
+                                <Link style={{textDecoration: "none"}} to="/confide">Tâm sự</Link>
                             </nav>
                         </div>
                     </div>
@@ -103,4 +103,4 @@ const Life = () => {
     );
 };
 
-export default Life;
+export default Family;
