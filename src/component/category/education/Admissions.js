@@ -14,13 +14,13 @@ import Header from "../../Header";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
 
-const Education = () => {
+const Admissions = () => {
     const [newsList, setNewsList] = useState([]);
 
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get(
-                'https://vietnamnet.vn/rss/giao-duc.rss'
+                'https://vietnamnet.vn/rss/tuyen-sinh.rss'
             );
             const rss = response.data;
             let parser = new DOMParser();
@@ -60,20 +60,20 @@ const Education = () => {
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Giáo dục</h2>
+                            <h2>Giáo dục<span style={{fontSize:"25px"}}> / Tuyển sinh</span></h2>
                         </div>
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                        <nav id="navbar" className="navbar">
-                            <Link style={{textDecoration: "none"}} to="/teacher">Người thầy</Link>
-                            <Link style={{textDecoration: "none"}} to="/admissions">Tuyển sinh</Link>
-                            <Link style={{textDecoration: "none"}} to="/young-face">Gương mặt trẻ</Link>
-                            <Link style={{textDecoration: "none"}} to="/parents">Góc phụ huynh</Link>
-                            <Link style={{textDecoration: "none"}} to="/study-abroad">Du học</Link>
-                            <Link style={{textDecoration: "none"}} to="/science">Khoa học</Link>
-                            <Link style={{textDecoration: "none"}} to="/english">Học tiếng anh</Link>
-                            <Link style={{textDecoration: "none"}} to="/recruitment">Tuyển dụng</Link>
-                            <Link style={{textDecoration: "none"}} to="/ai-contest">AI CONTEST 2023</Link>
-                        </nav>
+                            <nav id="navbar" className="navbar">
+                                <Link style={{textDecoration: "none"}} to="/teacher">Người thầy</Link>
+                                <Link style={{textDecoration: "none"}} to="/admissions">Tuyển sinh</Link>
+                                <Link style={{textDecoration: "none"}} to="/young-face">Gương mặt trẻ</Link>
+                                <Link style={{textDecoration: "none"}} to="/parents">Góc phụ huynh</Link>
+                                <Link style={{textDecoration: "none"}} to="/study-abroad">Du học</Link>
+                                <Link style={{textDecoration: "none"}} to="/science">Khoa học</Link>
+                                <Link style={{textDecoration: "none"}} to="/english">Học tiếng anh</Link>
+                                <Link style={{textDecoration: "none"}} to="/recruitment">Tuyển dụng</Link>
+                                <Link style={{textDecoration: "none"}} to="/ai-contest">AI CONTEST 2023</Link>
+                            </nav>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">
@@ -108,4 +108,4 @@ const Education = () => {
     );
 };
 
-export default Education;
+export default Admissions;

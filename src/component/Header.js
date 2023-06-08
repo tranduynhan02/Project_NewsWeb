@@ -25,7 +25,21 @@ const Header = ({news}) => {
                                 <Link style={{textDecoration: "none"}} to="/confide">Tâm sự</Link>
                             </ul>
                         </li>
-                        <li><Link style={{textDecoration: "none"}} to="/education">Giáo dục</Link></li>
+                        <li className="dropdown">
+                            <Link style={{textDecoration: "none"}} to="/education">Giáo dục<i
+                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
+                            <ul>
+                                <Link style={{textDecoration: "none"}} to="/teacher">Người thầy</Link>
+                                <Link style={{textDecoration: "none"}} to="/admissions">Tuyển sinh</Link>
+                                <Link style={{textDecoration: "none"}} to="/young-face">Gương mặt trẻ</Link>
+                                <Link style={{textDecoration: "none"}} to="/parents">Góc phụ huynh</Link>
+                                <Link style={{textDecoration: "none"}} to="/study-abroad">Du học</Link>
+                                <Link style={{textDecoration: "none"}} to="/science">Khoa học</Link>
+                                <Link style={{textDecoration: "none"}} to="/english">Học tiếng anh</Link>
+                                <Link style={{textDecoration: "none"}} to="/recruitment">Tuyển dụng</Link>
+                                <Link style={{textDecoration: "none"}} to="/ai-contest">AI CONTEST 2023</Link>
+                            </ul>
+                        </li>
                         <li className="dropdown">
                             <Link style={{textDecoration: "none"}} to="/current-events">Thời sự<i
                                 className="bi bi-chevron-down dropdown-indicator"></i></Link>
