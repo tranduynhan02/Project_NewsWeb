@@ -51,8 +51,27 @@ const Header = ({news}) => {
                                 <Link style={{textDecoration: "none"}} to="/naitional-defense">Quốc phòng</Link>
                             </ul>
                         </li>
-                        <li><Link style={{textDecoration: "none"}} to="/travel">Du lịch</Link></li>
-                        <li><Link style={{textDecoration: "none"}} to="/real-estate">Bất động sản</Link></li>
+                        <li className="dropdown">
+                            <Link style={{textDecoration: "none"}} to="/travel">Du lịch<i
+                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
+                            <ul>
+                                <Link style={{textDecoration: "none"}} to="/go">Đi đâu chơi đi</Link>
+                                <Link style={{textDecoration: "none"}} to="/eat">Ăn ăn uống uống</Link>
+                                <Link style={{textDecoration: "none"}} to="/sleep">Ngủ ngủ nghỉ nghỉ</Link>
+                            </ul>
+                        </li>
+                        <li className="dropdown">
+                            <Link style={{textDecoration: "none"}} to="/real-estate">Bất động sản<i
+                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
+                            <ul>
+                                <Link style={{textDecoration: "none"}} to="/project">Dự án</Link>
+                                <Link style={{textDecoration: "none"}} to="/interior">Nội thất</Link>
+                                <Link style={{textDecoration: "none"}} to="/advise">Tư vấn</Link>
+                                <Link style={{textDecoration: "none"}} to="/stock-market">Thị trường</Link>
+                                <Link style={{textDecoration: "none"}} to="/beautiful-house">Nhà đẹp</Link>
+                                <Link style={{textDecoration: "none"}} to="/chance-to-settle-down">Cơ hội an cư</Link>
+                            </ul>
+                        </li>
                         <li className="dropdown">
                             <Link style={{textDecoration: "none"}} to="/business">Kinh doanh<i
                                 className="bi bi-chevron-down dropdown-indicator"></i></Link>
