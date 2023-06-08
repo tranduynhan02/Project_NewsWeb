@@ -27,6 +27,12 @@ import Fashion from "./category/entertainment/Fashion";
 import Music from "./category/entertainment/Music";
 import Movie from "./category/entertainment/Movie";
 import TV from "./category/entertainment/TV";
+import Family from "./category/life/Family";
+import Story from "./category/life/Story";
+import Cuisine from "./category/life/Cuisine";
+import Youth from "./category/life/Youth";
+import Tips from "./category/life/Tips";
+import Confide from "./category/life/Confide";
 export const appRouter = createBrowserRouter([{
 
     path: '/',
@@ -34,9 +40,16 @@ export const appRouter = createBrowserRouter([{
     children: [{path: "life", element: <Life/>},
         {path: "education", element: <Education/>},
         {path: "current-events", element: <CurrentEvents/>},
+        {path: "family", element: <Family/>},
+        {path: "story", element: <Story/>},
+        {path: "cuisine", element: <Cuisine/>},
+        {path: "youth", element: <Youth/>},
+        {path: "tip", element: <Tips/>},
+        {path: "confide", element: <Confide/>},
+
+
         {
             path: "business", element: <Business/>, children: [
-
             ]
         },
 
