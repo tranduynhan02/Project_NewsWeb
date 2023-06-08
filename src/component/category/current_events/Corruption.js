@@ -14,13 +14,13 @@ import Header from "../../Header";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
 
-const CurrentEvents = () => {
+const Corruption = () => {
     const [newsList, setNewsList] = useState([]);
 
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get(
-                'https://vietnamnet.vn/rss/thoi-su.rss'
+                'https://vietnamnet.vn/rss/chong-tham-nhung.rss'
             );
             const rss = response.data;
             let parser = new DOMParser();
@@ -60,11 +60,10 @@ const CurrentEvents = () => {
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Thời sự</h2>
+                            <h2>Thời sự<span style={{fontSize:"25px"}}> / Chống tham nhũng</span></h2>
                             <nav id="navbar" className="navbar">
                                 <Link style={{textDecoration: "none"}} to="/congress">Quốc hội</Link>
                                 <Link style={{textDecoration: "none"}} to="/traffic">An toàn giao thông</Link>
-                                <Link style={{textDecoration: "none"}} to="/environment">Môi trường</Link>
                                 <Link style={{textDecoration: "none"}} to="/insurance">BHXH-BHYT</Link>
                                 <Link style={{textDecoration: "none"}} to="/corruption">Chống tham nhũng</Link>
                                 <Link style={{textDecoration: "none"}} to="/naitional-defense">Quốc phòng</Link>
@@ -103,4 +102,4 @@ const CurrentEvents = () => {
     );
 };
 
-export default CurrentEvents;
+export default Corruption;

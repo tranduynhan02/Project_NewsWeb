@@ -26,7 +26,17 @@ const Header = ({news}) => {
                             </ul>
                         </li>
                         <li><Link style={{textDecoration: "none"}} to="/education">Giáo dục</Link></li>
-                        <li><Link style={{textDecoration: "none"}} to="/current-events">Thời sự</Link></li>
+                        <li className="dropdown">
+                            <Link style={{textDecoration: "none"}} to="/current-events">Thời sự<i
+                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
+                            <ul>
+                                <Link style={{textDecoration: "none"}} to="/congress">Quốc hội</Link>
+                                <Link style={{textDecoration: "none"}} to="/traffic">An toàn giao thông</Link>
+                                <Link style={{textDecoration: "none"}} to="/insurance">BHXH-BHYT</Link>
+                                <Link style={{textDecoration: "none"}} to="/corruption">Chống tham nhũng</Link>
+                                <Link style={{textDecoration: "none"}} to="/naitional-defense">Quốc phòng</Link>
+                            </ul>
+                        </li>
                         <li><Link style={{textDecoration: "none"}} to="/travel">Du lịch</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/real-estate">Bất động sản</Link></li>
                         <li className="dropdown">

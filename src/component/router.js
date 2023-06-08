@@ -33,6 +33,11 @@ import Cuisine from "./category/life/Cuisine";
 import Youth from "./category/life/Youth";
 import Tips from "./category/life/Tips";
 import Confide from "./category/life/Confide";
+import Congress from "./category/current_events/Congress";
+import Traffic from "./category/current_events/Traffic";
+import Insurance from "./category/current_events/Insurance";
+import Corruption from "./category/current_events/Corruption";
+import NaitionalDefense from "./category/current_events/NaitionalDefense";
 export const appRouter = createBrowserRouter([{
 
     path: '/',
@@ -47,6 +52,11 @@ export const appRouter = createBrowserRouter([{
         {path: "tip", element: <Tips/>},
         {path: "confide", element: <Confide/>},
 
+        {path: "congress", element: <Congress/>},
+        {path: "traffic", element: <Traffic/>},
+        {path: "insurance", element: <Insurance/>},
+        {path: "corruption", element: <Corruption/>},
+        {path: "naitional-defense", element: <NaitionalDefense/>},
 
         {
             path: "business", element: <Business/>, children: [
