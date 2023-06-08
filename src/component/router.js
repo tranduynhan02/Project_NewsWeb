@@ -47,6 +47,15 @@ import Science from "./category/education/Science";
 import English from "./category/education/English";
 import Recruitment from "./category/education/Recruitment";
 import AiContest from "./category/education/AiContest";
+import Go from "./category/travel/Go";
+import Eat from "./category/travel/Eat";
+import Sleep from "./category/travel/Sleep";
+import Project from "./category/real_estate/Project";
+import Interior from "./category/real_estate/Interior";
+import Advise from "./category/real_estate/Advise";
+import Stock_Market from "./category/real_estate/Stock_Market";
+import Beautiful_House from "./category/real_estate/Beautiful_House";
+import Change_to_settle_down from "./category/real_estate/Change_to_settle_down";
 export const appRouter = createBrowserRouter([{
 
     path: '/',
@@ -125,5 +134,16 @@ export const appRouter = createBrowserRouter([{
         {path: "entertainment/fashion", element: <Fashion/>},
         {path: "entertainment/music", element: <Music/>},
         {path: "entertainment/movie", element: <Movie/>},
-        {path: "entertainment/tv", element: <TV/>}]
+        {path: "entertainment/tv", element: <TV/>},
+
+        {path: "go", element: <Go/>},
+        {path: "eat", element: <Eat/>},
+        {path: "sleep", element: <Sleep/>},
+
+        {path: "project", element: <Project/>},
+        {path: "interior", element: <Interior/>},
+        {path: "advise", element: <Advise/>},
+        {path: "stock-market", element: <Stock_Market/>},
+        {path: "beautiful-house", element: <Beautiful_House/>},
+        {path: "chance-to-settle-down", element: <Change_to_settle_down/>}]
 }]);
