@@ -51,7 +51,7 @@ const Traffic = () => {
         return subUrl;
     }
     function setTitle(title){
-        return title.replace(/&amp;apos;/g, "'");
+        return title.replace(/&amp;amp;/g,"&").replace(/&amp;apos;/g, "'");
     }
     return (
         <div className="Life">
