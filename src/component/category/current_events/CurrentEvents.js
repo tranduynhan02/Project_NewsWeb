@@ -12,7 +12,7 @@ import Center from "../../Items/Center";
 import Bottom from "../../Items/Bottom";
 import Header from "../../Header";
 import Footer from "../../Footer";
-import {Outlet} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 
 const CurrentEvents = () => {
     const [newsList, setNewsList] = useState([]);
@@ -51,7 +51,7 @@ const CurrentEvents = () => {
         return subUrl;
     }
     function setTitle(title){
-        return title.replace(/&amp;apos;/g, "'");
+        return title.replace(/&amp;amp;/g,"&").replace(/&amp;apos;/g, "'");
     }
     return (
         <div className="Life">
@@ -61,6 +61,14 @@ const CurrentEvents = () => {
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
                             <h2>Thời sự</h2>
+                            <nav id="navbar" className="navbar">
+                                <Link style={{textDecoration: "none"}} to="/congress">Quốc hội</Link>
+                                <Link style={{textDecoration: "none"}} to="/traffic">An toàn giao thông</Link>
+                                <Link style={{textDecoration: "none"}} to="/environment">Môi trường</Link>
+                                <Link style={{textDecoration: "none"}} to="/insurance">BHXH-BHYT</Link>
+                                <Link style={{textDecoration: "none"}} to="/corruption">Chống tham nhũng</Link>
+                                <Link style={{textDecoration: "none"}} to="/naitional-defense">Quốc phòng</Link>
+                            </nav>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">

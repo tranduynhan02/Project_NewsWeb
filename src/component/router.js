@@ -33,6 +33,20 @@ import Cuisine from "./category/life/Cuisine";
 import Youth from "./category/life/Youth";
 import Tips from "./category/life/Tips";
 import Confide from "./category/life/Confide";
+import Congress from "./category/current_events/Congress";
+import Traffic from "./category/current_events/Traffic";
+import Insurance from "./category/current_events/Insurance";
+import Corruption from "./category/current_events/Corruption";
+import NaitionalDefense from "./category/current_events/NaitionalDefense";
+import Teacher from "./category/education/Teacher";
+import Admissions from "./category/education/Admissions";
+import YoungFace from "./category/education/YoungFace";
+import Parents from "./category/education/Parents";
+import StudyAbroad from "./category/education/StudyAbroad";
+import Science from "./category/education/Science";
+import English from "./category/education/English";
+import Recruitment from "./category/education/Recruitment";
+import AiContest from "./category/education/AiContest";
 export const appRouter = createBrowserRouter([{
 
     path: '/',
@@ -47,7 +61,21 @@ export const appRouter = createBrowserRouter([{
         {path: "tip", element: <Tips/>},
         {path: "confide", element: <Confide/>},
 
+        {path: "congress", element: <Congress/>},
+        {path: "traffic", element: <Traffic/>},
+        {path: "insurance", element: <Insurance/>},
+        {path: "corruption", element: <Corruption/>},
+        {path: "naitional-defense", element: <NaitionalDefense/>},
 
+        {path: "teacher", element: <Teacher/>},
+        {path: "admissions", element: <Admissions/>},
+        {path: "young-face", element: <YoungFace/>},
+        {path: "parents", element: <Parents/>},
+        {path: "study-abroad", element: <StudyAbroad/>},
+        {path: "science", element: <Science/>},
+        {path: "english", element: <English/>},
+        {path: "recruitment", element: <Recruitment/>},
+        {path: "ai-contest", element: <AiContest/>},
         {
             path: "business", element: <Business/>, children: [
             ]

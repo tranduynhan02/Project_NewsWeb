@@ -14,13 +14,13 @@ import Header from "../../Header";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
 
-const Tips = () => {
+const Congress = () => {
     const [newsList, setNewsList] = useState([]);
 
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get(
-                'https://vietnamnet.vn/rss/meo-vat.rss'
+                'https://vietnamnet.vn/rss/quoc-hoi.rss'
             );
             const rss = response.data;
             let parser = new DOMParser();
@@ -60,14 +60,13 @@ const Tips = () => {
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Đời sống<span style={{fontSize:"25px"}}> / Mẹo vặt</span></h2>
+                            <h2>Thời sự<span style={{fontSize:"25px"}}> / Quốc hội</span></h2>
                             <nav id="navbar" className="navbar">
-                                <Link style={{textDecoration: "none"}} to="/family">Gia đình</Link>
-                                <Link style={{textDecoration: "none"}} to="/story">Chuyện lạ</Link>
-                                <Link style={{textDecoration: "none"}} to="/cuisine">Ẩm thực</Link>
-                                <Link style={{textDecoration: "none"}} to="/youth">Giới trẻ</Link>
-                                <Link style={{textDecoration: "none"}} to="/tip">Mẹo vặt</Link>
-                                <Link style={{textDecoration: "none"}} to="/confide">Tâm sự</Link>
+                                <Link style={{textDecoration: "none"}} to="/congress">Quốc hội</Link>
+                                <Link style={{textDecoration: "none"}} to="/traffic">An toàn giao thông</Link>
+                                <Link style={{textDecoration: "none"}} to="/insurance">BHXH-BHYT</Link>
+                                <Link style={{textDecoration: "none"}} to="/corruption">Chống tham nhũng</Link>
+                                <Link style={{textDecoration: "none"}} to="/naitional-defense">Quốc phòng</Link>
                             </nav>
                         </div>
                     </div>
@@ -103,4 +102,4 @@ const Tips = () => {
     );
 };
 
-export default Tips;
+export default Congress;
