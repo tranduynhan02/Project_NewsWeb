@@ -1,5 +1,6 @@
 import React from 'react';
-const Footer = ({ news }) => {
+
+const Footer = ({news}) => {
     return (
         <footer id="footer" className="footer">
 
@@ -8,94 +9,41 @@ const Footer = ({ news }) => {
 
                     <div className="row g-5">
                         <div className="col-lg-4">
-                            <h3 className="footer-heading">About ZenBlog</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ab, perspiciatis beatae
-                                autem deleniti voluptate nulla a dolores, exercitationem eveniet libero laudantium
-                                recusandae officiis qui aliquid blanditiis omnis quae. Explicabo?</p>
-                            <p><a href="about.html" className="footer-link-more">Learn More</a></p>
+                            <h3 className="footer-heading">VietNamNet</h3>
+                            <p>Trang tin tức sử dụng rss của <span>vietnamnet.vn</span></p>
                         </div>
                         <div className="col-6 col-lg-2">
-                            <h3 className="footer-heading">Navigation</h3>
+                            <h3 className="footer-heading">Chức năng</h3>
                             <ul className="footer-links list-unstyled">
-                                <li><a href="index.html"><i className="bi bi-chevron-right"></i> Home</a></li>
-                                <li><a href="index.html"><i className="bi bi-chevron-right"></i> Blog</a></li>
-                                <li><a href="category.html"><i className="bi bi-chevron-right"></i> Categories</a></li>
-                                <li><a href="single-post.html"><i className="bi bi-chevron-right"></i> Single Post</a>
-                                </li>
-                                <li><a href="about.html"><i className="bi bi-chevron-right"></i> About us</a></li>
-                                <li><a href="contact.html"><i className="bi bi-chevron-right"></i> Contact</a></li>
+                                <li><i className="bi bi-chevron-right"></i> Trang chi tiết</li>
+                                <li><i className="bi bi-chevron-right"></i> Tìm kiếm</li>
+                                <li><i className="bi bi-chevron-right"></i> Lịch sử xem</li>
                             </ul>
                         </div>
                         <div className="col-6 col-lg-2">
-                            <h3 className="footer-heading">Categories</h3>
+                            <h3 className="footer-heading">Danh mục</h3>
                             <ul className="footer-links list-unstyled">
-                                <li><a href="category.html"><i className="bi bi-chevron-right"></i> Business</a></li>
-                                <li><a href="category.html"><i className="bi bi-chevron-right"></i> Culture</a></li>
-                                <li><a href="category.html"><i className="bi bi-chevron-right"></i> Sport</a></li>
-                                <li><a href="category.html"><i className="bi bi-chevron-right"></i> Food</a></li>
-                                <li><a href="category.html"><i className="bi bi-chevron-right"></i> Politics</a></li>
-                                <li><a href="category.html"><i className="bi bi-chevron-right"></i> Celebrity</a></li>
-                                <li><a href="category.html"><i className="bi bi-chevron-right"></i> Startups</a></li>
-                                <li><a href="category.html"><i className="bi bi-chevron-right"></i> Travel</a></li>
-
+                                <li><a style={{textDecoration: "none"}} href="/"><i
+                                    className="bi bi-chevron-right"></i> Trang chủ</a></li>
+                                <li><a style={{textDecoration: "none"}} href="/life"><i
+                                    className="bi bi-chevron-right"></i> Đời sống</a></li>
+                                <li><a style={{textDecoration: "none"}} href="/education"><i
+                                    className="bi bi-chevron-right"></i> Giáo dục</a></li>
+                                <li><a style={{textDecoration: "none"}} href="/current-events"><i
+                                    className="bi bi-chevron-right"></i> Thời sự</a></li>
+                                <li><a style={{textDecoration: "none"}} href="/travel"><i
+                                    className="bi bi-chevron-right"></i> Du lịch</a></li>
+                                <li><a style={{textDecoration: "none"}} href="/real-estate"><i
+                                    className="bi bi-chevron-right"></i> Bất động sản</a></li>
+                                <li><a style={{textDecoration: "none"}} href="/business"><i
+                                    className="bi bi-chevron-right"></i> Kinh doanh</a></li>
+                                <li><a style={{textDecoration: "none"}} href="/sport"><i
+                                    className="bi bi-chevron-right"></i> Thể thao</a></li>
+                                <li><a style={{textDecoration: "none"}} href="/entertainment"><i
+                                    className="bi bi-chevron-right"></i> Giải trí</a></li>
                             </ul>
                         </div>
 
-                        <div className="col-lg-4">
-                            <h3 className="footer-heading">Recent Posts</h3>
-
-                            <ul className="footer-links footer-blog-entry list-unstyled">
-                                <li>
-                                    <a href="single-post.html" className="d-flex align-items-center">
-                                        <img src="assets/img/post-sq-1.jpg" alt="" className="img-fluid me-3"></img>
-                                            <div>
-                                                <div className="post-meta d-block"><span className="date">Culture</span>
-                                                    <span className="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-                                                </div>
-                                                <span>5 Great Startup Tips for Female Founders</span>
-                                            </div>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="single-post.html" className="d-flex align-items-center">
-                                        <img src="assets/img/post-sq-2.jpg" alt="" className="img-fluid me-3"></img>
-                                            <div>
-                                                <div className="post-meta d-block"><span className="date">Culture</span>
-                                                    <span className="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-                                                </div>
-                                                <span>What is the son of Football Coach John Gruden, Deuce Gruden doing Now?</span>
-                                            </div>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="single-post.html" className="d-flex align-items-center">
-                                        <img src="assets/img/post-sq-3.jpg" alt="" className="img-fluid me-3"></img>
-                                            <div>
-                                                <div className="post-meta d-block"><span className="date">Culture</span>
-                                                    <span className="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-                                                </div>
-                                                <span>Life Insurance And Pregnancy: A Working Mom’s Guide</span>
-                                            </div>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="single-post.html" className="d-flex align-items-center">
-                                        <img src="assets/img/post-sq-4.jpg" alt="" className="img-fluid me-3"></img>
-                                            <div>
-                                                <div className="post-meta d-block"><span className="date">Culture</span>
-                                                    <span className="mx-1">&bullet;</span> <span>Jul 5th '22</span>
-                                                </div>
-                                                <span>How to Avoid Distraction and Stay Focused During Video Calls?</span>
-                                            </div>
-                                    </a>
-                                </li>
-
-                            </ul>
-
-                        </div>
                     </div>
                 </div>
             </div>
@@ -117,11 +65,14 @@ const Footer = ({ news }) => {
 
                         <div className="col-md-6">
                             <div className="social-links mb-3 mb-lg-0 text-center text-md-end">
-                                <a href="#" className="twitter"><i className="bi bi-twitter"></i></a>
-                                <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
-                                <a href="#" className="instagram"><i className="bi bi-instagram"></i></a>
-                                <a href="#" className="google-plus"><i className="bi bi-skype"></i></a>
-                                <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a>
+                                <a target={"_blank"} href="https://twitter.com/" className="twitter"><i
+                                    className="bi bi-twitter"></i></a>
+                                <a target={"_blank"} href="https://www.facebook.com/" className="facebook"><i
+                                    className="bi bi-facebook"></i></a>
+                                <a target={"_blank"} href="https://www.instagram.com/" className="instagram"><i
+                                    className="bi bi-instagram"></i></a>
+                                <a target={"_blank"} href="https://www.linkedin.com/" className="linkedin"><i
+                                    className="bi bi-linkedin"></i></a>
                             </div>
 
                         </div>
