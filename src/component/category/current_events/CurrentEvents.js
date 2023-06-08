@@ -64,7 +64,6 @@ const CurrentEvents = () => {
                             <nav id="navbar" className="navbar">
                                 <Link style={{textDecoration: "none"}} to="/congress">Quốc hội</Link>
                                 <Link style={{textDecoration: "none"}} to="/traffic">An toàn giao thông</Link>
-                                <Link style={{textDecoration: "none"}} to="/environment">Môi trường</Link>
                                 <Link style={{textDecoration: "none"}} to="/insurance">BHXH-BHYT</Link>
                                 <Link style={{textDecoration: "none"}} to="/corruption">Chống tham nhũng</Link>
                                 <Link style={{textDecoration: "none"}} to="/naitional-defense">Quốc phòng</Link>
