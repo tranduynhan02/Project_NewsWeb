@@ -38,7 +38,7 @@ function SearchNews() {
             items.forEach((item) => {
                 if(filterNews(item.querySelector('title').textContent,name)){
                     let result = {
-                        title: item.querySelector('title').textContent,
+                        title: setTitle(item.querySelector('title').textContent),
                         description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                         link: getlink(item.querySelector('link').textContent),
                         image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -67,7 +67,7 @@ function SearchNews() {
             items.forEach((item) => {
                 if(filterNews(item.querySelector('title').textContent,name)){
                     let result = {
-                        title: item.querySelector('title').textContent,
+                        title: setTitle(item.querySelector('title').textContent),
                         description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                         link: getlink(item.querySelector('link').textContent),
                         image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -96,7 +96,7 @@ function SearchNews() {
             items.forEach((item) => {
                 if(filterNews(item.querySelector('title').textContent,name)){
                     let result = {
-                        title: item.querySelector('title').textContent,
+                        title: setTitle(item.querySelector('title').textContent),
                         description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                         link: getlink(item.querySelector('link').textContent),
                         image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -125,7 +125,7 @@ function SearchNews() {
             items.forEach((item) => {
                 if(filterNews(item.querySelector('title').textContent,name)){
                     let result = {
-                        title: item.querySelector('title').textContent,
+                        title: setTitle(item.querySelector('title').textContent),
                         description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                         link: getlink(item.querySelector('link').textContent),
                         image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -154,7 +154,7 @@ function SearchNews() {
             items.forEach((item) => {
                 if(filterNews(item.querySelector('title').textContent,name)){
                     let result = {
-                        title: item.querySelector('title').textContent,
+                        title: setTitle(item.querySelector('title').textContent),
                         description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                         link: getlink(item.querySelector('link').textContent),
                         image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -183,7 +183,7 @@ function SearchNews() {
             items.forEach((item) => {
                 if(filterNews(item.querySelector('title').textContent,name)){
                     let result = {
-                        title: item.querySelector('title').textContent,
+                        title: setTitle(item.querySelector('title').textContent),
                         description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                         link: getlink(item.querySelector('link').textContent),
                         image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -212,7 +212,7 @@ function SearchNews() {
             items.forEach((item) => {
                 if(filterNews(item.querySelector('title').textContent,name)){
                     let result = {
-                        title: item.querySelector('title').textContent,
+                        title: setTitle(item.querySelector('title').textContent),
                         description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                         link: getlink(item.querySelector('link').textContent),
                         image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -241,7 +241,7 @@ function SearchNews() {
             items.forEach((item) => {
                 if(filterNews(item.querySelector('title').textContent,name)){
                     let result = {
-                        title: item.querySelector('title').textContent,
+                        title: setTitle(item.querySelector('title').textContent),
                         description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                         link: getlink(item.querySelector('link').textContent),
                         image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -295,6 +295,9 @@ function SearchNews() {
     }
     function lengthNews(a){
         return a<10?a:10;
+    }
+    function setTitle(title){
+        return title.replace(/&amp;amp;/g,"&").replace(/&amp;apos;/g,"");
     }
 
     return (
