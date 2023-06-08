@@ -13,9 +13,44 @@ const Header = ({news}) => {
                 <nav id="navbar" className="navbar">
                     <ul>
                         <li><Link style={{textDecoration: "none"}} to="/">Trang chủ</Link></li>
-                        <li><Link style={{textDecoration: "none"}} to="/life">Đời sống</Link></li>
-                        <li><Link style={{textDecoration: "none"}} to="/education">Giáo dục</Link></li>
-                        <li><Link style={{textDecoration: "none"}} to="/current-events">Thời sự</Link></li>
+                        <li className="dropdown">
+                            <Link style={{textDecoration: "none"}} to="/life">Đời sống<i
+                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
+                            <ul>
+                                <Link style={{textDecoration: "none"}} to="/family">Gia đình</Link>
+                                <Link style={{textDecoration: "none"}} to="/story">Chuyện lạ</Link>
+                                <Link style={{textDecoration: "none"}} to="/cuisine">Ẩm thực</Link>
+                                <Link style={{textDecoration: "none"}} to="/youth">Giới trẻ</Link>
+                                <Link style={{textDecoration: "none"}} to="/tip">Mẹo vặt</Link>
+                                <Link style={{textDecoration: "none"}} to="/confide">Tâm sự</Link>
+                            </ul>
+                        </li>
+                        <li className="dropdown">
+                            <Link style={{textDecoration: "none"}} to="/education">Giáo dục<i
+                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
+                            <ul>
+                                <Link style={{textDecoration: "none"}} to="/teacher">Người thầy</Link>
+                                <Link style={{textDecoration: "none"}} to="/admissions">Tuyển sinh</Link>
+                                <Link style={{textDecoration: "none"}} to="/young-face">Gương mặt trẻ</Link>
+                                <Link style={{textDecoration: "none"}} to="/parents">Góc phụ huynh</Link>
+                                <Link style={{textDecoration: "none"}} to="/study-abroad">Du học</Link>
+                                <Link style={{textDecoration: "none"}} to="/science">Khoa học</Link>
+                                <Link style={{textDecoration: "none"}} to="/english">Học tiếng anh</Link>
+                                <Link style={{textDecoration: "none"}} to="/recruitment">Tuyển dụng</Link>
+                                <Link style={{textDecoration: "none"}} to="/ai-contest">AI CONTEST 2023</Link>
+                            </ul>
+                        </li>
+                        <li className="dropdown">
+                            <Link style={{textDecoration: "none"}} to="/current-events">Thời sự<i
+                                className="bi bi-chevron-down dropdown-indicator"></i></Link>
+                            <ul>
+                                <Link style={{textDecoration: "none"}} to="/congress">Quốc hội</Link>
+                                <Link style={{textDecoration: "none"}} to="/traffic">An toàn giao thông</Link>
+                                <Link style={{textDecoration: "none"}} to="/insurance">BHXH-BHYT</Link>
+                                <Link style={{textDecoration: "none"}} to="/corruption">Chống tham nhũng</Link>
+                                <Link style={{textDecoration: "none"}} to="/naitional-defense">Quốc phòng</Link>
+                            </ul>
+                        </li>
                         <li><Link style={{textDecoration: "none"}} to="/travel">Du lịch</Link></li>
                         <li><Link style={{textDecoration: "none"}} to="/real-estate">Bất động sản</Link></li>
                         <li className="dropdown">

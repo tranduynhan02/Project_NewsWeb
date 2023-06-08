@@ -12,7 +12,7 @@ import Center from "../../Items/Center";
 import Bottom from "../../Items/Bottom";
 import Header from "../../Header";
 import Footer from "../../Footer";
-import {Outlet} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 
 const Life = () => {
     const [newsList, setNewsList] = useState([]);
@@ -30,7 +30,7 @@ const Life = () => {
 
             items.forEach((item) => {
                 let result = {
-                    title: item.querySelector('title').textContent,
+                    title: setTitle(item.querySelector('title').textContent),
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                     link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -50,6 +50,9 @@ const Life = () => {
         const subUrl = url.substring(startIndex);
         return subUrl;
     }
+    function setTitle(title){
+        return title.replace(/&amp;amp;/g,"&").replace(/&amp;apos;/g, "'");
+    }
     return (
         <div className="Life">
             <Header/>
@@ -58,6 +61,14 @@ const Life = () => {
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
                             <h2>Đời sống</h2>
+                            <nav id="navbar" className="navbar">
+                            <Link style={{textDecoration: "none"}} to="/family">Gia đình</Link>
+                            <Link style={{textDecoration: "none"}} to="/story">Chuyện lạ</Link>
+                            <Link style={{textDecoration: "none"}} to="/cuisine">Ẩm thực</Link>
+                            <Link style={{textDecoration: "none"}} to="/youth">Giới trẻ</Link>
+                            <Link style={{textDecoration: "none"}} to="/tip">Mẹo vặt</Link>
+                            <Link style={{textDecoration: "none"}} to="/confide">Tâm sự</Link>
+                            </nav>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">
