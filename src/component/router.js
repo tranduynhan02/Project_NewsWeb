@@ -48,6 +48,16 @@ import English from "./category/education/English";
 import Recruitment from "./category/education/Recruitment";
 import AiContest from "./category/education/AiContest";
 import ViewedNews from "./category/viewed_news/ViewedNews";
+import Go from "./category/travel/Go";
+import Eat from "./category/travel/Eat";
+import Sleep from "./category/travel/Sleep";
+import Project from "./category/real_estate/Project";
+import Interior from "./category/real_estate/Interior";
+import Advise from "./category/real_estate/Advise";
+import Stock_Market from "./category/real_estate/Stock_Market";
+import Beautiful_House from "./category/real_estate/Beautiful_House";
+import Change_to_settle_down from "./category/real_estate/Change_to_settle_down";
+
 export const appRouter = createBrowserRouter([{
 
     path: '/',
@@ -78,14 +88,6 @@ export const appRouter = createBrowserRouter([{
         {path: "recruitment", element: <Recruitment/>},
         {path: "ai-contest", element: <AiContest/>},
         {
-            path: "business", element: <Business/>
-        },
-        {path: "sport", element: <Sport/>},
-        {
-            path: "entertainment",
-            element: <Entertainment/>
-        },
-        {
             path: "news/:link",
             element: <Detail/>,
         },
@@ -109,16 +111,21 @@ export const appRouter = createBrowserRouter([{
             path: "/search/news/:link",
             element: <Detail/>,
         },
+        //business
+        {path: "business", element: <Business/>},
         {path: "business/finance", element: <Finance/>},
         {path: "business/invest", element: <Invest/>},
         {path: "business/market", element: <Market/>},
         {path: "business/businessmen", element: <Businessmen/>},
         {path: "business/finance-support", element: <FinanceSupport/>},
+        //sport
+        {path: "sport", element: <Sport/>},
         {path: "sport/international-football", element: <InternationalFootball/>},
         {path: "sport/vn-football", element: <VNFootball/>},
         {path: "sport/transfer-news", element: <TransferNews/>},
         {path: "sport/other-sport", element: <OtherSport/>},
         {path: "sport/backstage", element: <Backstage/>},
+        //entertainment
         {path: "entertainment", element: <Entertainment/>},
         {path: "entertainment/star-world", element: <StarWorld/>},
         {path: "entertainment/miss", element: <Miss/>},
@@ -126,6 +133,17 @@ export const appRouter = createBrowserRouter([{
         {path: "entertainment/music", element: <Music/>},
         {path: "entertainment/movie", element: <Movie/>},
         {path: "entertainment/tv", element: <TV/>},
-        {path: "viewed-news", element: <ViewedNews/>}
+        //viewed-news
+        {path: "viewed-news", element: <ViewedNews/>},
+
+        {path: "go", element: <Go/>},
+        {path: "eat", element: <Eat/>},
+        {path: "sleep", element: <Sleep/>},
+        {path: "project", element: <Project/>},
+        {path: "interior", element: <Interior/>},
+        {path: "advise", element: <Advise/>},
+        {path: "stock-market", element: <Stock_Market/>},
+        {path: "beautiful-house", element: <Beautiful_House/>},
+        {path: "chance-to-settle-down", element: <Change_to_settle_down/>}
     ]
 }]);

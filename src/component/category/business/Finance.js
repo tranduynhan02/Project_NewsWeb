@@ -16,6 +16,10 @@ const Finance = () => {
         return subUrl;
     }
 
+    function setTitle(title) {
+        return title.replace(/&amp;amp;/g, "&").replace(/&amp;apos;/g, "'");
+    }
+
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get('https://vietnamnet.vn/kinh-doanh/tai-chinh.rss');
@@ -27,7 +31,7 @@ const Finance = () => {
 
             items.forEach((item) => {
                 let result = {
-                    title: item.querySelector('title').textContent,
+                    title: setTitle(item.querySelector('title').textContent),
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                     link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -52,9 +56,9 @@ const Finance = () => {
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <div style={{fontSize: "48px"}}><Link
-                                style={{textDecoration: "none", color: "#000", fontWeight: "700"}} to="/business">Kinh
-                                doanh</Link></div>
+                            <h2><Link
+                                style={{textDecoration: "none", color: "#000"}} to="/business">Kinh
+                                doanh</Link><span style={{fontSize: "28px"}}> / Tài chính</span></h2>
                             <nav id="navbar" className="navbar">
                                 <ul>
                                     <li><Link style={{textDecoration: "none"}} to="/business/finance">Tài

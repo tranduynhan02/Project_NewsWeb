@@ -29,7 +29,7 @@ const RealEstate = () => {
 
             items.forEach((item) => {
                 let result = {
-                    title: item.querySelector('title').textContent,
+                    title: setTitle(item.querySelector('title').textContent),
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                     link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -48,6 +48,9 @@ const RealEstate = () => {
         const startIndex = url.indexOf("vietnamnet.vn/") + "vietnamnet.vn/".length;
         const subUrl = url.substring(startIndex);
         return subUrl;
+    }
+    function setTitle(title){
+        return title.replace(/&amp;amp;/g,"&").replace(/&amp;apos;/g,"");
     }
 
     return (
@@ -68,13 +71,13 @@ const RealEstate = () => {
                                     <div className="col-lg-6 border-start custom-border">
                                         {<Center key={0} news={getIndex(0)}/>}
                                         <div className="col-lg-3 " style={{float: "left", marginLeft: 40}}>
-                                            {<Small_Center key={1} news={getIndex(1)}/>}
+                                            {<Center key={1} news={getIndex(1)}/>}
                                         </div>
                                         <div className="col-lg-3 " style={{float: "left" , marginLeft: 40, marginRight: 40}}>
-                                            {<Small_Center key={2} news={getIndex(2)}/>}
+                                            {<Center key={2} news={getIndex(2)}/>}
                                         </div>
                                         <div className="col-lg-3 " style={{float: "left"}}>
-                                            {<Small_Center key={3} news={getIndex(3)}/>}
+                                            {<Center key={3} news={getIndex(3)}/>}
                                         </div>
                                     </div>
                                     <div className="col-lg-3 border-start custom-border">

@@ -7,19 +7,21 @@ import '../../../assets/vendor/bootstrap-icons/bootstrap-icons.css';
 import '../../../assets/vendor/bootstrap/css/bootstrap.min.css';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import Left from "../../Items/Left";
 import Center from "../../Items/Center";
 import Bottom from "../../Items/Bottom";
 import Header from "../../Header";
 import Footer from "../../Footer";
+import {Link, Outlet} from "react-router-dom";
 import Small_Center from "../home/Small_Center";
 
-const Travel = () => {
+const Go = () => {
     const [newsList, setNewsList] = useState([]);
 
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get(
-                'https://vietnamnet.vn/rss/du-lich.rss'
+                'https://vietnamnet.vn/rss/di-dau-choi-di.rss'
             );
             const rss = response.data;
             let parser = new DOMParser();
@@ -50,9 +52,8 @@ const Travel = () => {
         return subUrl;
     }
     function setTitle(title){
-        return title.replace(/&amp;amp;/g,"&").replace(/&amp;apos;/g,"");
+        return title.replace(/&amp;amp;/g,"&").replace(/&amp;apos;/g, "'");
     }
-
     return (
         <div className="Travel">
             <Header/>
@@ -60,8 +61,12 @@ const Travel = () => {
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Du lịch</h2>
-
+                            <h2>Du lịch<span style={{fontSize:"25px"}}> / Đi đâu chơi đi</span></h2>
+                            <nav id="navbar" className="navbar">
+                                <Link style={{textDecoration: "none"}} to="/go">Đi đâu chơi đi</Link>
+                                <Link style={{textDecoration: "none"}} to="/eat">Ăn ăn uống uống</Link>
+                                <Link style={{textDecoration: "none"}} to="/sleep">Ngủ ngủ nghỉ nghỉ</Link>
+                            </nav>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">
@@ -122,8 +127,9 @@ const Travel = () => {
                 </section>
             </main>
             <Footer/>
+            <Outlet/>
         </div>
     );
 };
 
-export default Travel;
+export default Go;
