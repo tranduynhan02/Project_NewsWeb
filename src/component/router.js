@@ -47,6 +47,7 @@ import Science from "./category/education/Science";
 import English from "./category/education/English";
 import Recruitment from "./category/education/Recruitment";
 import AiContest from "./category/education/AiContest";
+import ViewedNews from "./category/viewed_news/ViewedNews";
 export const appRouter = createBrowserRouter([{
 
     path: '/',
@@ -77,10 +78,9 @@ export const appRouter = createBrowserRouter([{
         {path: "recruitment", element: <Recruitment/>},
         {path: "ai-contest", element: <AiContest/>},
         {
-            path: "business", element: <Business/>, children: [
-            ]
+            path: "business", element: <Business/>
         },
-
+        {path: "sport", element: <Sport/>},
         {
             path: "entertainment",
             element: <Entertainment/>
@@ -125,5 +125,7 @@ export const appRouter = createBrowserRouter([{
         {path: "entertainment/fashion", element: <Fashion/>},
         {path: "entertainment/music", element: <Music/>},
         {path: "entertainment/movie", element: <Movie/>},
-        {path: "entertainment/tv", element: <TV/>}]
+        {path: "entertainment/tv", element: <TV/>},
+        {path: "viewed-news", element: <ViewedNews/>}
+    ]
 }]);
