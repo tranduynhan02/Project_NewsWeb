@@ -23,6 +23,10 @@ const StarWorld = () => {
         return subUrl;
     }
 
+    function setTitle(title){
+        return title.replace(/&amp;amp;/g,"&").replace(/&amp;apos;/g, "'");
+    }
+
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get('https://vietnamnet.vn/rss/giai-tri/the-gioi-sao.rss');
@@ -34,7 +38,7 @@ const StarWorld = () => {
 
             items.forEach((item) => {
                 let result = {
-                    title: item.querySelector('title').textContent,
+                    title: setTitle(item.querySelector('title').textContent),
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                     link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -59,32 +63,30 @@ const StarWorld = () => {
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <div>
-                                <div style={{fontSize: "48px"}}><Link
-                                    style={{textDecoration: "none", color: "#000", fontWeight: "700"}}
-                                    to="/entertainment">Giải
-                                    trí</Link></div>
-                                <nav id="navbar" className="navbar">
-                                    <ul>
-                                        <li><Link style={{textDecoration: "none"}} to="/entertainment/star-world">Sao
-                                            thế
-                                            giới</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/entertainment/miss">Hoa
-                                            hậu</Link>
-                                        </li>
-                                        <li><Link style={{textDecoration: "none"}} to="/entertainment/fashion">Thời
-                                            trang</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/entertainment/music">Âm
-                                            nhạc</Link>
-                                        </li>
-                                        <li><Link style={{textDecoration: "none"}} to="/entertainment/movie">Phim</Link>
-                                        </li>
-                                        <li><Link style={{textDecoration: "none"}} to="/entertainment/tv">Truyền
-                                            hình</Link>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
+                            <h2><Link
+                                style={{textDecoration: "none", color: "#000"}}
+                                to="/entertainment">Giải
+                                trí</Link><span style={{fontSize: "28px"}}> / Sao thế giới</span></h2>
+                            <nav id="navbar" className="navbar">
+                                <ul>
+                                    <li><Link style={{textDecoration: "none"}} to="/entertainment/star-world">Sao
+                                        thế
+                                        giới</Link></li>
+                                    <li><Link style={{textDecoration: "none"}} to="/entertainment/miss">Hoa
+                                        hậu</Link>
+                                    </li>
+                                    <li><Link style={{textDecoration: "none"}} to="/entertainment/fashion">Thời
+                                        trang</Link></li>
+                                    <li><Link style={{textDecoration: "none"}} to="/entertainment/music">Âm
+                                        nhạc</Link>
+                                    </li>
+                                    <li><Link style={{textDecoration: "none"}} to="/entertainment/movie">Phim</Link>
+                                    </li>
+                                    <li><Link style={{textDecoration: "none"}} to="/entertainment/tv">Truyền
+                                        hình</Link>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">

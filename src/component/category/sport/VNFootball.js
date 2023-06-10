@@ -23,6 +23,10 @@ const VNFootball = () => {
         return subUrl;
     }
 
+    function setTitle(title){
+        return title.replace(/&amp;amp;/g,"&").replace(/&amp;apos;/g, "'");
+    }
+
     useEffect(() => {
         const fetchNews = async () => {
             const response = await axios.get('https://vietnamnet.vn/rss/the-thao/bong-da-viet-nam.rss');
@@ -34,7 +38,7 @@ const VNFootball = () => {
 
             items.forEach((item) => {
                 let result = {
-                    title: item.querySelector('title').textContent,
+                    title: setTitle(item.querySelector('title').textContent),
                     description: item.querySelector('description').textContent.split("</br>")[1].trim(),
                     link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
@@ -59,26 +63,24 @@ const VNFootball = () => {
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <div>
-                                <div style={{fontSize: "48px"}}><Link
-                                    style={{textDecoration: "none", color: "#000", fontWeight: "700"}} to="/sport">Thể
-                                    thao</Link></div>
-                                <nav id="navbar" className="navbar">
-                                    <ul>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng
-                                            đá quốc tế</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/vn-football">Bóng đá Việt
-                                            Nam</Link>
-                                        </li>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/transfer-news">Tin chuyển
-                                            nhượng</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/other-sport">Các môn
-                                            khác</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/sport/backstage">Hậu
-                                            trường</Link></li>
-                                    </ul>
-                                </nav>
-                            </div>
+                            <h2><Link
+                                style={{textDecoration: "none", color: "#000"}} to="/sport">Thể
+                                thao</Link><span style={{fontSize: "28px"}}> / Bóng đá Việt Nam</span></h2>
+                            <nav id="navbar" className="navbar">
+                                <ul>
+                                    <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng
+                                        đá quốc tế</Link></li>
+                                    <li><Link style={{textDecoration: "none"}} to="/sport/vn-football">Bóng đá Việt
+                                        Nam</Link>
+                                    </li>
+                                    <li><Link style={{textDecoration: "none"}} to="/sport/transfer-news">Tin chuyển
+                                        nhượng</Link></li>
+                                    <li><Link style={{textDecoration: "none"}} to="/sport/other-sport">Các môn
+                                        khác</Link></li>
+                                    <li><Link style={{textDecoration: "none"}} to="/sport/backstage">Hậu trường</Link>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">
