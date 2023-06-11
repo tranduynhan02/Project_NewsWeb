@@ -17,7 +17,8 @@ const Footer = ({news}) => {
                             <ul className="footer-links list-unstyled">
                                 <li><i className="bi bi-chevron-right"></i> Trang chi tiết</li>
                                 <li><i className="bi bi-chevron-right"></i> Tìm kiếm</li>
-                                <li><i className="bi bi-chevron-right"></i> Lịch sử xem</li>
+                                <li><a style={{textDecoration: "none"}} href="/viewed-news"><i
+                                    className="bi bi-chevron-right"></i> Lịch sử xem</a></li>
                             </ul>
                         </div>
                         <div className="col-6 col-lg-2">

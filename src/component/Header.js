@@ -12,7 +12,7 @@ const Header = ({news}) => {
 
                 <nav id="navbar" className="navbar">
                     <ul>
-                        <li><Link style={{textDecoration: "none"}} to="/">Trang chủ</Link></li>
+                        <li><Link style={{textDecoration: "none"}} to="/" className="bi-house-fill"></Link></li>
                         <li className="dropdown">
                             <Link style={{textDecoration: "none"}} to="/life">Đời sống<i
                                 className="bi bi-chevron-down dropdown-indicator"></i></Link>
@@ -119,6 +119,7 @@ const Header = ({news}) => {
                                 </li>
                             </ul>
                         </li>
+                       <Link style={{textDecoration: "none"}} to="/viewed-news"><img src="views.png" alt="Tin tức đã xem" width={"30px"} height={"30px"}/></Link>
                     </ul>
                 </nav>
 
