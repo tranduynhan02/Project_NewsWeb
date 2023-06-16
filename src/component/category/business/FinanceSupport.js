@@ -6,6 +6,7 @@ import Center from "../../Items/Center";
 import Bottom from "../../Items/Bottom";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
+import Form from "../../search/Form";
 
 const FinanceSupport = () => {
     const [newsList, setNewList] = useState([]);
@@ -54,6 +55,19 @@ const FinanceSupport = () => {
             <Header/>
             <main id="main">
                 <section className="category-section">
+                    <div className="container-fluid container-xl d-flex justify-content-end">
+                        <div className="position-relative">
+                            <Form/>
+                            {/*<i className="bi bi-list mobile-nav-toggle"></i>*/}
+                            {/*<div className="search-form-wrap js-search-form-wrap">*/}
+                            {/*    <form action="search-result.html" className="search-form">*/}
+                            {/*        <span className="icon bi-search"></span>*/}
+                            {/*        <input type="text" placeholder="Search" className="form-control"></input>*/}
+                            {/*        <button className="btn js-search-close"><span className="bi-x"></span></button>*/}
+                            {/*    </form>*/}
+                            {/*</div>*/}
+                        </div>
+                    </div>
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
                             <h2><Link
