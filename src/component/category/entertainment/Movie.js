@@ -23,8 +23,8 @@ const Movie = () => {
         return subUrl;
     }
 
-    function setTitle(title){
-        return title.replace(/&amp;amp;/g,"&").replace(/&amp;apos;/g, "'");
+    function setTitle(title) {
+        return title.replace(/&amp;amp;/g, "&").replace(/&amp;apos;/g, "'");
     }
 
     useEffect(() => {
@@ -39,7 +39,7 @@ const Movie = () => {
             items.forEach((item) => {
                 let result = {
                     title: setTitle(item.querySelector('title').textContent),
-                    description: item.querySelector('description').textContent.split("</br>")[1].trim(),
+                    description: setTitle(item.querySelector('description').textContent.split("</br>")[1].trim()),
                     link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,

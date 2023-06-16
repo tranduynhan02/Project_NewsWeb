@@ -38,8 +38,8 @@ const OtherSport = () => {
 
             items.forEach((item) => {
                 let result = {
-                    title: item.querySelector('title').textContent,
-                    description: item.querySelector('description').textContent.split("</br>")[1].trim(),
+                    title: setTitle(item.querySelector('title').textContent),
+                    description: setTitle(item.querySelector('description').textContent.split("</br>")[1].trim()),
                     link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,

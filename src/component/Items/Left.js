@@ -2,37 +2,41 @@ import React, {useState} from 'react';
 // import '../../../assets/css/style.css';
 const Left = ({news}) => {
     const [viewedNews, setViewedNews] = useState(JSON.parse(localStorage.getItem("viewedNews")));
-    if (viewedNews == '') {
-        localStorage.setItem("viewedNews", JSON.stringify([]));
-    }
-
-    //Kiem tra tin tuc trung lap trong LocalStorage
-    function checkDuplicateNews(news, viewedNews) {
-        for (let i = 0; i < viewedNews.length; i++) {
-            if (news.link === viewedNews[i].link) {
-                // Xoa value cu trong LocalStorage
-                viewedNews.splice(i, 1);
-                localStorage.setItem("viewedNews", JSON.stringify(viewedNews));
-                // Them tin tuc da xem vao lich su xem tin tuc
-                const newViewedNews = [news, ...viewedNews];
-                setViewedNews(newViewedNews);
-                // Luu lich su xem tin tuc vao LocalStorage
-                localStorage.setItem('viewedNews', JSON.stringify(newViewedNews));
-                return true;
-            }
-        }
-        return false;
-    }
 
     const handleViewNews = (news) => {
-        if (!checkDuplicateNews(news, viewedNews)) {
-            // Them tin tuc da xem vao lich su xem tin tuc
-            const newViewedNews = [news, ...viewedNews];
+        // bien found kiem tra phan tu ton tai
+        let found = false;
+        const newViewedNews = viewedNews.filter((item) => {
+            if (item.link === news.link) {
+                // ton tai
+                found = true;
+                // tra ve false de loai bo phan tu khoi man viewedNews
+                return false;
+            }
+            // tra ve true vi khong co phan tu nao trung lap
+            return true;
+        });
+        if (found) {
+            // found=true
+            // dua news vao dau mang
+            newViewedNews.unshift(news);
+            // cap nhat mang viewedNews
             setViewedNews(newViewedNews);
-            // Lưu lich su xem tin tuc vao LocalStorage
+            // luu vao LocalStoragre
             localStorage.setItem('viewedNews', JSON.stringify(newViewedNews));
+            return true;
+        } else {
+            // found=false
+            // tao mang moi them news vao dau
+            const updatedViewedNews = [news, ...viewedNews];
+            // cap nhat mang viewedNews
+            setViewedNews(updatedViewedNews);
+            // luu vao LocalStorage
+            localStorage.setItem('viewedNews', JSON.stringify(updatedViewedNews));
+            return false;
         }
     };
+
     return (
         <div className="col-lg-4">
             <div className="post-entry-1 lg">

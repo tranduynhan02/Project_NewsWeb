@@ -57,6 +57,8 @@ import Advise from "./category/real_estate/Advise";
 import Stock_Market from "./category/real_estate/Stock_Market";
 import Beautiful_House from "./category/real_estate/Beautiful_House";
 import Change_to_settle_down from "./category/real_estate/Change_to_settle_down";
+import Podcast from "./category/podcast/Podcast";
+import PodcastDetail from "./detail/PodcastDetail";
 
 export const appRouter = createBrowserRouter([{
 
@@ -144,6 +146,12 @@ export const appRouter = createBrowserRouter([{
         {path: "advise", element: <Advise/>},
         {path: "stock-market", element: <Stock_Market/>},
         {path: "beautiful-house", element: <Beautiful_House/>},
-        {path: "chance-to-settle-down", element: <Change_to_settle_down/>}
+        {path: "chance-to-settle-down", element: <Change_to_settle_down/>},
+        //podcast
+        {path: "podcast", element: <Podcast/>},
+        {
+            path: "podcast/:link",
+            element: <PodcastDetail/>,
+        },
     ]
 }]);
