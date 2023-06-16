@@ -58,7 +58,7 @@ const Left = ({podcast}) => {
 
     return (<div className="col-lg-4">
         <div className="post-entry-1 lg">
-            <a to={"/podcast/" + podcast.link} onClick={() => handleViewNews(podcast)}>
+            <a href={"/podcast/" + podcast.link} onClick={() => handleViewNews(podcast)}>
                 <img src="/headphone.png" alt="podcast" width={"30px"} height={"30px"} style={{
                     position: "absolute",
                     margin: "5px",

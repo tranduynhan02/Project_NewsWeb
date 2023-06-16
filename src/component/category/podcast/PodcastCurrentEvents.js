@@ -7,7 +7,7 @@ import Bottom from "./items/Bottom";
 import Left from "./items/Left";
 import Center from "./items/Center";
 
-const Podcast = () => {
+const PodcastCurrentEvents = () => {
     const [podcasts, setPodcasts] = useState([]);
 
     function getlink(url) {
@@ -23,7 +23,7 @@ const Podcast = () => {
     useEffect(() => {
         const fetchPodcasts = async () => {
             try {
-                const response = await axios.get('https://vietnamnet.vn/podcast.rss');
+                const response = await axios.get('https://vietnamnet.vn/podcast/ban-tin-thoi-su.rss');
                 const rss = response.data;
                 const parser = new DOMParser();
                 const xml = parser.parseFromString(rss, 'text/xml');
@@ -120,4 +120,4 @@ const Podcast = () => {
     );
 };
 
-export default Podcast;
+export default PodcastCurrentEvents;
