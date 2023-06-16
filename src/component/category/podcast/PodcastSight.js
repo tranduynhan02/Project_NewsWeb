@@ -7,7 +7,7 @@ import Bottom from "./items/Bottom";
 import Left from "./items/Left";
 import Center from "./items/Center";
 
-const Podcast = () => {
+const PodcastSight = () => {
     const [podcasts, setPodcasts] = useState([]);
 
     function getlink(url) {
@@ -23,7 +23,7 @@ const Podcast = () => {
     useEffect(() => {
         const fetchPodcasts = async () => {
             try {
-                const response = await axios.get('https://vietnamnet.vn/podcast.rss');
+                const response = await axios.get('https://vietnamnet.vn/podcast/goc-nhin.rss');
                 const rss = response.data;
                 const parser = new DOMParser();
                 const xml = parser.parseFromString(rss, 'text/xml');
@@ -77,9 +77,9 @@ const Podcast = () => {
                                 <ul>
                                     <li><Link style={{textDecoration: "none"}} to="/podcast/current-event">Bản tin thời
                                         sự</Link></li>
-                                    {/*<li><Link style={{textDecoration: "none"}} to="/podcast/sight">Góc nhìn</Link>*/}
-                                    {/*</li>*/}
-                                    {/*<li><Link style={{textDecoration: "none"}} to="/podcast/strange">Độc lạ</Link></li>*/}
+                                    <li><Link style={{textDecoration: "none"}} to="/podcast/sight">Góc nhìn</Link>
+                                    </li>
+                                    <li><Link style={{textDecoration: "none"}} to="/podcast/strange">Độc lạ</Link></li>
                                     <li><Link style={{textDecoration: "none"}} to="/podcast/live-young">Sống trẻ</Link>
                                     </li>
                                     <li><Link style={{textDecoration: "none"}} to="/podcast/good-book">Sách hay</Link>
@@ -120,4 +120,4 @@ const Podcast = () => {
     );
 };
 
-export default Podcast;
+export default PodcastSight;
