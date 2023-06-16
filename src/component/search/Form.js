@@ -28,7 +28,7 @@ class MyComponent extends React.Component {
 
     render() {
         return (
-            <div key={this.key} style={{marginTop:20}}>
+            <div key={this.key} style={{marginTop:20, display:"flex"}}>
                 <form id="form_search" onSubmit={handleClick}>
                     <input id="text" type="text" name="name" value={this.state.name} onChange={this.handleInputChange} style={{float:"left",width:120}} />
                 </form>

@@ -2,9 +2,6 @@ import React, {useState} from 'react';
 // import '../../../assets/css/style.css';
 const Center = ({news}) => {
     const [viewedNews, setViewedNews] = useState(JSON.parse(localStorage.getItem("viewedNews")));
-    if (viewedNews == '') {
-        localStorage.setItem("viewedNews", JSON.stringify([]));
-    }
 
     //Kiem tra tin tuc trung lap trong LocalStorage
     function checkDuplicateNews(news, viewedNews) {
@@ -36,7 +33,7 @@ const Center = ({news}) => {
     return (
         <div className="post-entry-1">
             <a href={"/news/" + news.link} onClick={() => handleViewNews(news)}><img src={news.image} alt=""
-                                                                                    className="img-fluid"></img></a>
+                                                                                     className="img-fluid"></img></a>
             <div className="post-meta"><span>{news.pubDate}</span>
             </div>
             <h2><a href={"/news/" + news.link} onClick={() => handleViewNews(news)}
