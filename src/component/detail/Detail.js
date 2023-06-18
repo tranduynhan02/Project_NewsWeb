@@ -13,7 +13,6 @@ import Image from "./items/Image";
 import {Link, useParams} from "react-router-dom";
 import Relate from "./items/Relate";
 import ViewedNew from "./items/ViewedNew";
-import Form from "../search/Form";
 const Detail = () => {
     const [title, setTitle] = useState();
     const [listImage, setListImage] = useState([]);
@@ -23,51 +22,49 @@ const Detail = () => {
     const [article, setArticle] = useState([]);
     const [articleTitle, setarTicleTitle] = useState([]);
     const [viewedNews, setViewedNews] = useState(JSON.parse(localStorage.getItem("viewedNews")));
-
-    //Danh sach tin noi bat
-    const [outstanding, setOutstanding] = useState([]);
-
     async function ScrapeData() {
         let {link} = useParams();
-        const {data} = await axios.get("https://vietnamnet.vn/" + link);
-        const cheerio = require('cheerio');
-        const $ = cheerio.load(data);
+       try{
+           const {data} = await axios.get("https://vietnamnet.vn/" + link);
+           const cheerio = require('cheerio');
+           const $ = cheerio.load(data);
 
-        // Lay ra title
-        setTitle($('h1').text());
-        // Lay ra noi dung tomtat
-        setSummary($('h2').text());
-        // Lay ra danh sach image
-        const list = [];
-        $('figure img').each((i, el) => {
-            const imageUrl = $(el).attr('src');
-            list.push(imageUrl);
-        });
-        setListImage(list);
-        // Lay ra danh sach thong tin
-        const listDes = [];
-        $('div p').each((i, el) => {
-            const text = $(el).text();
-            listDes.push(text);
-        });
-        setListDecription(listDes);
+           // Lay ra title
+           setTitle($('h1').text());
+           // Lay ra noi dung tomtat
+           setSummary($('h2').text());
+           // Lay ra danh sach image
+           const list = [];
+           $('figure img').each((i, el) => {
+               const imageUrl = $(el).attr('src');
+               list.push(imageUrl);
+           });
+           setListImage(list);
+           // Lay ra danh sach thong tin
+           const listDes = [];
+           $('div p').each((i, el) => {
+               const text = $(el).text();
+               listDes.push(text);
+           });
+           setListDecription(listDes);
 
-        // Link trang chi tiet
-        const linkDetail = [];
-        $('article a').each((i, el) => {
-            const titleL = $(el).attr('href');
-            linkDetail.push(titleL);
-        });
-        setArticle(linkDetail);
+           // Link trang chi tiet
+           const linkDetail = [];
+           $('article a').each((i, el) => {
+               const titleL = $(el).attr('href');
+               linkDetail.push(titleL);
+           });
+           setArticle(linkDetail);
 
-        const texts = [];
-        $('article a').each((i, el) => {
-            const titleL = $(el).text();
-            texts.push(titleL);
-        });
-        setarTicleTitle(texts);
+           const texts = [];
+           $('article a').each((i, el) => {
+               const titleL = $(el).text();
+               texts.push(titleL);
+           });
+           setarTicleTitle(texts);
+       }catch (error){
+       }
     }
-
     ScrapeData();
 
     function getIndex() {

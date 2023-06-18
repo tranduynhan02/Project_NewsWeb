@@ -64,6 +64,7 @@ import PodcastSight from "./category/podcast/PodcastSight";
 import PodcastStrange from "./category/podcast/PodcastStrange";
 import PodcastLiveYoung from "./category/podcast/PodcastLiveYoung";
 import PodcastGoodBook from "./category/podcast/PodcastGoodBook";
+import SpeechRecognitionComponent from "./search/SpeechRecognitionComponent";
 
 export const appRouter = createBrowserRouter([{
 
@@ -94,6 +95,7 @@ export const appRouter = createBrowserRouter([{
         {path: "english", element: <English/>},
         {path: "recruitment", element: <Recruitment/>},
         {path: "ai-contest", element: <AiContest/>},
+        {path: "voice", element: <SpeechRecognitionComponent/>},
         {
             path: "news/:link",
             element: <Detail/>,
