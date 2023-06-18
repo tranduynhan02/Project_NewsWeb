@@ -5,6 +5,7 @@ import Footer from "../Footer";
 import React, {useEffect, useRef, useState} from "react";
 import axios from "axios";
 import Relate from "./items/Relate";
+import Form from "../search/Form";
 
 const PodcastDetail = () => {
     const [title, setTitle] = useState();
@@ -147,6 +148,11 @@ const PodcastDetail = () => {
         <div>
             <Header/>
             <main id="main">
+                <div className="container-fluid container-xl d-flex justify-content-end">
+                    <div className="position-relative">
+                        <Form/>
+                    </div>
+                </div>
                 <section className="single-post-content">
                     <div className="container">
                         <div style={{maxWidth: "100%", margin: "auto", marginBottom: "50px"}}>
