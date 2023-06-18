@@ -235,7 +235,7 @@ const PodcastDetail = () => {
                                     <div className="col-lg-12">
                                         <h5 className="comment-title">Bình luận</h5>
                                         <div className="row">
-                                            <div className="col-lg-6 m-3">b
+                                            <div className="col-lg-6 m-3">
                                                 <label htmlFor="comment-name">Tên</label>
                                                 <input type="text" className="form-control" id="comment-name"
                                                        placeholder="Nhập tên"></input>

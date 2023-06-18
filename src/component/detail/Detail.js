@@ -12,10 +12,8 @@ import Footer from "../Footer";
 import Image from "./items/Image";
 import {Link, useParams} from "react-router-dom";
 import Relate from "./items/Relate";
-import Bottom from "../Items/Bottom";
 import ViewedNew from "./items/ViewedNew";
 import Form from "../search/Form";
-
 const Detail = () => {
     const [title, setTitle] = useState();
     const [listImage, setListImage] = useState([]);
@@ -83,6 +81,22 @@ const Detail = () => {
         }
     }
 
+    function voice() {
+        let text = title + ". " + summary;
+         // text += listDecription.join(' ');
+        for (let i = 2; i < listDecription.length - 1; i++) {
+            text += listDecription[i];
+            if (i !== listDecription.length - 2) {
+                text += ' ';
+            }
+        }
+        window.responsiveVoice.speak(text.replace(/\s{2,}/g, ' '), 'Vietnamese Female');
+    }
+
+    function cancelVoice() {
+        window.responsiveVoice.cancel();
+    }
+
     return (
         <div>
             <Header/>
@@ -96,6 +110,14 @@ const Detail = () => {
                         <div className="row">
                             <div className="col-md-9 post-content" data-aos="fade-up">
                                 <div className="single-post">
+                                    <img src="/audio-speaker-on.png"
+                                         alt="Tin tức đã xem"
+                                         width={"30px"}
+                                         height={"30px"} onClick={voice}/>
+                                    <img src="/mute.png"
+                                         alt="Tin tức đã xem"
+                                         width={"30px"}
+                                         height={"30px"} onClick={cancelVoice} style={{marginLeft:"15px"}}/>
                                     <h1 className="mb-5" style={{maxWidth: "90%"}}>{title}</h1>
                                     <p style={{maxWidth: "90%", fontWeight: "bold"}}>{summary}</p>
                                     {listDecription.map((p, index) => (
@@ -105,6 +127,7 @@ const Detail = () => {
                                     ))}
                                 </div>
                                 <div className="row justify-content-center mt-5">
+
                                     <div className="col-lg-12">
                                         <h5 className="comment-title">Bình luận</h5>
                                         <div className="row">
