@@ -12,9 +12,8 @@ import Footer from "../Footer";
 import Image from "./items/Image";
 import {Link, useParams} from "react-router-dom";
 import Relate from "./items/Relate";
-import Bottom from "../Items/Bottom";
 import ViewedNew from "./items/ViewedNew";
-
+// import ResponsiveVoice from 'responsivevoice';
 const Detail = () => {
     const [title, setTitle] = useState();
     const [listImage, setListImage] = useState([]);
@@ -81,7 +80,18 @@ const Detail = () => {
             return y - 1;
         }
     }
-
+    function voice() {
+        // for(let i =1; i<listDecription.length;i++){
+        //     // window.responsiveVoice.speak(listDecription[4], 'Vietnamese Female');
+        //     console.log(listDecription[1]);
+        // }
+        const text = listDecription.join(' ');
+        console.log(text);
+        window.responsiveVoice.speak(text.replace(/\s{2,}/g, ' '), 'Vietnamese Female');
+    }
+    function cancelVoice(){
+        window.responsiveVoice.cancel();
+    }
     return (
         <div>
             <Header/>
@@ -93,6 +103,8 @@ const Detail = () => {
                                  src={"https://static.vnncdn.net/images/vnn-viet-nam-hung-cuong.svg"}/>
                         </div>
                         <div className="row">
+                            <button onClick={voice}>Convert text to speech</button>
+                            <button onClick={cancelVoice}>Cancel</button>
                             <div className="col-md-9 post-content" data-aos="fade-up">
                                 <div className="single-post">
                                     <h1 className="mb-5" style={{maxWidth: "90%"}}>{title}</h1>

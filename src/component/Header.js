@@ -119,7 +119,10 @@ const Header = ({news}) => {
                                 </li>
                             </ul>
                         </li>
-                       <Link style={{textDecoration: "none"}} to="/viewed-news"><img src="views.png" alt="Tin tức đã xem" width={"30px"} height={"30px"}/></Link>
+                        <Link style={{textDecoration: "none"}} to="/viewed-news"><img src="/views.png"
+                                                                                      alt="Tin tức đã xem"
+                                                                                      width={"30px"}
+                                                                                      height={"30px"}/></Link>
                     </ul>
                 </nav>
 
