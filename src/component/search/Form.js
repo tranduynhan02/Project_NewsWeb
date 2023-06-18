@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SpeechRecognitionComponent from "./SpeechRecognitionComponent";
 
 
 class MyComponent extends React.Component {
@@ -29,6 +30,7 @@ class MyComponent extends React.Component {
     render() {
         return (
             <div key={this.key} className="d-flex float-end" style={{margin: "-12px 24px 0 0"}}>
+                <SpeechRecognitionComponent/>
                 <form className="example" id="form_search" onSubmit={handleClick}>
                     <input id="text" type="text" name="name" value={this.state.name} onChange={this.handleInputChange} style={{float:"left",width:180}} />
                     <Link to={`/search/${this.state.name}`}><button style={{border:"none"}}><i className="fa fa-search"></i></button></Link>

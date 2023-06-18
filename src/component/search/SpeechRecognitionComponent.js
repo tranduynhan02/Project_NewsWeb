@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import annyang from 'annyang';
-import {Link, useHistory } from "react-router-dom";
+import {Link, useNavigate } from "react-router-dom";
 const SpeechRecognitionComponent = () => {
-    const history = useHistory();
+    const history = useNavigate();
     const [text, setText] = useState('');
 
     function handleInput(input) {
@@ -20,7 +20,6 @@ const SpeechRecognitionComponent = () => {
 
         recognition.start();
     }
-
     if (annyang) {
         // Định nghĩa lệnh bằng giọng nói
         const commands = {
@@ -31,16 +30,15 @@ const SpeechRecognitionComponent = () => {
         // Thêm lệnh cho annyang
         annyang.addCommands(commands);
     }
-    if (text.endsWith('.')) {
-        setText(text.slice(0, -1));
-        history('search/'+text);
+    if(text!=''){
+        if (text.endsWith('.')) {
+            history(`/search/${text.slice(0, -1)}`);
+            setText('');
+        }
     }
     return (
         <div>
-            <button onClick={startListening}>Bắt đầu nhận dạng giọng nói</button>
-            {/*<input type="text" style={{display:"none"}} value={text} onChange={(event) => handleInput(event.target.value)} />*/}
-            <p>{text}</p>
-            <Link to={`/search/${text}`}><button style={{border:"none"}}><i className="fa fa-search"></i></button></Link>
+            <button onClick={startListening} style={{border:"none"}}><i className="fa fa-microphone"></i></button>
         </div>
     );
 };

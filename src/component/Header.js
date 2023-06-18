@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import Form from "./search/Form";
+import SpeechRecognitionComponent from "./search/SpeechRecognitionComponent";
 
 const Header = ({news}) => {
     return (
