@@ -45,7 +45,7 @@ const Left_Home = ({ news }) => {
     );
 };
 
-const MAX_LENGTH = 55; //Giới hạn số ký tự cho phép hiển thị
+const MAX_LENGTH = 100; //Giới hạn số ký tự cho phép hiển thị
 const ELLIPSIS = '...'; //Dấu ba chấm để hiển thị ẩn đi
 
 function MyComponent(text) {
