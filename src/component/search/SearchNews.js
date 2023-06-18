@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "../Header";
 import Footer from "../Footer";
 import Bottom from "../Items/Bottom";
+import Form from "./Form";
 
 function SearchNews() {
     const {name} = useParams();
@@ -304,6 +305,11 @@ function SearchNews() {
         <div className="Home">
             <Header/>
             <main id="main">
+                <div className="container-fluid container-xl d-flex justify-content-end">
+                    <div className="position-relative">
+                        <Form/>
+                    </div>
+                </div>
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="row g-5">

@@ -14,6 +14,7 @@ import Center_Home from "./Center_Home";
 import Trending_Home from "./Trending_Home";
 import Small_Center from "./Small_Center";
 import SmallTrending from "./SmallTrending";
+import Form from "../../search/Form";
 
 const Home = () => {
     // lấy tin tức du lịch
@@ -285,6 +286,11 @@ const Home = () => {
         <div className="Home">
             <Header/>
             <main id="main">
+                <div className="container-fluid container-xl d-flex justify-content-end">
+                    <div className="position-relative">
+                        <Form/>
+                    </div>
+                </div>
                 <section id="posts" className="posts">
                     <div className="container" data-aos="fade-up">
                         <div className="row g-5">

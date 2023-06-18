@@ -13,6 +13,7 @@ import Bottom from "../../Items/Bottom";
 import Header from "../../Header";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
+import Form from "../../search/Form";
 
 const Tips = () => {
     const [newsList, setNewsList] = useState([]);
@@ -56,6 +57,11 @@ const Tips = () => {
     return (
         <div className="Life">
             <Header/>
+            <div className="container-fluid container-xl d-flex justify-content-end">
+                <div className="position-relative">
+                    <Form/>
+                </div>
+            </div>
             <main id="main">
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">

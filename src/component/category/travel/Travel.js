@@ -12,6 +12,7 @@ import Bottom from "../../Items/Bottom";
 import Header from "../../Header";
 import Footer from "../../Footer";
 import Small_Center from "../home/Small_Center";
+import Form from "../../search/Form";
 
 const Travel = () => {
     const [newsList, setNewsList] = useState([]);
@@ -57,6 +58,11 @@ const Travel = () => {
         <div className="Travel">
             <Header/>
             <main id="main">
+                <div className="container-fluid container-xl d-flex justify-content-end">
+                    <div className="position-relative">
+                        <Form/>
+                    </div>
+                </div>
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
