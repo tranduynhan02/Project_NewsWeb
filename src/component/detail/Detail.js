@@ -80,18 +80,23 @@ const Detail = () => {
             return y - 1;
         }
     }
+
     function voice() {
-        // for(let i =1; i<listDecription.length;i++){
-        //     // window.responsiveVoice.speak(listDecription[4], 'Vietnamese Female');
-        //     console.log(listDecription[1]);
-        // }
-        const text = listDecription.join(' ');
-        console.log(text);
+        let text = title + ". " + summary;
+         // text += listDecription.join(' ');
+        for (let i = 2; i < listDecription.length - 1; i++) {
+            text += listDecription[i];
+            if (i !== listDecription.length - 2) {
+                text += ' ';
+            }
+        }
         window.responsiveVoice.speak(text.replace(/\s{2,}/g, ' '), 'Vietnamese Female');
     }
-    function cancelVoice(){
+
+    function cancelVoice() {
         window.responsiveVoice.cancel();
     }
+
     return (
         <div>
             <Header/>
@@ -103,10 +108,16 @@ const Detail = () => {
                                  src={"https://static.vnncdn.net/images/vnn-viet-nam-hung-cuong.svg"}/>
                         </div>
                         <div className="row">
-                            <button onClick={voice}>Convert text to speech</button>
-                            <button onClick={cancelVoice}>Cancel</button>
                             <div className="col-md-9 post-content" data-aos="fade-up">
                                 <div className="single-post">
+                                    <img src="/audio-speaker-on.png"
+                                         alt="Tin tức đã xem"
+                                         width={"30px"}
+                                         height={"30px"} onClick={voice}/>
+                                    <img src="/mute.png"
+                                         alt="Tin tức đã xem"
+                                         width={"30px"}
+                                         height={"30px"} onClick={cancelVoice} style={{marginLeft:"15px"}}/>
                                     <h1 className="mb-5" style={{maxWidth: "90%"}}>{title}</h1>
                                     <p style={{maxWidth: "90%", fontWeight: "bold"}}>{summary}</p>
                                     {listDecription.map((p, index) => (
@@ -116,6 +127,7 @@ const Detail = () => {
                                     ))}
                                 </div>
                                 <div className="row justify-content-center mt-5">
+
                                     <div className="col-lg-12">
                                         <h5 className="comment-title">Bình luận</h5>
                                         <div className="row">
@@ -172,9 +184,11 @@ const Detail = () => {
                                         <li><Link style={{textDecoration: "none"}} to="/">Trang chủ</Link></li>
                                         <li><Link style={{textDecoration: "none"}} to="/life">Đời sống</Link></li>
                                         <li><Link style={{textDecoration: "none"}} to="/education">Giáo dục</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/current-events">Thời sự</Link></li>
-                                        <li> <Link style={{textDecoration:"none"}} to="/travel">Du lịch</Link></li>
-                                        <li> <Link style={{textDecoration:"none"}} to="/real-estate">Bất động sản</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/current-events">Thời sự</Link>
+                                        </li>
+                                        <li><Link style={{textDecoration: "none"}} to="/travel">Du lịch</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/real-estate">Bất động sản</Link>
+                                        </li>
                                         <li><Link style={{textDecoration: "none"}} to="/business">Kinh doanh</Link></li>
                                         <li><Link style={{textDecoration: "none"}} to="/sport">Thể thao</Link></li>
                                         <li><Link style={{textDecoration: "none"}} to="/entertainment">Giải trí</Link>
