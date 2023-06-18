@@ -61,31 +61,28 @@ const Business = () => {
         <div className="Business">
             <Header/>
             <main id="main">
-                <div className="container-fluid container-xl d-flex justify-content-end">
-                    <div className="position-relative">
-                        <Form/>
-                    </div>
-                </div>
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2><Link
-                                style={{textDecoration: "none", color: "#000"}} to="/business">Kinh
-                                doanh</Link></h2>
-                            <nav id="navbar" className="navbar">
-                                <ul>
-                                    <li><Link style={{textDecoration: "none"}} to="/business/finance">Tài
-                                        chính</Link></li>
-                                    <li><Link style={{textDecoration: "none"}} to="/business/invest">Đầu tư</Link>
-                                    </li>
-                                    <li><Link style={{textDecoration: "none"}} to="/business/market">Thị
-                                        trường</Link></li>
-                                    <li><Link style={{textDecoration: "none"}} to="/business/businessmen">Doanh
-                                        nhân</Link></li>
-                                    <li><Link style={{textDecoration: "none"}} to="/business/finance-support">Tư vấn
-                                        tài chính</Link></li>
-                                </ul>
-                            </nav>
+                            <div>
+                                <h2><Link
+                                    style={{textDecoration: "none", color: "#000"}} to="/business">Kinh
+                                    doanh</Link></h2>
+                                <nav id="navbar" className="navbar">
+                                    <ul>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/finance">Tài
+                                            chính</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/invest">Đầu tư</Link>
+                                        </li>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/market">Thị
+                                            trường</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/businessmen">Doanh
+                                            nhân</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/finance-support">Tư vấn
+                                            tài chính</Link></li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">

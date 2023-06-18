@@ -61,32 +61,29 @@ const TransferNews = () => {
         <div className="Sport">
             <Header/>
             <main id="main">
-                <div className="container-fluid container-xl d-flex justify-content-end">
-                    <div className="position-relative">
-                        <Form/>
-                    </div>
-                </div>
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2><Link
-                                style={{textDecoration: "none", color: "#000"}} to="/sport">Thể
-                                thao</Link><span style={{fontSize: "28px"}}> / Tin chuyển nhượng</span></h2>
-                            <nav id="navbar" className="navbar">
-                                <ul>
-                                    <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng
-                                        đá quốc tế</Link></li>
-                                    <li><Link style={{textDecoration: "none"}} to="/sport/vn-football">Bóng đá Việt
-                                        Nam</Link>
-                                    </li>
-                                    <li><Link style={{textDecoration: "none"}} to="/sport/transfer-news">Tin chuyển
-                                        nhượng</Link></li>
-                                    <li><Link style={{textDecoration: "none"}} to="/sport/other-sport">Các môn
-                                        khác</Link></li>
-                                    <li><Link style={{textDecoration: "none"}} to="/sport/backstage">Hậu trường</Link>
-                                    </li>
-                                </ul>
-                            </nav>
+                            <div>
+                                <h2><Link
+                                    style={{textDecoration: "none", color: "#000"}} to="/sport">Thể
+                                    thao</Link><span style={{fontSize: "28px"}}> / Tin chuyển nhượng</span></h2>
+                                <nav id="navbar" className="navbar">
+                                    <ul>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng
+                                            đá quốc tế</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/vn-football">Bóng đá Việt
+                                            Nam</Link>
+                                        </li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/transfer-news">Tin chuyển
+                                            nhượng</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/other-sport">Các môn
+                                            khác</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/backstage">Hậu trường</Link>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">

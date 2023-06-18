@@ -143,6 +143,9 @@ const Header = ({news}) => {
                            style={{color: "#212529"}}><span className="bi-instagram"></span></a>
                     </div>
                 </div>
+                <div className="container-fluid container-xl position-absolute">
+                        <Form/>
+                </div>
                 {/*<div className="container-fluid container-xl d-flex align-items-center justify-content-between">*/}
                 {/*    <div className="position-relative">*/}
                 {/*        <Form/>*/}
