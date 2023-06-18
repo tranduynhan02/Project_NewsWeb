@@ -5,13 +5,12 @@ import Footer from "../Footer";
 import React, {useEffect, useRef, useState} from "react";
 import axios from "axios";
 import Relate from "./items/Relate";
+import * as cheerio from "cheerio";
 
 const PodcastDetail = () => {
     const [title, setTitle] = useState();
     const [summary, setSummary] = useState();
     const [audio, setAudio] = useState();
-    const [article, setArticle] = useState([]);
-    const [articleTitle, setarTicleTitle] = useState([]);
     const {link} = useParams();
     const PLAYBACK_RATES = [0.5, 0.75, 1, 1.25, 1.5, 2];
     const [displayPlaybackRates, setDisplayPlaybackRates] = useState(false);
@@ -22,8 +21,8 @@ const PodcastDetail = () => {
     const [playbackRate, setPlaybackRate] = useState(1);
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
-    const [viewedNews, setViewedNews] = useState(JSON.parse(localStorage.getItem("viewedNews")));
-
+    const [viewedNews, setViewedNews] = useState(JSON.parse(localStorage.getItem("viewedNews")))
+    const [relatedPodcasts, setRelatedPodcasts] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -35,20 +34,20 @@ const PodcastDetail = () => {
                 setSummary($("h2").text());
                 setAudio($('audio source').attr('src'));
 
-                // Link trang chi tiet
-                const linkDetail = [];
-                $('article a').each((i, el) => {
-                    const titleL = $(el).attr('href');
-                    linkDetail.push(titleL);
+                // Lay thong tin lien quan podcast
+                let result = [];
+                $('.related-podcast-horizontal').each((i, el) => {
+                    const title = $(el).find('.horizontalPost__main-title a').text();
+                    const link = $(el).find('.horizontalPost__main-title a').attr('href');
+                    const image = $(el).find('img').attr('src');
+                    let related = {
+                        title: title,
+                        link: link,
+                        image: image,
+                    }
+                    result.push(related);
                 });
-                setArticle(linkDetail);
-
-                const texts = [];
-                $('article a').each((i, el) => {
-                    const titleL = $(el).text();
-                    texts.push(titleL);
-                });
-                setarTicleTitle(texts);
+                setRelatedPodcasts(result);
             } catch (error) {
                 console.log(error);
             }
@@ -236,7 +235,7 @@ const PodcastDetail = () => {
                                     <div className="col-lg-12">
                                         <h5 className="comment-title">Bình luận</h5>
                                         <div className="row">
-                                            <div className="col-lg-6 mb-3">
+                                            <div className="col-lg-6 m-3">b
                                                 <label htmlFor="comment-name">Tên</label>
                                                 <input type="text" className="form-control" id="comment-name"
                                                        placeholder="Nhập tên"></input>
@@ -275,9 +274,18 @@ const PodcastDetail = () => {
                                     <div className="tab-content" id="pills-tabContent">
                                         <div className="tab-pane fade active show" id="pills-popular" role="tabpanel"
                                              aria-labelledby="pills-popular-tab">
-                                            {article.map((i, index) => (
-                                                index % 2 !== 0 ?
-                                                    <Relate key={index} link={i} title={articleTitle[index]}/> : ""
+                                            {relatedPodcasts.map((podcast, index) => (
+                                                index < 6 ?
+                                                    <div className="post-entry-1 border-bottom" key={index}>
+                                                        <div className="post-meta"></div>
+                                                        <h2 className="mb-2">
+                                                            <a style={{textDecoration: "none"}}
+                                                               href={"/podcast" + podcast.link}>
+                                                                <img src="/headphone.png" alt="podcast" width={"20px"}
+                                                                     height={"20px"}
+                                                                     style={{margin: "auto"}}/>{podcast.title}</a>
+                                                        </h2>
+                                                    </div> : ""
                                             ))}
                                         </div>
                                     </div>
