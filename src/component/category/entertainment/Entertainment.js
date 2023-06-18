@@ -65,10 +65,7 @@ const Entertainment = () => {
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
                             <div>
-                                <h2><Link
-                                    style={{textDecoration: "none", color: "#000"}}
-                                    to="/entertainment">Giải
-                                    trí</Link></h2>
+                                <h2>Giải trí</h2>
                                 <nav id="navbar" className="navbar">
                                     <ul>
                                         <li><Link style={{textDecoration: "none"}} to="/entertainment/star-world">Sao

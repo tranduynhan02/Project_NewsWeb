@@ -65,9 +65,7 @@ const TransferNews = () => {
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
                             <div>
-                                <h2><Link
-                                    style={{textDecoration: "none", color: "#000"}} to="/sport">Thể
-                                    thao</Link><span style={{fontSize: "28px"}}> / Tin chuyển nhượng</span></h2>
+                                <h2>Thể thao<span style={{fontSize: "28px"}}> / Tin chuyển nhượng</span></h2>
                                 <nav id="navbar" className="navbar">
                                     <ul>
                                         <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng

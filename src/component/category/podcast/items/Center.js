@@ -41,16 +41,14 @@ const Center = ({podcast}) => {
     const getAudioDuration = async () => {
         try {
             const audio = new Audio(podcast.audio);
-            await new Promise(resolve => {
-                audio.addEventListener("loadedmetadata", () => {
-                    const duration = Math.floor(audio.duration / 60);
-                    setAudioDuration(`${duration} phút`);
-                    resolve();
-                });
+            // chờ tệp audio được tải xuống trước khi truy cập vào thuộc tính duration
+            await audio.addEventListener("loadedmetadata", () => {
+                const duration = Math.floor(audio.current.duration / 60);
+                setAudioDuration(`${duration} phút`);
             });
+            audio.load(); // để tải dữ liệu trước khi đăng ký sự kiện.
         } catch (e) {
             console.log(e);
-            setAudioDuration('Không thể tính toán thời lượng');
         }
     };
 

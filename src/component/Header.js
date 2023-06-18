@@ -144,7 +144,7 @@ const Header = ({news}) => {
                     </div>
                 </div>
                 <div className="container-fluid container-xl position-absolute">
-                        <Form/>
+                    <Form/>
                 </div>
             </div>
         </header>
