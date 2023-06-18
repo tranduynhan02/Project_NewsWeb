@@ -59,20 +59,15 @@ const Eat = () => {
         <div className="Travel">
             <Header/>
             <main id="main">
-                <div className="container-fluid container-xl d-flex justify-content-end">
-                    <div className="position-relative">
-                        <Form/>
-                    </div>
-                </div>
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Du lịch<span style={{fontSize:"25px"}}> / Ăn ăn uống uống</span></h2>
-                            <nav id="navbar" className="navbar">
-                                <Link style={{textDecoration: "none"}} to="/go">Đi đâu chơi đi</Link>
-                                <Link style={{textDecoration: "none"}} to="/eat">Ăn ăn uống uống</Link>
-                                <Link style={{textDecoration: "none"}} to="/sleep">Ngủ ngủ nghỉ nghỉ</Link>
-                            </nav>
+                            <div><h2>Du lịch<span style={{fontSize:"25px"}}> / Ăn ăn uống uống</span></h2>
+                                <nav id="navbar" className="navbar">
+                                    <Link style={{textDecoration: "none"}} to="/go">Đi đâu chơi đi</Link>
+                                    <Link style={{textDecoration: "none"}} to="/eat">Ăn ăn uống uống</Link>
+                                    <Link style={{textDecoration: "none"}} to="/sleep">Ngủ ngủ nghỉ nghỉ</Link>
+                                </nav></div>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">

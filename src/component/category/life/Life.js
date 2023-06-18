@@ -58,23 +58,22 @@ const Life = () => {
         <div className="Life">
             <Header/>
             <main id="main">
-                <div className="container-fluid container-xl d-flex justify-content-end">
-                    <div className="position-relative">
-                        <Form/>
-                    </div>
-                </div>
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Đời sống</h2>
-                            <nav id="navbar" className="navbar">
-                            <Link style={{textDecoration: "none"}} to="/family">Gia đình</Link>
-                            <Link style={{textDecoration: "none"}} to="/story">Chuyện lạ</Link>
-                            <Link style={{textDecoration: "none"}} to="/cuisine">Ẩm thực</Link>
-                            <Link style={{textDecoration: "none"}} to="/youth">Giới trẻ</Link>
-                            <Link style={{textDecoration: "none"}} to="/tip">Mẹo vặt</Link>
-                            <Link style={{textDecoration: "none"}} to="/confide">Tâm sự</Link>
-                            </nav>
+                            <div>
+                                <h2>Đời sống</h2>
+                                <nav id="navbar" className="navbar">
+                                    <ul>
+                                        <li><Link style={{textDecoration: "none"}} to="/family">Gia đình</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/story">Chuyện lạ</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/cuisine">Ẩm thực</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/youth">Giới trẻ</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/tip">Mẹo vặt</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/confide">Tâm sự</Link></li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">

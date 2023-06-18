@@ -146,19 +146,6 @@ const Header = ({news}) => {
                 <div className="container-fluid container-xl position-absolute">
                         <Form/>
                 </div>
-                {/*<div className="container-fluid container-xl d-flex align-items-center justify-content-between">*/}
-                {/*    <div className="position-relative">*/}
-                {/*        <Form/>*/}
-                {/*        /!*<i className="bi bi-list mobile-nav-toggle"></i>*!/*/}
-                {/*        /!*<div className="search-form-wrap js-search-form-wrap">*!/*/}
-                {/*        /!*    <form action="search-result.html" className="search-form">*!/*/}
-                {/*        /!*        <span className="icon bi-search"></span>*!/*/}
-                {/*        /!*        <input type="text" placeholder="Search" className="form-control"></input>*!/*/}
-                {/*        /!*        <button className="btn js-search-close"><span className="bi-x"></span></button>*!/*/}
-                {/*        /!*    </form>*!/*/}
-                {/*        /!*</div>*!/*/}
-                {/*    </div>*/}
-                {/*</div>*/}
             </div>
         </header>
     );
