@@ -59,23 +59,20 @@ const Project = () => {
         <div className="Travel">
             <Header/>
             <main id="main">
-                <div className="container-fluid container-xl d-flex justify-content-end">
-                    <div className="position-relative">
-                        <Form/>
-                    </div>
-                </div>
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Bất động sản<span style={{fontSize:"25px"}}> / Tư vấn</span></h2>
-                            <nav id="navbar" className="navbar">
-                                <Link style={{textDecoration: "none"}} to="/project">Dự án</Link>
-                                <Link style={{textDecoration: "none"}} to="/interior">Nội thất</Link>
-                                <Link style={{textDecoration: "none"}} to="/advise">Tư vấn</Link>
-                                <Link style={{textDecoration: "none"}} to="/stock-market">Thị trường</Link>
-                                <Link style={{textDecoration: "none"}} to="/beautiful-house">Nhà đẹp</Link>
-                                <Link style={{textDecoration: "none"}} to="/chance-to-settle-down">Cơ hội an cư</Link>
-                            </nav>
+                            <div>
+                                <h2>Bất động sản<span style={{fontSize:"25px"}}> / Tư vấn</span></h2>
+                                <nav id="navbar" className="navbar">
+                                    <Link style={{textDecoration: "none"}} to="/project">Dự án</Link>
+                                    <Link style={{textDecoration: "none"}} to="/interior">Nội thất</Link>
+                                    <Link style={{textDecoration: "none"}} to="/advise">Tư vấn</Link>
+                                    <Link style={{textDecoration: "none"}} to="/stock-market">Thị trường</Link>
+                                    <Link style={{textDecoration: "none"}} to="/beautiful-house">Nhà đẹp</Link>
+                                    <Link style={{textDecoration: "none"}} to="/chance-to-settle-down">Cơ hội an cư</Link>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">

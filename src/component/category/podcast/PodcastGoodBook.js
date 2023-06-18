@@ -69,29 +69,26 @@ const PodcastGoodBook = () => {
         <div className="Podcast">
             <Header/>
             <main id="main">
-                <div className="container-fluid container-xl d-flex justify-content-end">
-                    <div className="position-relative">
-                        <Form/>
-                    </div>
-                </div>
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2><Link
-                                style={{textDecoration: "none", color: "#000"}} to="/podcast">Podcast</Link></h2>
-                            <nav id="navbar" className="navbar">
-                                <ul>
-                                    <li><Link style={{textDecoration: "none"}} to="/podcast/current-event">Bản tin thời
-                                        sự</Link></li>
-                                    {/*<li><Link style={{textDecoration: "none"}} to="/podcast/sight">Góc nhìn</Link>*/}
-                                    {/*</li>*/}
-                                    {/*<li><Link style={{textDecoration: "none"}} to="/podcast/strange">Độc lạ</Link></li>*/}
-                                    <li><Link style={{textDecoration: "none"}} to="/podcast/live-young">Sống trẻ</Link>
-                                    </li>
-                                    <li><Link style={{textDecoration: "none"}} to="/podcast/good-book">Sách hay</Link>
-                                    </li>
-                                </ul>
-                            </nav>
+                            <div>
+                                <h2><Link
+                                    style={{textDecoration: "none", color: "#000"}} to="/podcast">Podcast</Link></h2>
+                                <nav id="navbar" className="navbar">
+                                    <ul>
+                                        <li><Link style={{textDecoration: "none"}} to="/podcast/current-event">Bản tin thời
+                                            sự</Link></li>
+                                        {/*<li><Link style={{textDecoration: "none"}} to="/podcast/sight">Góc nhìn</Link>*/}
+                                        {/*</li>*/}
+                                        {/*<li><Link style={{textDecoration: "none"}} to="/podcast/strange">Độc lạ</Link></li>*/}
+                                        <li><Link style={{textDecoration: "none"}} to="/podcast/live-young">Sống trẻ</Link>
+                                        </li>
+                                        <li><Link style={{textDecoration: "none"}} to="/podcast/good-book">Sách hay</Link>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">

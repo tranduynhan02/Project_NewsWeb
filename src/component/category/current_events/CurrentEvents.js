@@ -58,22 +58,21 @@ const CurrentEvents = () => {
         <div className="Life">
             <Header/>
             <main id="main">
-                <div className="container-fluid container-xl d-flex justify-content-end">
-                    <div className="position-relative">
-                        <Form/>
-                    </div>
-                </div>
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Thời sự</h2>
-                            <nav id="navbar" className="navbar">
-                                <Link style={{textDecoration: "none"}} to="/congress">Quốc hội</Link>
-                                <Link style={{textDecoration: "none"}} to="/traffic">An toàn giao thông</Link>
-                                <Link style={{textDecoration: "none"}} to="/insurance">BHXH-BHYT</Link>
-                                <Link style={{textDecoration: "none"}} to="/corruption">Chống tham nhũng</Link>
-                                <Link style={{textDecoration: "none"}} to="/naitional-defense">Quốc phòng</Link>
-                            </nav>
+                            <div>
+                                <div>
+                                    <h2>Thời sự</h2>
+                                    <nav id="navbar" className="navbar">
+                                        <Link style={{textDecoration: "none"}} to="/congress">Quốc hội</Link>
+                                        <Link style={{textDecoration: "none"}} to="/traffic">An toàn giao thông</Link>
+                                        <Link style={{textDecoration: "none"}} to="/insurance">BHXH-BHYT</Link>
+                                        <Link style={{textDecoration: "none"}} to="/corruption">Chống tham nhũng</Link>
+                                        <Link style={{textDecoration: "none"}} to="/naitional-defense">Quốc phòng</Link>
+                                    </nav>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">
