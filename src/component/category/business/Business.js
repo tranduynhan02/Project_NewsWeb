@@ -65,9 +65,7 @@ const Business = () => {
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
                             <div>
-                                <h2><Link
-                                    style={{textDecoration: "none", color: "#000"}} to="/business">Kinh
-                                    doanh</Link></h2>
+                                <h2>Kinh doanh</h2>
                                 <nav id="navbar" className="navbar">
                                     <ul>
                                         <li><Link style={{textDecoration: "none"}} to="/business/finance">Tài

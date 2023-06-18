@@ -87,11 +87,6 @@ const Detail = () => {
         <div>
             <Header/>
             <main id="main">
-                <div className="container-fluid container-xl d-flex justify-content-end">
-                    <div className="position-relative">
-                        <Form/>
-                    </div>
-                </div>
                 <section className="single-post-content">
                     <div className="container">
                         <div style={{maxWidth: "100%", margin: "auto", marginBottom: "50px"}}>
