@@ -6,6 +6,7 @@ import Footer from "../../Footer";
 import Bottom from "./items/Bottom";
 import Left from "./items/Left";
 import Center from "./items/Center";
+import Form from "../../search/Form";
 
 const Podcast = () => {
     const [podcasts, setPodcasts] = useState([]);
@@ -68,6 +69,11 @@ const Podcast = () => {
         <div className="Podcast">
             <Header/>
             <main id="main">
+                <div className="container-fluid container-xl d-flex justify-content-end">
+                    <div className="position-relative">
+                        <Form/>
+                    </div>
+                </div>
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
