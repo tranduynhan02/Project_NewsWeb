@@ -65,9 +65,7 @@ const Sport = () => {
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
                             <div>
-                                <h2><Link
-                                    style={{textDecoration: "none", color: "#000"}} to="/sport">Thể
-                                    thao</Link></h2>
+                                <h2>Thể thao</h2>
                                 <nav id="navbar" className="navbar">
                                     <ul>
                                         <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng
