@@ -6,6 +6,7 @@ import Center from "../../Items/Center";
 import Bottom from "../../Items/Bottom";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
+import Form from "../../search/Form";
 
 const Market = () => {
     const [newsList, setNewList] = useState([]);
@@ -16,8 +17,8 @@ const Market = () => {
         return subUrl;
     }
 
-    function setTitle(title){
-        return title.replace(/&amp;amp;/g,"&").replace(/&amp;apos;/g, "'");
+    function setTitle(title) {
+        return title.replace(/&amp;amp;/g, "&").replace(/&amp;apos;/g, "'");
     }
 
     useEffect(() => {
@@ -32,7 +33,7 @@ const Market = () => {
             items.forEach((item) => {
                 let result = {
                     title: setTitle(item.querySelector('title').textContent),
-                    description: item.querySelector('description').textContent.split("</br>")[1].trim(),
+                    description: setTitle(item.querySelector('description').textContent.split("</br>")[1].trim()),
                     link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,
@@ -56,23 +57,23 @@ const Market = () => {
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2><Link
-                                style={{textDecoration: "none", color: "#000"}} to="/business">Kinh
-                                doanh</Link><span style={{fontSize: "28px"}}> / Thị trường</span></h2>
-                            <nav id="navbar" className="navbar">
-                                <ul>
-                                    <li><Link style={{textDecoration: "none"}} to="/business/finance">Tài
-                                        chính</Link></li>
-                                    <li><Link style={{textDecoration: "none"}} to="/business/invest">Đầu tư</Link>
-                                    </li>
-                                    <li><Link style={{textDecoration: "none"}} to="/business/market">Thị
-                                        trường</Link></li>
-                                    <li><Link style={{textDecoration: "none"}} to="/business/businessmen">Doanh
-                                        nhân</Link></li>
-                                    <li><Link style={{textDecoration: "none"}} to="/business/finance-support">Tư vấn
-                                        tài chính</Link></li>
-                                </ul>
-                            </nav>
+                            <div>
+                                <h2>Kinh doanh<span style={{fontSize: "28px"}}> / Thị trường</span></h2>
+                                <nav id="navbar" className="navbar">
+                                    <ul>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/finance">Tài
+                                            chính</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/invest">Đầu tư</Link>
+                                        </li>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/market">Thị
+                                            trường</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/businessmen">Doanh
+                                            nhân</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/business/finance-support">Tư vấn
+                                            tài chính</Link></li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">

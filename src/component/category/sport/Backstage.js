@@ -13,6 +13,7 @@ import Center from "../../Items/Center";
 import Bottom from "../../Items/Bottom";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
+import Form from "../../search/Form";
 
 const Backstage = () => {
     const [newsList, setNewList] = useState([]);
@@ -40,7 +41,7 @@ const Backstage = () => {
             items.forEach((item) => {
                 let result = {
                     title: setTitle(item.querySelector('title').textContent),
-                    description: item.querySelector('description').textContent.split("</br>")[1].trim(),
+                    description: setTitle(item.querySelector('description').textContent.split("</br>")[1].trim()),
                     link: getlink(item.querySelector('link').textContent),
                     image: item.querySelector('description').textContent.match(/src="([^"]+)"/i)[1],
                     pubDate: item.querySelector('pubDate').textContent,
@@ -64,24 +65,24 @@ const Backstage = () => {
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2><Link
-                                style={{textDecoration: "none", color: "#000"}} to="/sport">Thể
-                                thao</Link><span style={{fontSize: "28px"}}> / Hậu trường</span></h2>
-                            <nav id="navbar" className="navbar">
-                                <ul>
-                                    <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng
-                                        đá quốc tế</Link></li>
-                                    <li><Link style={{textDecoration: "none"}} to="/sport/vn-football">Bóng đá Việt
-                                        Nam</Link>
-                                    </li>
-                                    <li><Link style={{textDecoration: "none"}} to="/sport/transfer-news">Tin chuyển
-                                        nhượng</Link></li>
-                                    <li><Link style={{textDecoration: "none"}} to="/sport/other-sport">Các môn
-                                        khác</Link></li>
-                                    <li><Link style={{textDecoration: "none"}} to="/sport/backstage">Hậu trường</Link>
-                                    </li>
-                                </ul>
-                            </nav>
+                            <div>
+                                <h2>Thể thao<span style={{fontSize: "28px"}}> / Hậu trường</span></h2>
+                                <nav id="navbar" className="navbar">
+                                    <ul>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/international-football">Bóng
+                                            đá quốc tế</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/vn-football">Bóng đá Việt
+                                            Nam</Link>
+                                        </li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/transfer-news">Tin chuyển
+                                            nhượng</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/other-sport">Các môn
+                                            khác</Link></li>
+                                        <li><Link style={{textDecoration: "none"}} to="/sport/backstage">Hậu trường</Link>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">

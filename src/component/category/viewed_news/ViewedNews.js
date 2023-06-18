@@ -3,6 +3,7 @@ import Header from "../../Header";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
 import Bottom from "./items/Bottom";
+import Form from "../../search/Form";
 
 const ViewedNews = () => {
     const [viewedNews, setViewedNews] = useState(JSON.parse(localStorage.getItem('viewedNews')));

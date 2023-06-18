@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "../Header";
 import Footer from "../Footer";
 import Bottom from "../Items/Bottom";
+import Form from "./Form";
 
 function SearchNews() {
     const {name} = useParams();

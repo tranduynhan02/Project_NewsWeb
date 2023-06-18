@@ -57,6 +57,13 @@ import Advise from "./category/real_estate/Advise";
 import Stock_Market from "./category/real_estate/Stock_Market";
 import Beautiful_House from "./category/real_estate/Beautiful_House";
 import Change_to_settle_down from "./category/real_estate/Change_to_settle_down";
+import Podcast from "./category/podcast/Podcast";
+import PodcastDetail from "./detail/PodcastDetail";
+import PodcastCurrentEvents from "./category/podcast/PodcastCurrentEvents";
+import PodcastSight from "./category/podcast/PodcastSight";
+import PodcastStrange from "./category/podcast/PodcastStrange";
+import PodcastLiveYoung from "./category/podcast/PodcastLiveYoung";
+import PodcastGoodBook from "./category/podcast/PodcastGoodBook";
 
 export const appRouter = createBrowserRouter([{
 
@@ -144,6 +151,17 @@ export const appRouter = createBrowserRouter([{
         {path: "advise", element: <Advise/>},
         {path: "stock-market", element: <Stock_Market/>},
         {path: "beautiful-house", element: <Beautiful_House/>},
-        {path: "chance-to-settle-down", element: <Change_to_settle_down/>}
+        {path: "chance-to-settle-down", element: <Change_to_settle_down/>},
+        //podcast
+        {path: "podcast", element: <Podcast/>},
+        {path: "podcast/current-event", element: <PodcastCurrentEvents/>},
+        // {path: "podcast/sight", element: <PodcastSight/>},
+        // {path: "podcast/strange", element: <PodcastStrange/>},
+        {path: "podcast/live-young", element: <PodcastLiveYoung/>},
+        {path: "podcast/good-book", element: <PodcastGoodBook/>},
+        {
+            path: "podcast/:link",
+            element: <PodcastDetail/>,
+        },
     ]
 }]);

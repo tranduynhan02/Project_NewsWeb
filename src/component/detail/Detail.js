@@ -13,7 +13,7 @@ import Image from "./items/Image";
 import {Link, useParams} from "react-router-dom";
 import Relate from "./items/Relate";
 import ViewedNew from "./items/ViewedNew";
-// import ResponsiveVoice from 'responsivevoice';
+import Form from "../search/Form";
 const Detail = () => {
     const [title, setTitle] = useState();
     const [listImage, setListImage] = useState([]);

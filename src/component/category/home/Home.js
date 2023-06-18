@@ -14,6 +14,7 @@ import Center_Home from "./Center_Home";
 import Trending_Home from "./Trending_Home";
 import Small_Center from "./Small_Center";
 import SmallTrending from "./SmallTrending";
+import Form from "../../search/Form";
 
 const Home = () => {
     // lấy tin tức du lịch

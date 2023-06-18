@@ -14,6 +14,7 @@ import Header from "../../Header";
 import Footer from "../../Footer";
 import {Link, Outlet} from "react-router-dom";
 import Small_Center from "../home/Small_Center";
+import Form from "../../search/Form";
 
 const Eat = () => {
     const [newsList, setNewsList] = useState([]);
@@ -61,12 +62,12 @@ const Eat = () => {
                 <section className="category-section">
                     <div className="container" data-aos="fade-up">
                         <div className="section-header d-flex justify-content-between align-items-center mb-5">
-                            <h2>Du lịch<span style={{fontSize:"25px"}}> / Ăn ăn uống uống</span></h2>
-                            <nav id="navbar" className="navbar">
-                                <Link style={{textDecoration: "none"}} to="/go">Đi đâu chơi đi</Link>
-                                <Link style={{textDecoration: "none"}} to="/eat">Ăn ăn uống uống</Link>
-                                <Link style={{textDecoration: "none"}} to="/sleep">Ngủ ngủ nghỉ nghỉ</Link>
-                            </nav>
+                            <div><h2>Du lịch<span style={{fontSize:"25px"}}> / Ăn ăn uống uống</span></h2>
+                                <nav id="navbar" className="navbar">
+                                    <Link style={{textDecoration: "none"}} to="/go">Đi đâu chơi đi</Link>
+                                    <Link style={{textDecoration: "none"}} to="/eat">Ăn ăn uống uống</Link>
+                                    <Link style={{textDecoration: "none"}} to="/sleep">Ngủ ngủ nghỉ nghỉ</Link>
+                                </nav></div>
                         </div>
                     </div>
                     <div className="container" data-aos="fade-up">

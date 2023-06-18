@@ -28,13 +28,12 @@ class MyComponent extends React.Component {
 
     render() {
         return (
-            <div key={this.key} style={{marginTop:20}}>
-                <form id="form_search" onSubmit={handleClick}>
-                    <input id="text" type="text" name="name" value={this.state.name} onChange={this.handleInputChange} style={{float:"left",width:120}} />
+            <div key={this.key} className="d-flex float-end" style={{margin: "-12px 24px 0 0"}}>
+                <form className="example" id="form_search" onSubmit={handleClick}>
+                    <input id="text" type="text" name="name" value={this.state.name} onChange={this.handleInputChange} style={{float:"left",width:180}} />
+                    <Link to={`/search/${this.state.name}`}><button style={{border:"none"}}><i className="fa fa-search"></i></button></Link>
                 </form>
-                <Link to={`/search/${this.state.name}`}><button style={
-                    {borderRadius:2,border:'none',backgroundColor:"gray",color:"white",fontSize:12,height:30}
-                }>Tìm kiếm</button></Link>
+
             </div>
         );
     }
