@@ -65,12 +65,12 @@ const Life = () => {
                                 <h2>Đời sống</h2>
                                 <nav id="navbar" className="navbar">
                                     <ul>
-                                        <li><Link style={{textDecoration: "none"}} to="/family">Gia đình</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/story">Chuyện lạ</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/cuisine">Ẩm thực</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/youth">Giới trẻ</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/tip">Mẹo vặt</Link></li>
-                                        <li><Link style={{textDecoration: "none"}} to="/confide">Tâm sự</Link></li>
+                                        <Link style={{textDecoration: "none"}} to="/life/family">Gia đình</Link>
+                                        <Link style={{textDecoration: "none"}} to="/life/story">Chuyện lạ</Link>
+                                        <Link style={{textDecoration: "none"}} to="/life/cuisine">Ẩm thực</Link>
+                                        <Link style={{textDecoration: "none"}} to="/life/youth">Giới trẻ</Link>
+                                        <Link style={{textDecoration: "none"}} to="/life/tip">Mẹo vặt</Link>
+                                        <Link style={{textDecoration: "none"}} to="/life/confide">Tâm sự</Link>
                                     </ul>
                                 </nav>
                             </div>
