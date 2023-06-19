@@ -64,6 +64,7 @@ import PodcastSight from "./category/podcast/PodcastSight";
 import PodcastStrange from "./category/podcast/PodcastStrange";
 import PodcastLiveYoung from "./category/podcast/PodcastLiveYoung";
 import PodcastGoodBook from "./category/podcast/PodcastGoodBook";
+import SearchByVoice from "./search/SearchByVoice";
 
 export const appRouter = createBrowserRouter([{
 
@@ -72,28 +73,29 @@ export const appRouter = createBrowserRouter([{
     children: [{path: "life", element: <Life/>},
         {path: "education", element: <Education/>},
         {path: "current-events", element: <CurrentEvents/>},
-        {path: "family", element: <Family/>},
-        {path: "story", element: <Story/>},
-        {path: "cuisine", element: <Cuisine/>},
-        {path: "youth", element: <Youth/>},
-        {path: "tip", element: <Tips/>},
-        {path: "confide", element: <Confide/>},
+        {path: "life/family", element: <Family/>},
+        {path: "life/story", element: <Story/>},
+        {path: "life/cuisine", element: <Cuisine/>},
+        {path: "life/youth", element: <Youth/>},
+        {path: "life/tip", element: <Tips/>},
+        {path: "life/confide", element: <Confide/>},
 
-        {path: "congress", element: <Congress/>},
-        {path: "traffic", element: <Traffic/>},
-        {path: "insurance", element: <Insurance/>},
-        {path: "corruption", element: <Corruption/>},
-        {path: "naitional-defense", element: <NaitionalDefense/>},
+        {path: "current-events/congress", element: <Congress/>},
+        {path: "current-events/traffic", element: <Traffic/>},
+        {path: "current-events/insurance", element: <Insurance/>},
+        {path: "current-events/corruption", element: <Corruption/>},
+        {path: "current-events/naitional-defense", element: <NaitionalDefense/>},
 
-        {path: "teacher", element: <Teacher/>},
-        {path: "admissions", element: <Admissions/>},
-        {path: "young-face", element: <YoungFace/>},
-        {path: "parents", element: <Parents/>},
-        {path: "study-abroad", element: <StudyAbroad/>},
-        {path: "science", element: <Science/>},
-        {path: "english", element: <English/>},
-        {path: "recruitment", element: <Recruitment/>},
-        {path: "ai-contest", element: <AiContest/>},
+        {path: "education/teacher", element: <Teacher/>},
+        {path: "education/admissions", element: <Admissions/>},
+        {path: "education/young-face", element: <YoungFace/>},
+        {path: "education/parents", element: <Parents/>},
+        {path: "education/study-abroad", element: <StudyAbroad/>},
+        {path: "education/science", element: <Science/>},
+        {path: "education/english", element: <English/>},
+        {path: "education/recruitment", element: <Recruitment/>},
+        {path: "education/ai-contest", element: <AiContest/>},
+        {path: "education/voice", element: <SearchByVoice/>},
         {
             path: "news/:link",
             element: <Detail/>,

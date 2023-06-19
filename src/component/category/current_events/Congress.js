@@ -64,11 +64,11 @@ const Congress = () => {
                             <div>
                                 <h2>Thời sự<span style={{fontSize:"25px"}}> / Quốc hội</span></h2>
                                 <nav id="navbar" className="navbar">
-                                    <Link style={{textDecoration: "none"}} to="/congress">Quốc hội</Link>
-                                    <Link style={{textDecoration: "none"}} to="/traffic">An toàn giao thông</Link>
-                                    <Link style={{textDecoration: "none"}} to="/insurance">BHXH-BHYT</Link>
-                                    <Link style={{textDecoration: "none"}} to="/corruption">Chống tham nhũng</Link>
-                                    <Link style={{textDecoration: "none"}} to="/naitional-defense">Quốc phòng</Link>
+                                    <Link style={{textDecoration: "none"}} to="/current-events/congress">Quốc hội</Link>
+                                    <Link style={{textDecoration: "none"}} to="/current-events/traffic">An toàn giao thông</Link>
+                                    <Link style={{textDecoration: "none"}} to="/current-events/insurance">BHXH-BHYT</Link>
+                                    <Link style={{textDecoration: "none"}} to="/current-events/corruption">Chống tham nhũng</Link>
+                                    <Link style={{textDecoration: "none"}} to="/current-events/naitional-defense">Quốc phòng</Link>
                                 </nav>
                             </div>
                         </div>
